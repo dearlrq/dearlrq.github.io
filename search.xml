@@ -1,39 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>单片机原理及应用</title>
-    <url>/2024/02/26/%E5%8D%95%E7%89%87%E6%9C%BA%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="导学"><a href="#导学" class="headerlink" title="导学"></a>导学</h1><p>教师</p>
-<ul>
-<li>姓名：祁瑞丽</li>
-<li>电话：15369155136</li>
-<li>研习室：1#322</li>
-</ul>
-<p>主要内容大纲</p>
-<ul>
-<li><p>GPIO</p>
-</li>
-<li><p>中断系统</p>
-</li>
-<li><p>定时器&#x2F;计数器</p>
-</li>
-<li><p>串口通信</p>
-</li>
-<li><p>ADC应用</p>
-</li>
-</ul>
-<p>实验内容</p>
-<ul>
-<li>外部中断应用—键控三色灯的设计</li>
-<li>串行通信应用—多指令控制器设计与开发</li>
-<li>ADC应用—芯片温度监控系统设计</li>
-</ul>
-<h1 id="认识单片机"><a href="#认识单片机" class="headerlink" title="认识单片机"></a>认识单片机</h1>]]></content>
-      <tags>
-        <tag>课程笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2024/01/12/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>

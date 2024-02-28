@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2024/01/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>JavaWeb（含SSM框架）系统速学</title>
     <url>/2024/02/27/JavaWeb%EF%BC%88%E5%90%ABSSM%E6%A1%86%E6%9E%B6%EF%BC%89%E7%B3%BB%E7%BB%9F%E9%80%9F%E5%AD%A6/</url>
     <content><![CDATA[<h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>全球广域网，也称为万维网(www world Wide Web)，能够通过浏览器访问的网站。如：京东、淘宝。</p>
@@ -8,20 +26,21 @@
 <li><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://api2.mubu.com/v3/document_image/a3b26770-3beb-4401-a427-7e6df0363018-25143160.jpg"
-                      alt="img"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240228115425165.png"
+                      alt="image-20240228115425165"
                 ></li>
 </ul>
 <h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><h2 id="参考手册"><a href="#参考手册" class="headerlink" title="参考手册"></a>参考手册</h2><ul>
 <li><a class="link"   href="http://w3school.com.cn/" >w3school.com.cn&#x2F; <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 </ul>
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><ul>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://api2.mubu.com/v3/document_image/06f301fa-a4d2-4e94-b97a-398475e0e3c5-25143160.jpg"
-                      alt="img"
-                ></li>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>HTML ( Hyper Text Markup Language )：超文本标记语言。</p>
+<ul>
+<li><p>超文本：超越了文本的限制，比普通文本更强大。除了文字信息，还可以定义图片、音频、视频等内容。</p>
+</li>
+<li><p>标记语言：由标签构成的语言</p>
+<p>HTML标签都是预定义好的。例如：使用&lt; a &gt;展示超链接，使用&lt; img &gt;展示图片，&lt; video &gt;展示视频。</p>
+<p>HTML代码直接在浏览器中运行，HTML标签由浏览器解析。</p>
+</li>
 </ul>
 <h3 id="标题标签-h1-h6"><a href="#标题标签-h1-h6" class="headerlink" title="标题标签&lt; h1 &gt;-&lt; h6 &gt;"></a>标题标签&lt; h1 &gt;-&lt; h6 &gt;</h3><p>h1最大，h6最小</p>
 <h3 id="图片标签-img-src-””"><a href="#图片标签-img-src-””" class="headerlink" title="图片标签 &lt; img src&#x3D;”” &gt;"></a>图片标签 &lt; img src&#x3D;”” &gt;</h3><p>src：指定图像的url(绝对路径 &#x2F;相对路径)。</p>
@@ -46,14 +65,12 @@
 <h3 id="音频标签-audio-src-””-controls"><a href="#音频标签-audio-src-””-controls" class="headerlink" title="音频标签 &lt; audio src&#x3D;”” controls &gt;"></a>音频标签 &lt; audio src&#x3D;”” controls &gt;</h3><p>src：规定音频的url。</p>
 <p>controls：显示播放控件。</p>
 <h3 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h3><p>&lt; th &gt; ：表示表头单元格，具有加粗居中效果</p>
-<ul>
-<li><img  
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://api2.mubu.com/v3/document_image/bad3f2c3-cdcf-411a-8547-b6113a397263-25143160.jpg"
-                      alt="img"
-                ></li>
-</ul>
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240228170546475.png"
+                      alt="image-20240228170546475"
+                ></p>
 <h3 id="表单标签-form-action-””-method-””"><a href="#表单标签-form-action-””-method-””" class="headerlink" title="表单标签 &lt; form action&#x3D;”” method&#x3D;”” &gt;"></a>表单标签 &lt; form action&#x3D;”” method&#x3D;”” &gt;</h3><p>action：表单提交的url，往何处提交数据 。 如果不指定，默认提交到当前页面。</p>
 <p>method: 表单的提交方式。</p>
 <ul>
@@ -65,22 +82,18 @@
 <p>&lt; option &gt; ：定义列表项</p>
 <p>&lt; textarea &gt;：定义文本域</p>
 <p>表单项必须有name属性才可以提交。</p>
-<ul>
-<li><p><img  
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://api2.mubu.com/v3/document_image/abc9fd42-1fad-4b71-8048-4b9341345907-25143160.jpg"
-                      alt="img"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240228170609448.png"
+                      alt="image-20240228170609448"
                 ></p>
-</li>
-<li><p><img  
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://api2.mubu.com/v3/document_image/1c66ac80-51c4-45a1-a545-89a6cb0032bd-25143160.jpg"
-                      alt="img"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240228170617774.png"
+                      alt="image-20240228170617774"
                 ></p>
-</li>
-</ul>
 <h3 id="其他标签"><a href="#其他标签" class="headerlink" title="其他标签"></a>其他标签</h3><p>&lt; hr &gt;：水平分割线</p>
 <p>&lt; br &gt;：换行</p>
 <p>&lt; p &gt;：段落</p>
@@ -140,23 +153,5 @@
       <tags>
         <tag>课程笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/01/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-]]></content>
   </entry>
 </search>

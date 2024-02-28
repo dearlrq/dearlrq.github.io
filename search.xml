@@ -19,9 +19,46 @@
 ]]></content>
   </entry>
   <entry>
+    <title>单片机原理及应用</title>
+    <url>/2024/02/26/%E5%8D%95%E7%89%87%E6%9C%BA%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="导学"><a href="#导学" class="headerlink" title="导学"></a>导学</h1><p>教师</p>
+<ul>
+<li>姓名：祁瑞丽</li>
+<li>电话：15369155136</li>
+<li>研习室：1#322</li>
+</ul>
+<p>主要内容大纲</p>
+<ul>
+<li><p>GPIO</p>
+</li>
+<li><p>中断系统</p>
+</li>
+<li><p>定时器&#x2F;计数器</p>
+</li>
+<li><p>串口通信</p>
+</li>
+<li><p>ADC应用</p>
+</li>
+</ul>
+<p>实验内容</p>
+<ul>
+<li>外部中断应用—键控三色灯的设计</li>
+<li>串行通信应用—多指令控制器设计与开发</li>
+<li>ADC应用—芯片温度监控系统设计</li>
+</ul>
+<h1 id="认识单片机"><a href="#认识单片机" class="headerlink" title="认识单片机"></a>认识单片机</h1>]]></content>
+      <categories>
+        <category>硬件</category>
+        <category>单片机</category>
+      </categories>
+      <tags>
+        <tag>课程笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaWeb（含SSM框架）系统速学</title>
     <url>/2024/02/27/JavaWeb%EF%BC%88%E5%90%ABSSM%E6%A1%86%E6%9E%B6%EF%BC%89%E7%B3%BB%E7%BB%9F%E9%80%9F%E5%AD%A6/</url>
-    <content><![CDATA[<h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>全球广域网，也称为万维网(www world Wide Web)，能够通过浏览器访问的网站。如：京东、淘宝。</p>
+    <content><![CDATA[<h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>全球广域网，也称为万维网 ( www world Wide Web )，能够通过浏览器访问的网站。如：京东、淘宝。</p>
 <h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><ul>
 <li><img  
                      lazyload
@@ -33,7 +70,7 @@
 <h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><h2 id="参考手册"><a href="#参考手册" class="headerlink" title="参考手册"></a>参考手册</h2><ul>
 <li><a class="link"   href="http://w3school.com.cn/" >w3school.com.cn&#x2F; <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 </ul>
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>HTML ( Hyper Text Markup Language )：超文本标记语言。</p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>HTML ( Hyper Text Markup Language )：超文本标记语言。</p>
 <ul>
 <li><p>超文本：超越了文本的限制，比普通文本更强大。除了文字信息，还可以定义图片、音频、视频等内容。</p>
 </li>
@@ -100,7 +137,182 @@
 <p>&lt; b &gt; &#x2F;&lt; strong &gt;：文本加粗</p>
 <p>&lt; span &gt;：一个在开发网页时大量会用到的没有语义的布局标签；一行可以显示多个(组合行内元素)，宽度和高度默认由内容撑开；不可以设置宽高 (width、height)</p>
 <p>&lt; div &gt;：一行只显示一个(独占一行)；宽度默认是父元素的宽度，高度默认由内容撑开；可以设置宽高 (width、height)</p>
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h1 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h1><h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><ul>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h3><p>CSS ( Cascading Style Sheet )：层叠样式表，用于控制页面的样式 ( 表现 )。</p>
+<h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/a408199c-4141-4844-8f67-e68fa3dfcac6-25143160.jpg"
+                      alt="img"
+                ></li>
+</ul>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>优先级：id &gt; 类 &gt; 元素</p>
+<ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/633d1731-b21d-499c-ab9b-fc974b8180ff-25143160.jpg"
+                      alt="img"
+                ></li>
+</ul>
+<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><h4 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h4><p>页面中所有的元素(标签)，都可以看做是一个盒子，由盒子将页面中的元素包含在一个矩形区域内，通过盒子的视角更方便的进行页面布局。</p>
+<h4 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h4><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/e0e9d03d-25f9-45d7-9d6c-80e0b51de009-25143160.jpg"
+                      alt="img"
+                ></li>
+</ul>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>width：设置宽度</p>
+<p>height：设置高度</p>
+<p>padding、margin：上、右、下、左</p>
+<p>border：宽度、线条类型、颜色</p>
+<p>background：背景</p>
+<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><p>颜色：color</p>
+<table>
+<thead>
+<tr>
+<th>表示方式</th>
+<th>表示含义</th>
+<th>取值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>关键字</td>
+<td>预定义的颜色名</td>
+<td>red、green、blue</td>
+</tr>
+<tr>
+<td>rgb表示法</td>
+<td>红绿蓝三原色，每项取值范围：0-255</td>
+<td>rgb(0,0,0)、rgb(255,255,255)、rgb(255,0,0)</td>
+</tr>
+<tr>
+<td>十六进制表示法</td>
+<td>#开头，将数字转换成十六进制表示</td>
+<td>#ff0000、#cccccc，简写：#ccc</td>
+</tr>
+</tbody></table>
+<p>字体大小：font-size</p>
+<p>规定添加到文本的修饰：text-decoration，其中none表示定义标准的文本</p>
+<p>设置行高：line-height</p>
+<p>定义第一个行内容的缩进：text-indent</p>
+<p>规定元素中的文本的水平对齐方式：text-align</p>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="介绍-4"><a href="#介绍-4" class="headerlink" title="介绍"></a>介绍</h3><p>JavaScript ( 简称：JS )是一门跨平台、面向对象的脚本语言。是用来控制网页行为的，它能使网页可交互。</p>
+<p>JavaScript 和 Java 是完全不同的语言，不论是概念还是设计。但是基础语法类似。</p>
+<h3 id="引入-1"><a href="#引入-1" class="headerlink" title="引入"></a>引入</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/675a0f0f-716a-4e94-9132-f8ac779098ac-25143160.jpg"
+                      alt="img"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/2582d6db-e4af-427d-9c09-17022702f111-25143160.jpg"
+                      alt="img"
+                ></p>
+</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><p>区分大小写：与Java 一样，变量名、函数名以及其他一切东西都是区分大小写的。</p>
+<p>注释：单行注释：&#x2F;&#x2F; 注释内容；多行注释：&#x2F;* 注释内容 *&#x2F;</p>
+<p>每行结尾的分号可有可无。</p>
+<p>大括号表示代码块。</p>
+<h4 id="输出语句"><a href="#输出语句" class="headerlink" title="输出语句"></a>输出语句</h4><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/2891e753-e511-4814-aef4-52e24395ee90-25143160.jpg"
+                      alt="img"
+                ></li>
+</ul>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>命名规则：</p>
+<ul>
+<li><p>组成字符可以是任何字母、数字、下划线 (_) 或美元符号 ($) 。</p>
+</li>
+<li><p>数字不能开头。</p>
+</li>
+<li><p>建议使用驼峰命名。</p>
+</li>
+</ul>
+<p>声明：</p>
+<ul>
+<li><p>用var关键字 ( variable 的缩写 ) 来声明。</p>
+</li>
+<li><p>同一变量可以存放不同类型的值。</p>
+</li>
+</ul>
+<p>特点：</p>
+<ul>
+<li><p>作用域比较大，全局变量。</p>
+</li>
+<li><p>可以重复定义的，但后面的覆盖前面的</p>
+</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li><p>ECMAScript6 新增了 let 关键字来定义变量。它的用法类似于 var，但是所声明的变量，只在 let 关键字所在的代码块内有效，且不允许重复声明。</p>
+</li>
+<li><p>ECMAScript6 新增了 const 关键字，用来声明一个只读的常量。一旦声明，常量的值就不能改变。</p>
+</li>
+</ul>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>引用类型</p>
+<p>原始类型：</p>
+<ul>
+<li>number：数字 ( 整数、小数、NaN ( Not a Number ) )</li>
+<li>string：字符串，单双引皆可</li>
+<li>boolean：布尔</li>
+<li>null：对象为空</li>
+<li>undefined：当声明的变量未初始化时，该变量的默认值是undefined</li>
+</ul>
+<p>使用 typeof 运算符可以获取数据类型。</p>
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p>字符串类型转为数字：</p>
+<ul>
+<li>将字符串字面值转为数字。 如果字面值不是数字，则转为NaN。<ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/800f63b9-356f-4851-a9c5-9a55d120a252-25143160.jpg"
+                      alt="img"
+                ></li>
+</ul>
+</li>
+</ul>
+<p>其他类型转为boolean：</p>
+<ul>
+<li>Number：0和NaN为false，其他均转为true。</li>
+<li>String：空字符串为false，其他均转为true。</li>
+<li>Null和 undefined：均转为false。</li>
+</ul>
+<h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/47ac47da-f475-419f-93eb-1bba0a1af413-25143160.jpg"
+                      alt="img"
+                ></li>
+</ul>
+<p>&#x3D;&#x3D;与&#x3D;&#x3D;&#x3D;的区别：</p>
+<ul>
+<li>&#x3D;&#x3D; 会进行类型转换，&#x3D;&#x3D;&#x3D; 不会进行类型转换。<ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/8babe1f1-9a87-47c8-9598-2ce35765f1a5-25143160.jpg"
+                      alt="img"
+                ></li>
+</ul>
+</li>
+</ul>
+<h4 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h4><p>if…else if …else…</p>
+<p>switch</p>
+<p>for</p>
+<p>while</p>
+<p>do…while</p>
+<h1 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h1><h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><ul>
 <li><img  
                      lazyload
                      src="/images/loading.svg"
@@ -115,43 +327,6 @@
       </categories>
       <tags>
         <tag>自研笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>单片机原理及应用</title>
-    <url>/2024/02/26/%E5%8D%95%E7%89%87%E6%9C%BA%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="导学"><a href="#导学" class="headerlink" title="导学"></a>导学</h1><p>教师</p>
-<ul>
-<li>姓名：祁瑞丽</li>
-<li>电话：15369155136</li>
-<li>研习室：1#322</li>
-</ul>
-<p>主要内容大纲</p>
-<ul>
-<li><p>GPIO</p>
-</li>
-<li><p>中断系统</p>
-</li>
-<li><p>定时器&#x2F;计数器</p>
-</li>
-<li><p>串口通信</p>
-</li>
-<li><p>ADC应用</p>
-</li>
-</ul>
-<p>实验内容</p>
-<ul>
-<li>外部中断应用—键控三色灯的设计</li>
-<li>串行通信应用—多指令控制器设计与开发</li>
-<li>ADC应用—芯片温度监控系统设计</li>
-</ul>
-<h1 id="认识单片机"><a href="#认识单片机" class="headerlink" title="认识单片机"></a>认识单片机</h1>]]></content>
-      <categories>
-        <category>硬件</category>
-        <category>单片机</category>
-      </categories>
-      <tags>
-        <tag>课程笔记</tag>
       </tags>
   </entry>
 </search>

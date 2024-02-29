@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2024/01/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>单片机原理及应用</title>
     <url>/2024/02/26/%E5%8D%95%E7%89%87%E6%9C%BA%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<h1 id="导学"><a href="#导学" class="headerlink" title="导学"></a>导学</h1><p>教师</p>
@@ -54,6 +36,24 @@
       <tags>
         <tag>课程笔记</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/01/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
   </entry>
   <entry>
     <title>JavaWeb（含SSM框架）系统速学</title>
@@ -271,17 +271,32 @@
 <p>使用 typeof 运算符可以获取数据类型。</p>
 <h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p>字符串类型转为数字：</p>
 <ul>
-<li><p>将字符串字面值转为数字。 如果字面值不是数字，则转为NaN。</p>
+<li>将字符串字面值转为数字。 如果字面值不是数字，则转为NaN。</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="built_in">parseInt</span>(<span class="string">&quot;12&quot;</span>)); <span class="comment">//12</span></span><br><span class="line"><span class="title function_">alert</span>(<span class="built_in">parseInt</span>(<span class="string">&quot;12A45&quot;</span>)); <span class="comment">//12</span></span><br><span class="line"><span class="title function_">alert</span>(<span class="built_in">parseInt</span>(<span class="string">&quot;A45&quot;</span>)); <span class="comment">//NaN ( not a number )</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>其他类型转为boolean：</p>
 <ul>
-<li><pre><code>alert(parseInt(&quot;12&quot;)); //12
-alert(parseInt(&quot;12A45&quot;)); //12
-alert(parseInt(&quot;A45&quot;)); //NaN ( not a number )
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">其他类型转为boolean：</span><br><span class="line"></span><br><span class="line">- Number：0和NaN为false，其他均转为true。</span><br><span class="line">- String：空字符串为false，其他均转为true。</span><br><span class="line">- Null和 undefined：均转为false。</span><br><span class="line"></span><br><span class="line">#### 运算符</span><br><span class="line"></span><br><span class="line">- ![img](https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/47ac47da-f475-419f-93eb-1bba0a1af413-25143160.jpg)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">==与===的区别：</span><br><span class="line"></span><br><span class="line">- == 会进行类型转换，=== 不会进行类型转换。</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    var age = 20;</span><br><span class="line">    var _age = &quot;20&quot;;</span><br><span class="line">    var $age = 20;</span><br><span class="line">    </span><br><span class="line">    alert(age == _age); //true</span><br><span class="line">    alert(age === _age); //flase</span><br><span class="line">    alert(age === $age); //true</span><br></pre></td></tr></table></figure></div>
-</code></pre>
-</li>
+<li>Number：0和NaN为false，其他均转为true。</li>
+<li>String：空字符串为false，其他均转为true。</li>
+<li>Null和 undefined：均转为false。</li>
 </ul>
-</li>
+<h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/47ac47da-f475-419f-93eb-1bba0a1af413-25143160.jpg"
+                      alt="img"
+                ></li>
 </ul>
+<p>&#x3D;&#x3D;与&#x3D;&#x3D;&#x3D;的区别：</p>
+<ul>
+<li>&#x3D;&#x3D; 会进行类型转换，&#x3D;&#x3D;&#x3D; 不会进行类型转换。</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> _age = <span class="string">&quot;20&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> $age = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">alert</span>(age == _age); <span class="comment">//true</span></span><br><span class="line"><span class="title function_">alert</span>(age === _age); <span class="comment">//flase</span></span><br><span class="line"><span class="title function_">alert</span>(age === $age); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></div>
+
 <h4 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h4><p>if…else if …else…</p>
 <p>switch</p>
 <p>for</p>
@@ -321,52 +336,228 @@ alert(parseInt(&quot;A45&quot;)); //NaN ( not a number )
 </ul>
 <p>方法：</p>
 <ul>
-<li><p>forEach ( )</p>
-<ul>
-<li><p>遍历数组中的每个有值的元素，并调用一次传入的函数。</p>
-<ul>
-<li><pre><code>//arr是数组
-arr.forEash(function(e)&#123;
-    console.log(e);
-&#125;)
+<li>forEach ( )<ul>
+<li>遍历数组中的每个有值的元素，并调用一次传入的函数。</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//arr是数组</span></span><br><span class="line">arr.<span class="title function_">forEash</span>(<span class="keyword">function</span>(<span class="params">e</span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(e);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6 箭头函数:(...) =&gt; &#123;...&#125; -- 简化函数定义</span></span><br><span class="line">arr.<span class="title function_">forEash</span>(<span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(e);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
 
-//ES6 箭头函数:(...) =&gt; &#123;...&#125; -- 简化函数定义
-arr.forEash((e) =&gt; &#123;
-    console.log(e);
-&#125;)
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">- push ( )</span><br><span class="line">  </span><br><span class="line">  - 将新元素添加到数组的末尾，并返回新的数组。</span><br><span class="line">- splice ( )</span><br><span class="line">  </span><br><span class="line">  - 从数组中删除元素。第一个参数是从什么位置开始删，第二个参数是删几个。</span><br><span class="line"></span><br><span class="line">#### String（字符串）</span><br><span class="line"></span><br><span class="line">定义：</span><br><span class="line"></span><br><span class="line">- var 变量名 = new String ( &quot;......&quot; ) ;</span><br><span class="line">- var 变量名 = &quot;......&quot;；</span><br><span class="line"></span><br><span class="line">属性：</span><br><span class="line"></span><br><span class="line">- length：字符串的长度。</span><br><span class="line"></span><br><span class="line">方法：</span><br><span class="line"></span><br><span class="line">- charAt ( )</span><br><span class="line">  - 返回在指定位置的字符。</span><br><span class="line"></span><br><span class="line">- indexOf ( )</span><br><span class="line">  - 检索字符串位置。</span><br><span class="line"></span><br><span class="line">- trim ( )</span><br><span class="line">  - 去除字符串两边的空格。</span><br><span class="line"></span><br><span class="line">- substring ( )</span><br><span class="line">  - 提取字符串中两个指定的索引号之间的字符。左闭右开。</span><br><span class="line"></span><br><span class="line">#### JSON</span><br><span class="line"></span><br><span class="line">自定义对象:</span><br><span class="line"></span><br><span class="line">- ![img](https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/6b283f80-7343-45d7-a66c-c088a526c04f-25143160.jpg)</span><br><span class="line"></span><br><span class="line">介绍:</span><br><span class="line"></span><br><span class="line">- JavaScript Object Notation，JavaScript对象标记法。JSON是通过JavaScript对象标记法书写的文本。由于其语法简单，层次结构鲜明，现多用于作为数据载体，在网络中进行数据传输。</span><br><span class="line"></span><br><span class="line">定义：</span><br><span class="line"></span><br><span class="line">- var 变量名 = &#123; &quot;key1&quot; : value1，&quot;key2&quot; : value2 .....&#125;；</span><br><span class="line">- value的数据类型：</span><br><span class="line">  - 数字 ( 整数或浮点数 )</span><br><span class="line">  - 字符串 ( 在双引号中 )</span><br><span class="line">  - 逻辑值 ( true 或 false )</span><br><span class="line">  - 数组 ( 在方括号中 )</span><br><span class="line">  - 对象 ( 在花括号中 )</span><br><span class="line">  - null</span><br><span class="line"></span><br><span class="line">转换：</span><br><span class="line"></span><br><span class="line">- JSON字符串转为JS对象：</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    var jsObject = JSON.parse(jsonStr);</span><br></pre></td></tr></table></figure></div>
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>JS对象转为JSON字符串：</p>
 <ul>
-<li><pre><code>var jsonStr = JSON.stringify(jsObject);
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### BOM</span><br><span class="line"></span><br><span class="line">介绍：</span><br><span class="line"></span><br><span class="line">- Browser Obiect Model 浏览器对象模型，允许JavaScript 与浏览器对话，Javacript 将浏览器的各个组成部分封装为对象。</span><br><span class="line"></span><br><span class="line">组成：</span><br><span class="line"></span><br><span class="line">- Window：浏览器窗口对象</span><br><span class="line">- Navigator：浏览器对象</span><br><span class="line">- Screen：屏幕对象</span><br><span class="line">- History：历史记录对象</span><br><span class="line">- Location：地址栏对象</span><br><span class="line"></span><br><span class="line">Window：</span><br><span class="line"></span><br><span class="line">- ![img](https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/8a5db09e-cb86-4001-bb0a-1b0f863edf58-25143160.jpg)</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    //定时器-setInterval -- 周期性的执行某一个函数</span><br><span class="line">    var i = 0;</span><br><span class="line">    setInterval(function()&#123;</span><br><span class="line">    	i++;</span><br><span class="line">    	console.log(&quot;定时器执行了&quot;+ i +&quot;次&quot;);</span><br><span class="line">    &#125;,2000);</span><br><span class="line">    </span><br><span class="line">    //定时器-setTimeout -- 延迟指定时间执行一次</span><br><span class="line">    setTimeout(function()&#123;</span><br><span class="line">    	alert(&quot;JS&quot;);</span><br><span class="line">    &#125;,3000);</span><br></pre></td></tr></table></figure></div>
-</code></pre>
+<li><p>push ( )</p>
+<ul>
+<li>将新元素添加到数组的末尾，并返回新的数组。</li>
+</ul>
 </li>
+<li><p>splice ( )</p>
+<ul>
+<li>从数组中删除元素。第一个参数是从什么位置开始删，第二个参数是删几个。</li>
 </ul>
 </li>
 </ul>
+<h4 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a>String（字符串）</h4><p>定义：</p>
+<ul>
+<li>var 变量名 &#x3D; new String ( “……” ) ;</li>
+<li>var 变量名 &#x3D; “……”；</li>
+</ul>
+<p>属性：</p>
+<ul>
+<li>length：字符串的长度。</li>
+</ul>
+<p>方法：</p>
+<ul>
+<li><p>charAt ( )</p>
+<ul>
+<li>返回在指定位置的字符。</li>
+</ul>
+</li>
+<li><p>indexOf ( )</p>
+<ul>
+<li>检索字符串位置。</li>
+</ul>
+</li>
+<li><p>trim ( )</p>
+<ul>
+<li>去除字符串两边的空格。</li>
+</ul>
+</li>
+<li><p>substring ( )</p>
+<ul>
+<li>提取字符串中两个指定的索引号之间的字符。左闭右开。</li>
+</ul>
+</li>
+</ul>
+<h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><p>自定义对象:</p>
+<ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/6b283f80-7343-45d7-a66c-c088a526c04f-25143160.jpg"
+                      alt="img"
+                ></li>
+</ul>
+<p>介绍:</p>
+<ul>
+<li>JavaScript Object Notation，JavaScript对象标记法。JSON是通过JavaScript对象标记法书写的文本。由于其语法简单，层次结构鲜明，现多用于作为数据载体，在网络中进行数据传输。</li>
+</ul>
+<p>定义：</p>
+<ul>
+<li>var 变量名 &#x3D; { “key1” : value1，”key2” : value2 …..}；</li>
+<li>value的数据类型：<ul>
+<li>数字 ( 整数或浮点数 )</li>
+<li>字符串 ( 在双引号中 )</li>
+<li>逻辑值 ( true 或 false )</li>
+<li>数组 ( 在方括号中 )</li>
+<li>对象 ( 在花括号中 )</li>
+<li>null</li>
+</ul>
+</li>
+</ul>
+<p>转换：</p>
+<ul>
+<li>JSON字符串转为JS对象：</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> jsObject = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(jsonStr);</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>JS对象转为JSON字符串：</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> jsonStr = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(jsObject);</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h4><p>介绍：</p>
+<ul>
+<li>Browser Obiect Model 浏览器对象模型，允许JavaScript 与浏览器对话，Javacript 将浏览器的各个组成部分封装为对象。</li>
+</ul>
+<p>组成：</p>
+<ul>
+<li>Window：浏览器窗口对象</li>
+<li>Navigator：浏览器对象</li>
+<li>Screen：屏幕对象</li>
+<li>History：历史记录对象</li>
+<li>Location：地址栏对象</li>
+</ul>
+<p>Window：</p>
+<ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/8a5db09e-cb86-4001-bb0a-1b0f863edf58-25143160.jpg"
+                      alt="img"
+                ></li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定时器-setInterval -- 周期性的执行某一个函数</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">setInterval</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	i++;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;定时器执行了&quot;</span>+ i +<span class="string">&quot;次&quot;</span>);</span><br><span class="line">&#125;,<span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//定时器-setTimeout -- 延迟指定时间执行一次</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="title function_">alert</span>(<span class="string">&quot;JS&quot;</span>);</span><br><span class="line">&#125;,<span class="number">3000</span>);</span><br></pre></td></tr></table></figure></div>
+
 <p>Location：</p>
 <ul>
-<li><p><img  
+<li><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/17a8a14b-2c53-4ea7-a988-75efd626ee30-25143160.jpg"
                       alt="img"
-                ></p>
+                ></li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">location.<span class="property">href</span>; <span class="comment">//返回本地地址。</span></span><br><span class="line">location.<span class="property">href</span> = <span class="string">&quot;https://www.itcast.cn&quot;</span>; <span class="comment">//自动跳转到该地址。</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h4><p>介绍：</p>
 <ul>
-<li><pre><code>location.href; //返回本地地址。
-location.href = &quot;https://www.itcast.cn&quot;; //自动跳转到该地址。
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### DOM</span><br><span class="line"></span><br><span class="line">介绍：</span><br><span class="line"></span><br><span class="line">- Document object Model，文档对象模型。</span><br><span class="line"></span><br><span class="line">组成：</span><br><span class="line"></span><br><span class="line">- ![img](https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/77403e16-9cff-461a-9bdd-0e3c092a527c-25143160.jpg)</span><br><span class="line"></span><br><span class="line">JavaScript 通过DOM，能够对HTML进行操作：</span><br><span class="line"></span><br><span class="line">- 改变HTML元素的内容。</span><br><span class="line">- 改变HTML元素的样式(CSS)。</span><br><span class="line">- 对HTML DOM 事件作出反应。</span><br><span class="line">- 添加和删除HTML元素。</span><br><span class="line"></span><br><span class="line">方法：</span><br><span class="line"></span><br><span class="line">- ![img](https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/9cde866d-df6b-4c9b-bff2-78ed287881da-25143160.jpg)</span><br><span class="line">  - ![img](https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/b2f93c99-f5ae-42ae-a0ee-a927e2a59407-25143160.jpg)</span><br><span class="line"></span><br><span class="line">#### 事件监听</span><br><span class="line"></span><br><span class="line">事件：</span><br><span class="line"></span><br><span class="line">- HTML事件是发生在HTML元素上的“事情”。比如：按钮被点击、鼠标移动到元素上、按下键盘按键。</span><br><span class="line"></span><br><span class="line">事件监听：</span><br><span class="line"></span><br><span class="line">- JavaScript可以在事件被侦测到时执行代码。</span><br><span class="line"></span><br><span class="line">事件绑定：</span><br><span class="line"></span><br><span class="line">- ![img](https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/584141c9-8ba6-4f8f-94fa-4a47eee9f9f4-25143160.jpg)</span><br><span class="line"></span><br><span class="line">常见事件：</span><br><span class="line"></span><br><span class="line">- | 事件名      | 说明                     |</span><br><span class="line">  | ----------- | ------------------------ |</span><br><span class="line">  | onclick     | 鼠标单击事件             |</span><br><span class="line">  | onblur      | 元素失去焦点             |</span><br><span class="line">  | onfocus     | 元素获得焦点             |</span><br><span class="line">  | onload      | 某个页面或图像被完成加载 |</span><br><span class="line">  | onsubmit    | 当表单提交时触发该事件   |</span><br><span class="line">  | onkeydown   | 某个键盘的键被按下       |</span><br><span class="line">  | onmouseover | 鼠标被移到某元素之上     |</span><br><span class="line">  | onmouseout  | 鼠标从某元素移开         |</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    //输入框聚焦后，展示小写; 输入框离焦后，展示大写; -- onfocus，onblur</span><br><span class="line">    function lower()&#123; //小写</span><br><span class="line">    	//获取输入框元素对象</span><br><span class="line">    	var input = document.getElementById(&quot;name&quot;);</span><br><span class="line">    	//将值转为小写</span><br><span class="line">    	input.value = input.value.toLowerCase();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    function upper()&#123; //大写</span><br><span class="line">    	//获取输入框元素对象</span><br><span class="line">    	var input = document.getElementById(&quot;name&quot;);</span><br><span class="line">    	//将值转为小写</span><br><span class="line">    	input.value = input.value.toUpperCase();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
-</code></pre>
-</li>
+<li>Document object Model，文档对象模型。</li>
+</ul>
+<p>组成：</p>
+<ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/77403e16-9cff-461a-9bdd-0e3c092a527c-25143160.jpg"
+                      alt="img"
+                ></li>
+</ul>
+<p>JavaScript 通过DOM，能够对HTML进行操作：</p>
+<ul>
+<li>改变HTML元素的内容。</li>
+<li>改变HTML元素的样式(CSS)。</li>
+<li>对HTML DOM 事件作出反应。</li>
+<li>添加和删除HTML元素。</li>
+</ul>
+<p>方法：</p>
+<ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/9cde866d-df6b-4c9b-bff2-78ed287881da-25143160.jpg"
+                      alt="img"
+                ><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/b2f93c99-f5ae-42ae-a0ee-a927e2a59407-25143160.jpg"
+                      alt="img"
+                ></li>
 </ul>
 </li>
 </ul>
+<h4 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h4><p>事件：</p>
+<ul>
+<li>HTML事件是发生在HTML元素上的“事情”。比如：按钮被点击、鼠标移动到元素上、按下键盘按键。</li>
+</ul>
+<p>事件监听：</p>
+<ul>
+<li>JavaScript可以在事件被侦测到时执行代码。</li>
+</ul>
+<p>事件绑定：</p>
+<ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/584141c9-8ba6-4f8f-94fa-4a47eee9f9f4-25143160.jpg"
+                      alt="img"
+                ></li>
+</ul>
+<p>常见事件：</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>事件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onclick</td>
+<td>鼠标单击事件</td>
+</tr>
+<tr>
+<td>onblur</td>
+<td>元素失去焦点</td>
+</tr>
+<tr>
+<td>onfocus</td>
+<td>元素获得焦点</td>
+</tr>
+<tr>
+<td>onload</td>
+<td>某个页面或图像被完成加载</td>
+</tr>
+<tr>
+<td>onsubmit</td>
+<td>当表单提交时触发该事件</td>
+</tr>
+<tr>
+<td>onkeydown</td>
+<td>某个键盘的键被按下</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>鼠标被移到某元素之上</td>
+</tr>
+<tr>
+<td>onmouseout</td>
+<td>鼠标从某元素移开</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//输入框聚焦后，展示小写; 输入框离焦后，展示大写; -- onfocus，onblur</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">lower</span>(<span class="params"></span>)&#123; <span class="comment">//小写</span></span><br><span class="line">	<span class="comment">//获取输入框元素对象</span></span><br><span class="line">	<span class="keyword">var</span> input = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">	<span class="comment">//将值转为小写</span></span><br><span class="line">	input.<span class="property">value</span> = input.<span class="property">value</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">upper</span>(<span class="params"></span>)&#123; <span class="comment">//大写</span></span><br><span class="line">	<span class="comment">//获取输入框元素对象</span></span><br><span class="line">	<span class="keyword">var</span> input = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">	<span class="comment">//将值转为小写</span></span><br><span class="line">	input.<span class="property">value</span> = input.<span class="property">value</span>.<span class="title function_">toUpperCase</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
 <h1 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h1><h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><ul>
 <li><img  
                      lazyload

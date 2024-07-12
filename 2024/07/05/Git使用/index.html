@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="dearlrq">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/07/05/git使用/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="1- 版本控制系统概述1-1 基本概念​		版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。  实现跨区域多人协同开发 追踪和记载一个或者多个文件的历史记录 组织和保护你的源代码和文档 统计工作量 并行开发、提高开发效率 跟踪记录整个软件的开发过程 减轻开发人员的负担，节省时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git使用">
+<meta property="og:url" content="http://example.com/2024/07/05/Git%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1- 版本控制系统概述1-1 基本概念​		版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。  实现跨区域多人协同开发 追踪和记载一个或者多个文件的历史记录 组织和保护你的源代码和文档 统计工作量 并行开发、提高开发效率 跟踪记录整个软件的开发过程 减轻开发人员的负担，节省时">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705195350325.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705200131154.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705200545377.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705201619865.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705213054229.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705213304208.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705213726071.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705213916587.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705214038216.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705214318310.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240706212139437.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240706214724254.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240706215451156.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240706215700028.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240706220203973.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-07-07%20120835.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240706221905074.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-07-07%20121342.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707122436361.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707122847774.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707123218612.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707123918738.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707125343485.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707161737053.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707161459302.png">
+<meta property="article:published_time" content="2024-07-05T11:28:03.000Z">
+<meta property="article:modified_time" content="2024-07-07T08:22:20.848Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="自研笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705195350325.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/%E7%AB%99%E7%82%B9.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/%E7%AB%99%E7%82%B9.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/%E7%AB%99%E7%82%B9.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Git使用 -
+        
+        dearlrq
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        dearlrq
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Farsan&display=swap" rel="stylesheet">
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":true,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"english":{"enable":true,"family":"Farsan","url":"https://fonts.googleapis.com/css2?family=Farsan&display=swap"}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/白.jpg","dark":"/images/夜.jpg"},"title":"Hello,World!","subtitle":{"text":["若待上林花似锦，出门俱是看花人。"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"首页":{"path":"/","icon":"fa-regular fa-house"},"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"},"关于":{"icon":"fa-regular fa-user","submenus":{"Me":"/about"}},"链接":{"icon":"fa-regular fa-link","submenus":{"Github":"https://github.com/dearlrq"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"欢迎来到dearlrq的blog,网站正在建设中...","links":{"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"标签":{"path":"/tags","icon":"fa-regular fa-tags"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":50,"Categories":{"icon":"fa-solid fa-folder","path":"/categories/"}},"tags":{"enable":true,"limit":50,"Tags":{"icon":"fa-solid fa-tags","path":"/tags/"}}},"footerStart":"2024/1/13 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+        
+<link rel="stylesheet" href="/fontawesome/thin.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/duotone.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/sharp-solid.min.css">
+
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/%E7%AB%99%E7%82%B9.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                dearlrq
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    链接
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/dearlrq">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-关于"
+                        >
+                            <span>
+                                关于
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-关于">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-链接"
+                        >
+                            <span>
+                                链接
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-链接">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/dearlrq">GITHUB</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">12</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">Git使用</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/%E7%AB%99%E7%82%B9.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">dearlrq</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-07-05 19:28:03</span>
+        <span class="mobile">2024-07-05 19:28:03</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-07-07 16:22:20</span>
+            <span class="mobile">2024-07-07 16:22:20</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E5%85%B6%E4%BB%96/">其他</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/%E5%85%B6%E4%BB%96/Git%E4%BD%BF%E7%94%A8/">Git使用</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%87%AA%E7%A0%94%E7%AC%94%E8%AE%B0/">自研笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.8k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>14 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h1 id="1-版本控制系统概述"><a href="#1-版本控制系统概述" class="headerlink" title="1- 版本控制系统概述"></a>1- 版本控制系统概述</h1><h2 id="1-1-基本概念"><a href="#1-1-基本概念" class="headerlink" title="1-1 基本概念"></a>1-1 基本概念</h2><p>​		版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记<br>录，备份以便恢复以前的版本的软件工程技术。</p>
+<ul>
+<li>实现跨区域多人协同开发</li>
+<li>追踪和记载一个或者多个文件的历史记录</li>
+<li>组织和保护你的源代码和文档</li>
+<li>统计工作量</li>
+<li>并行开发、提高开发效率</li>
+<li>跟踪记录整个软件的开发过程</li>
+<li>减轻开发人员的负担，节省时间，同时降低人为错误</li>
+</ul>
+<p>简单说就是用于管理多人协同开发项目的技术。</p>
+<p>​		没有进行版本控制或者版本控制本身缺乏正确的流程管理，在软件开发过程中将会引入很多问题，如软件代码的一致性、软件内容的冗余、软件过程的事物性、软件开发过程中的并发性、软件源代码的安全性，以及软件的整合等问题。</p>
+<p>​		有了版本控制系统以后，就可以方便记录每次修改的版本了，类似于以下效果：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705195350325.png"
+                      alt="image-20240705195350325"
+                ></p>
+<p>​		主流的版本控制器有如下这些：</p>
+<ul>
+<li><strong>Git</strong></li>
+<li><strong>SVN</strong>（Subversion）</li>
+<li><strong>CVS</strong>（Concurrent Versions System）</li>
+<li><strong>VSS</strong>（Micorosoft Visual SourceSafe）</li>
+<li><strong>TFS</strong> （Team Foundation Server）</li>
+<li><strong>Visual Studio Online</strong></li>
+</ul>
+<p>版本控制产品非常的多，现在影响力最大且使用最广泛的是 Git与SVN。</p>
+<h2 id="1-2-版本控制分类"><a href="#1-2-版本控制分类" class="headerlink" title="1-2 版本控制分类"></a>1-2 版本控制分类</h2><h3 id="1-2-1-集中式"><a href="#1-2-1-集中式" class="headerlink" title="1-2-1 集中式"></a>1-2-1 集中式</h3><p>集中式版本控制系统，版本库是集中存放在中央服务器的，团队成员需要先从中央服务器取得最新的版本，再将变动推送给中央服务器。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705200131154.png"
+                      alt="image-20240705200131154"
+                ></p>
+<p>集中式版本控制系统主要问题在于中央服务器的故障。如果服务器宕机，那么谁都无法提交更新，也就无法协同工作，代表产品：SVN、<br>CVS、VSS。</p>
+<h3 id="1-2-2-分布式"><a href="#1-2-2-分布式" class="headerlink" title="1-2-2 分布式"></a>1-2-2 分布式</h3><p>分布式版本控制系统没有 ”中央服务器“，每个人的电脑上都是一个完整的版本库，这样任何一处协同工作用的文件发生故障，事后都可以<br>用其他客户端的本地仓库进行恢复，分布式的版本控制系统出现之后，解决了集中式版本控制系统的缺陷：</p>
+<ul>
+<li>服务器断网的情况下也可以进行开发（因为版本控制是在本地进行的）</li>
+<li>每个客户端保存的也都是整个完整的项目（包含历史记录，更加安全）</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705200545377.png"
+                      alt="image-20240705200545377"
+                ></p>
+<h3 id="1-2-3-Git与SVN最主要区别"><a href="#1-2-3-Git与SVN最主要区别" class="headerlink" title="1-2-3 Git与SVN最主要区别"></a>1-2-3 Git与SVN最主要区别</h3><p>SVN是集中式版本控制系统，版本库是集中在中央服务器中，Git是分布式版本控制系统，没有中央服务器，每个人的电脑就是一个完整的<br>版本库。</p>
+<p>Git是目前世界上最先进的分布式版本控制系统，Git是免费、开源的。</p>
+<h2 id="1-3-远程仓库"><a href="#1-3-远程仓库" class="headerlink" title="1-3 远程仓库"></a>1-3 远程仓库</h2><p>Git是分布式版本控制系统，同一个Git仓库，可以分布到不同的机器上，但开发参与者必须在同一个网络中，且必须有一个项目的原始版本，通常的办法是让一台电脑充当服务器的角色，每天24小时开机，其他每个人都从这个 “服务器” 仓库克隆一份到自己的电脑上，并且名自把各自的提交推送到服务器仓库里，也从服务器仓库中拉取别人的提交。完全可以自己搭建一台运行Git服务器但现在更适合的做法是使用免费的托管平台。</p>
+<p>同时相较于传统的代码都是管理到本机或者内网。一旦本机或者内网机器出问题，代码可能会丢失，使用远端代码仓库将永远存在一个备份。同时也免去了搭建本地代码版本控制服务的繁琐。云计算时代Git以其强大的分支和克隆功能，更加方便了开发者远程协作。</p>
+<p>代码托管中心是基于网络服务器的远程代码仓库，一般我们简单称为远程库。</p>
+<p>企业内部可以使用GitLab搭建远程仓库，也可以使用公网上开放的远程仓库，如：GitHub，Gitee（码云），阿里云效中的CodeUp。</p>
+<h2 id="1-4-工作机制"><a href="#1-4-工作机制" class="headerlink" title="1-4 工作机制"></a>1-4 工作机制</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705201619865.png"
+                      alt="image-20240705201619865"
+                ></p>
+<h2 id="1-5-团队协作建议"><a href="#1-5-团队协作建议" class="headerlink" title="1-5 团队协作建议"></a>1-5 团队协作建议</h2><p>1.组长在本地设计项目结构，并推送到远程仓库。</p>
+<p>2.组员将远程仓库克隆到本地。</p>
+<p>3.组员在本地创建分支进行协作开发，分支可以以组员名称命名。</p>
+<p>4.组员将自己的分支推送到远程仓库。</p>
+<p>5.当代码确认没有问题后，告诉组长，组长进行分支合并。</p>
+<h1 id="2-基础使用"><a href="#2-基础使用" class="headerlink" title="2- 基础使用"></a>2- 基础使用</h1><h2 id="2-1-基本配置"><a href="#2-1-基本配置" class="headerlink" title="2-1 基本配置"></a>2-1 基本配置</h2><p>-&#x2F;.gitconfig文件保存了本用户的所有仓库的配置，可以通过命令：git config -global来设置。</p>
+<p>Git仓库在进行commit时，必须进行签名。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &#x27;username&#x27;</span><br><span class="line">git config --global user.email &#x27;emai1@163.com&#x27;</span><br></pre></td></tr></table></figure></div>
+
+<p>签名用于区分不同操作者身份，在提交信息中可以查看用户的签名，以此确认本次提交是谁做的。Git 首次安装必须设置一下用户签名<br>否则无法提交代码。</p>
+<p>注意，此处设置的用户签名和远端代码托管中心的账号没有任何关系!</p>
+<h2 id="2-2-常用操作"><a href="#2-2-常用操作" class="headerlink" title="2-2 常用操作"></a>2-2 常用操作</h2><h3 id="2-2-1-初始化本地仓库"><a href="#2-2-1-初始化本地仓库" class="headerlink" title="2-2-1 初始化本地仓库"></a>2-2-1 初始化本地仓库</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git init</span></span><br><span class="line">Initialized empty Git repository in C:/xx/.git/</span><br></pre></td></tr></table></figure></div>
+
+<p>会在当前目录中自动创建 .git目录，此目录用于Git跟踪管理版本库。</p>
+<h3 id="2-2-2-查看本地库状态"><a href="#2-2-2-查看本地库状态" class="headerlink" title="2-2-2 查看本地库状态"></a>2-2-2 查看本地库状态</h3><p>无文件时：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git status</span></span><br><span class="line">On branch master</span><br><span class="line">No commits yet</span><br><span class="line">nothing to commit (create/copy files and use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure></div>
+
+<p>新增文件后：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">touch</span> hello.txt <span class="comment"># 生成hello.txt文件</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git status</span></span><br><span class="line">On branch master</span><br><span class="line">No commits yet</span><br><span class="line">Untracked files:</span><br><span class="line">	(use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line">		hello.txt</span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="2-2-3-添加文件至暂存区"><a href="#2-2-3-添加文件至暂存区" class="headerlink" title="2-2-3 添加文件至暂存区"></a>2-2-3 添加文件至暂存区</h3><p>命令</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名</span><br></pre></td></tr></table></figure></div>
+
+<p>添加 hello.txt 至暂存区</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git add hello.txt</span></span><br></pre></td></tr></table></figure></div>
+
+<p>查看状态</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git status</span></span><br><span class="line">On branch master</span><br><span class="line">No commits yet</span><br><span class="line">Changes to be committed:</span><br><span class="line">	(use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span><br><span class="line">		new file:      hello.txt</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="2-2-4-提交至本地库"><a href="#2-2-4-提交至本地库" class="headerlink" title="2-2-4 提交至本地库"></a>2-2-4 提交至本地库</h3><p>命令</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;日志信息&quot;</span><br></pre></td></tr></table></figure></div>
+
+<p>提交 hello.txt 到本地库</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git commit -m <span class="string">&quot;测试&quot;</span></span></span><br><span class="line">[master (root-commit) 5e97c57] 测试</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 hello.txt</span><br></pre></td></tr></table></figure></div>
+
+<p>查看状态</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git status</span></span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="2-2-5-提交修改"><a href="#2-2-5-提交修改" class="headerlink" title="2-2-5 提交修改"></a>2-2-5 提交修改</h3><p>修改 hello.txt 后，再次查看状态</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git status</span></span><br><span class="line">On branch master</span><br><span class="line">Changes not staged for commit:</span><br><span class="line">	(use &quot;git add &lt;file&gt;...&quot; to update what wi7l be committed)</span><br><span class="line">	(use &quot;git restore &lt;file&gt;...to discard changes in working directory)</span><br><span class="line">		modified:  hello.txt</span><br><span class="line">		</span><br><span class="line">no changes added to commit(use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span><br></pre></td></tr></table></figure></div>
+
+<p>重新添加至暂存区</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git add hello.txt</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git status</span></span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">	(use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span><br><span class="line">		modified:   hello.txt</span><br></pre></td></tr></table></figure></div>
+
+<p>再次提交</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git commit -m <span class="string">&quot;修改了hello.txt&quot;</span></span></span><br><span class="line">[master 575cf6c] 修改了he11o.txt</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="2-2-6-撤销修改"><a href="#2-2-6-撤销修改" class="headerlink" title="2-2-6 撤销修改"></a>2-2-6 撤销修改</h3><p>命令</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- fi1e</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">可以丢弃工作区的修改</span></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git checkout -- hello.txt</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>当文件自修改后还没有被放到暂存区（add）时，撤销修改就回到和版本库一模一样的状态（最后一次提交的状态）</li>
+<li>当文件已经添加到暂存区后，又作了修改，撤销修改就回到添加到暂存区后的状态</li>
+</ul>
+<h3 id="2-2-7-版本穿梭"><a href="#2-2-7-版本穿梭" class="headerlink" title="2-2-7 版本穿梭"></a>2-2-7 版本穿梭</h3><p>命令</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 版本号</span><br></pre></td></tr></table></figure></div>
+
+<p>可以通过 git reflog 查看版本信息</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git reflog</span></span><br><span class="line">575cf6c(HEAD -&gt; master) HEAD@&#123;0&#125;: commit: 修改了hello.txt</span><br><span class="line">5e97c57 HEAD@&#123;1&#125;: commit (initia1): 测试</span><br></pre></td></tr></table></figure></div>
+
+<p>切换到 5e97c57 版本</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git reset --hard 5e97c57</span></span><br><span class="line">HEAD is now at 5e97c57 测试</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="2-3-分支操作"><a href="#2-3-分支操作" class="headerlink" title="2-3 分支操作"></a>2-3 分支操作</h2><h3 id="2-3-1-基本概念"><a href="#2-3-1-基本概念" class="headerlink" title="2-3-1 基本概念"></a>2-3-1 基本概念</h3><p>假设你准备开发一个新功能，但是需要两周才能完成，第一周你写了50%的代码，如果立刻提交，由于代码还没写完，不完整的代码库会导致别人不能干活了。如果等代码全部写完再一次提交，又存在丢失每天进度的巨大风险。</p>
+<p>这时可以创建一个属于你自己的分支，别人看不到，还继续在原来的分支上正常工作，而你在自己的分支上干活，想提交就提交，直到开发完毕后，再一次性合并到原来的分支上，这样，既安全，又不影响别人工作。</p>
+<p>在版本控制过程中，同时推进多个任务，为每个任务，我们就可以创建每个任务的单独分支。使用分支意味着程序员可以把自己的工作从开发主线上分离开来，开发自己分支的时候，不会影响主线分支的运行。</p>
+<p>每次提交时，Git都把它们串成一条时间线，这条时间线就是一个分支。截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即master分支。同时会有一个HEAD指针指向当前分支，而master指向最新的提交。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705213054229.png"
+                      alt="image-20240705213054229"
+                ></p>
+<p>每次提交，master分支都会向前移动一步，这样，随着你不断提交，master 分支的线也越来越长。</p>
+<p>当我们创建新的分支，例如dev时，Git新建了一个指针叫dev，指向master相同的提交，再把HEAD指向dev，就表示当前分支在dev上：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705213304208.png"
+                      alt="image-20240705213304208"
+                ></p>
+<p>从现在开始，对工作区的修改和提交就是针对dev分支了，比如新提交一次后，dev指针往前移动一步，而master 指针不变：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705213726071.png"
+                      alt="image-20240705213726071"
+                ></p>
+<p>假如我们在 dev上的工作完成了，就可以把dev合并到master上。Git怎么合并呢？最简单的方法，就是直接把master指向dev的当前提交，就完成了合并：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705213916587.png"
+                      alt="image-20240705213916587"
+                ></p>
+<p>合并完分支后，甚至可以删除dev分支。删除dev分支就是把dev指针给删掉，删掉后，我们就剩下了一条master分支:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705214038216.png"
+                      alt="image-20240705214038216"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240705214318310.png"
+                      alt="image-20240705214318310"
+                ></p>
+<h3 id="2-3-2-查看分支"><a href="#2-3-2-查看分支" class="headerlink" title="2-3-2 查看分支"></a>2-3-2 查看分支</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch -v</span></span><br><span class="line">* master 5e97c57 测试</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="2-3-3-创建分支"><a href="#2-3-3-创建分支" class="headerlink" title="2-3-3 创建分支"></a>2-3-3 创建分支</h3><p>*表示目前所在的分支</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch dev</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch -v</span></span><br><span class="line">  dev    5e97c57 测试</span><br><span class="line">* master 5e97c57 测试</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="2-3-4-切换分支"><a href="#2-3-4-切换分支" class="headerlink" title="2-3-4 切换分支"></a>2-3-4 切换分支</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git checkout dev</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch -v</span></span><br><span class="line">* dev    5e97c57 测试</span><br><span class="line">  master 5e97c57 测试</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="2-3-5-合并分支"><a href="#2-3-5-合并分支" class="headerlink" title="2-3-5 合并分支"></a>2-3-5 合并分支</h3><p>在dev分支上修改hello.txt文件，添加内容</p>
+<p>添加至暂存区，并提交至本地版本库</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git add hello.txt</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git commit -m <span class="string">&quot;dev commit&quot;</span></span></span><br></pre></td></tr></table></figure></div>
+
+<p>切换至master分支，在master分支上合并dev分支</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git checkout master</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> hello.txt <span class="comment"># 没有dev分支的内容</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">执行合井</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git merge dev</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看文件内容</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> hello.txt <span class="comment"># 此时可以看到dev分支修改的内容</span></span></span><br></pre></td></tr></table></figure></div>
+
+<p>如果在dev分支上修改时，master分支也修改（两个分支修改的不是同一个文件）。当分支合并时，切换到master分支，合并dev分支。</p>
+<h3 id="2-3-6-删除分支"><a href="#2-3-6-删除分支" class="headerlink" title="2-3-6 删除分支"></a>2-3-6 删除分支</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch -d dev</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除dev分支</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="2-3-7-合并冲突并解决"><a href="#2-3-7-合并冲突并解决" class="headerlink" title="2-3-7 合并冲突并解决"></a>2-3-7 合并冲突并解决</h3><ul>
+<li>冲突</li>
+</ul>
+<p>合并分支时，两个分支在同一个文件的同一个位置有两套完全不同的修改。Git 无法替我们决定使用哪一个。必须人为决定新代码内容。</p>
+<p>在master分支上修改hello.txt文件并提交至版本库</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dev add content</span><br><span class="line">master 添加内容</span><br></pre></td></tr></table></figure></div>
+
+<p>在dev分支上修改hello.txt文件并提交至版本库</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dev add content dev添加内容</span><br></pre></td></tr></table></figure></div>
+
+<p>切换回master分支，将dev分支内容合并至master分支，发现合并失败，此时需要手动解决冲突</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git merge dev</span></span><br><span class="line">Auto-merging hello.txt</span><br><span class="line">CONFLICT(content): Merge conflict in hello.txt</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br></pre></td></tr></table></figure></div>
+
+<p>此时hello.txt文件代码格式</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">当前分支的代码</span><br><span class="line">=======</span><br><span class="line">合并过来的代码</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>解决</li>
+</ul>
+<p>编辑有冲突的文件，删除特殊符号，决定要使用的内容，决定保留当前分支的内容。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dev add content</span><br><span class="line">master 添加内容</span><br></pre></td></tr></table></figure></div>
+
+<p>添加并提交修改后的文件，注意此步骤非常重要，需要将修改后的内容进行提交！</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git add hello.txt</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git commit -m <span class="string">&quot;冲突解决&quot;</span></span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="2-4-分支管理策略"><a href="#2-4-分支管理策略" class="headerlink" title="2-4 分支管理策略"></a>2-4 分支管理策略</h2><h3 id="2-4-1-禁用-Fast-forward"><a href="#2-4-1-禁用-Fast-forward" class="headerlink" title="2-4-1 禁用 Fast forward"></a>2-4-1 禁用 Fast forward</h3><p>通常，合并分支时，如果可能，Git会用Fast forward模式（既直接移动指针），但这种模式下，删除分支后，会丢掉分支信息。</p>
+<p>注意：如果分叉后，master和dev均产生了新的提交，则无法适用于Fast forward模式，此时分为两种情况：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240706212139437.png"
+                      alt="image-20240706212139437"
+                ></p>
+<p>如果要强制禁用Fast forward模式，Git则会在merge时自动生成一个新的commit，这样，从分支历史上就可以看出分支信息。</p>
+<p>下面我们实战一下：–no-ff 方式的 git merge：</p>
+<p>首先，仍然创建并切换dev分支：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch dev</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git checkout dev</span></span><br></pre></td></tr></table></figure></div>
+
+<p>修改文件，并提交一个新的commit：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git add merge.txt</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git commit -m <span class="string">&quot;add merge&quot;</span></span></span><br></pre></td></tr></table></figure></div>
+
+<p>现在，我们切换回master：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git checkout master</span></span><br></pre></td></tr></table></figure></div>
+
+<p>准备合并dev分支，请注意–no-ff参数，表示禁用Fast forward：</p>
+<p>因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git merge --no-ff -m <span class="string">&quot;merge with no-ff&quot;</span> dev</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="2-4-2-分支策略"><a href="#2-4-2-分支策略" class="headerlink" title="2-4-2 分支策略"></a>2-4-2 分支策略</h3><p>在实际开发中，我们应该按照几个基本原则进行分支管理:</p>
+<p>首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；</p>
+<p>那在哪干活呢？干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；</p>
+<p>你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往 dev分支上合并就可以了。</p>
+<p>所以，团队合作的分支看起来就像这样：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240706214724254.png"
+                      alt="image-20240706214724254"
+                ></p>
+<h1 id="3-idea的Git操作"><a href="#3-idea的Git操作" class="headerlink" title="3- idea的Git操作"></a>3- idea的Git操作</h1><h2 id="3-1-初始化仓库"><a href="#3-1-初始化仓库" class="headerlink" title="3-1 初始化仓库"></a>3-1 初始化仓库</h2><ul>
+<li>相当于 git init</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240706215451156.png"
+                      alt="image-20240706215451156"
+                ></p>
+<ul>
+<li>此时左下角是Git（可以看到所有操作状态），右下角显示是master分支。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240706215700028.png"
+                      alt="image-20240706215700028"
+                ></p>
+<h2 id="3-2-添加到暂存区"><a href="#3-2-添加到暂存区" class="headerlink" title="3-2 添加到暂存区"></a>3-2 添加到暂存区</h2><ul>
+<li>相当于 git add 文件名，一次全部添加。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240706220203973.png"
+                      alt="image-20240706220203973"
+                ></p>
+<h2 id="3-3-提交到本地库"><a href="#3-3-提交到本地库" class="headerlink" title="3-3 提交到本地库"></a>3-3 提交到本地库</h2><ul>
+<li>相当于 git commit -m “日志信息”，一次全部提交。</li>
+<li>三处是提交，一处是日志信息。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-07-07%20120835.png"
+                      alt="屏幕截图 2024-07-07 120835"
+                ></p>
+<h2 id="3-4-提交修改"><a href="#3-4-提交修改" class="headerlink" title="3-4 提交修改"></a>3-4 提交修改</h2><ul>
+<li>和上面两个步骤一样。</li>
+</ul>
+<h2 id="3-5-推送到远端仓库"><a href="#3-5-推送到远端仓库" class="headerlink" title="3-5 推送到远端仓库"></a>3-5 推送到远端仓库</h2><ul>
+<li>远端创建仓库，得到远端的URL（http）。</li>
+<li>将远端的URL添加到管理远程的URL里面。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240706221905074.png"
+                      alt="image-20240706221905074"
+                ></p>
+<ul>
+<li>有三处推送</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-07-07%20121342.png"
+                      alt="屏幕截图 2024-07-07 121342"
+                ></p>
+<h2 id="3-6-当远端修改后的本地更新"><a href="#3-6-当远端修改后的本地更新" class="headerlink" title="3-6 当远端修改后的本地更新"></a>3-6 当远端修改后的本地更新</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707122436361.png"
+                      alt="image-20240707122436361"
+                ></p>
+<h2 id="3-7-新建分支"><a href="#3-7-新建分支" class="headerlink" title="3-7 新建分支"></a>3-7 新建分支</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707122847774.png"
+                      alt="image-20240707122847774"
+                ></p>
+<h2 id="3-8-切换分支"><a href="#3-8-切换分支" class="headerlink" title="3-8 切换分支"></a>3-8 切换分支</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707123218612.png"
+                      alt="image-20240707123218612"
+                ></p>
+<h2 id="3-9-将分支推送到远端"><a href="#3-9-将分支推送到远端" class="headerlink" title="3-9 将分支推送到远端"></a>3-9 将分支推送到远端</h2><ul>
+<li>切换到想要的分支</li>
+<li>然后和上面的推送到远端仓库操作一样</li>
+<li>推送后的远端仓库</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707123918738.png"
+                      alt="image-20240707123918738"
+                ></p>
+<h2 id="3-10-合并不同的分支"><a href="#3-10-合并不同的分支" class="headerlink" title="3-10 合并不同的分支"></a>3-10 合并不同的分支</h2><ul>
+<li>先点击Git，点击合并</li>
+<li>这可以在不同的分支，合并不同的分支</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707125343485.png"
+                      alt="image-20240707125343485"
+                ></p>
+<h2 id="3-11-删除分支"><a href="#3-11-删除分支" class="headerlink" title="3-11 删除分支"></a>3-11 删除分支</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707161737053.png"
+                      alt="image-20240707161737053"
+                ></p>
+<h1 id="4-vscode的Git操作"><a href="#4-vscode的Git操作" class="headerlink" title="4- vscode的Git操作"></a>4- vscode的Git操作</h1><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240707161459302.png"
+                      alt="image-20240707161459302"
+                ></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> Git使用</li>
+        <li><strong>作者:</strong> dearlrq</li>
+        <li><strong>创建于
+                :</strong> 2024-07-05 19:28:03</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2024-07-07 16:22:20
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://redefine.ohevan.com/2024/07/05/Git使用/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E8%87%AA%E7%A0%94%E7%AC%94%E8%AE%B0/">#自研笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/07/08/Vue2%E9%80%9F%E5%AD%A6/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Vue2速学</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">计算机网络</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">Git使用</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">1- 版本控制系统概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">1-1 基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">1-2 版本控制分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-%E9%9B%86%E4%B8%AD%E5%BC%8F"><span class="nav-number">1.2.1.</span> <span class="nav-text">1-2-1 集中式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-%E5%88%86%E5%B8%83%E5%BC%8F"><span class="nav-number">1.2.2.</span> <span class="nav-text">1-2-2 分布式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-Git%E4%B8%8ESVN%E6%9C%80%E4%B8%BB%E8%A6%81%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.3.</span> <span class="nav-text">1-2-3 Git与SVN最主要区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">1.3.</span> <span class="nav-text">1-3 远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">1.4.</span> <span class="nav-text">1-4 工作机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C%E5%BB%BA%E8%AE%AE"><span class="nav-number">1.5.</span> <span class="nav-text">1-5 团队协作建议</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">2- 基础使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">2-1 基本配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="nav-number">2.2.</span> <span class="nav-text">2-2 常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="nav-number">2.2.1.</span> <span class="nav-text">2-2-1 初始化本地仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-%E6%9F%A5%E7%9C%8B%E6%9C%AC%E5%9C%B0%E5%BA%93%E7%8A%B6%E6%80%81"><span class="nav-number">2.2.2.</span> <span class="nav-text">2-2-2 查看本地库状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6%E8%87%B3%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="nav-number">2.2.3.</span> <span class="nav-text">2-2-3 添加文件至暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4-%E6%8F%90%E4%BA%A4%E8%87%B3%E6%9C%AC%E5%9C%B0%E5%BA%93"><span class="nav-number">2.2.4.</span> <span class="nav-text">2-2-4 提交至本地库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-5-%E6%8F%90%E4%BA%A4%E4%BF%AE%E6%94%B9"><span class="nav-number">2.2.5.</span> <span class="nav-text">2-2-5 提交修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-6-%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9"><span class="nav-number">2.2.6.</span> <span class="nav-text">2-2-6 撤销修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-7-%E7%89%88%E6%9C%AC%E7%A9%BF%E6%A2%AD"><span class="nav-number">2.2.7.</span> <span class="nav-text">2-2-7 版本穿梭</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C"><span class="nav-number">2.3.</span> <span class="nav-text">2-3 分支操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.3.1.</span> <span class="nav-text">2-3-1 基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF"><span class="nav-number">2.3.2.</span> <span class="nav-text">2-3-2 查看分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF"><span class="nav-number">2.3.3.</span> <span class="nav-text">2-3-3 创建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-4-%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="nav-number">2.3.4.</span> <span class="nav-text">2-3-4 切换分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-5-%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="nav-number">2.3.5.</span> <span class="nav-text">2-3-5 合并分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-6-%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="nav-number">2.3.6.</span> <span class="nav-text">2-3-6 删除分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-7-%E5%90%88%E5%B9%B6%E5%86%B2%E7%AA%81%E5%B9%B6%E8%A7%A3%E5%86%B3"><span class="nav-number">2.3.7.</span> <span class="nav-text">2-3-7 合并冲突并解决</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5"><span class="nav-number">2.4.</span> <span class="nav-text">2-4 分支管理策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-%E7%A6%81%E7%94%A8-Fast-forward"><span class="nav-number">2.4.1.</span> <span class="nav-text">2-4-1 禁用 Fast forward</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-%E5%88%86%E6%94%AF%E7%AD%96%E7%95%A5"><span class="nav-number">2.4.2.</span> <span class="nav-text">2-4-2 分支策略</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-idea%E7%9A%84Git%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">3- idea的Git操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93"><span class="nav-number">3.1.</span> <span class="nav-text">3-1 初始化仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="nav-number">3.2.</span> <span class="nav-text">3-2 添加到暂存区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E6%8F%90%E4%BA%A4%E5%88%B0%E6%9C%AC%E5%9C%B0%E5%BA%93"><span class="nav-number">3.3.</span> <span class="nav-text">3-3 提交到本地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E6%8F%90%E4%BA%A4%E4%BF%AE%E6%94%B9"><span class="nav-number">3.4.</span> <span class="nav-text">3-4 提交修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93"><span class="nav-number">3.5.</span> <span class="nav-text">3-5 推送到远端仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-%E5%BD%93%E8%BF%9C%E7%AB%AF%E4%BF%AE%E6%94%B9%E5%90%8E%E7%9A%84%E6%9C%AC%E5%9C%B0%E6%9B%B4%E6%96%B0"><span class="nav-number">3.6.</span> <span class="nav-text">3-6 当远端修改后的本地更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF"><span class="nav-number">3.7.</span> <span class="nav-text">3-7 新建分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8-%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="nav-number">3.8.</span> <span class="nav-text">3-8 切换分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-9-%E5%B0%86%E5%88%86%E6%94%AF%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%AB%AF"><span class="nav-number">3.9.</span> <span class="nav-text">3-9 将分支推送到远端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-10-%E5%90%88%E5%B9%B6%E4%B8%8D%E5%90%8C%E7%9A%84%E5%88%86%E6%94%AF"><span class="nav-number">3.10.</span> <span class="nav-text">3-10 合并不同的分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-11-%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="nav-number">3.11.</span> <span class="nav-text">3-11 删除分支</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-vscode%E7%9A%84Git%E6%93%8D%E4%BD%9C"><span class="nav-number">4.</span> <span class="nav-text">4- vscode的Git操作</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">dearlrq</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2024</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">dearlrq</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.0</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>

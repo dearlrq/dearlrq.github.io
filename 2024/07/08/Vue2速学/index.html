@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="dearlrq">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/07/08/vue2速学/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="1- 快速上手1-1 Vue概念Vue 是一个用于 构建用户界面 的 渐进式 框架。  构建用户界面：基于数据渲染出用户看到的页面。  渐进式：循序渐进。    框架：一套完整的项目解决方案。可以提升开发效率（理解规则 -&gt; 官网）。   1-2 构建Vue实例  引入的是开发版本包，包含完整的注释和警告。 一旦引入 VueJs 核心包，在全局环境，就有了 Vue 构造函数。  1-3 插值">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue2速学">
+<meta property="og:url" content="http://example.com/2024/07/08/Vue2%E9%80%9F%E5%AD%A6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1- 快速上手1-1 Vue概念Vue 是一个用于 构建用户界面 的 渐进式 框架。  构建用户界面：基于数据渲染出用户看到的页面。  渐进式：循序渐进。    框架：一套完整的项目解决方案。可以提升开发效率（理解规则 -&gt; 官网）。   1-2 构建Vue实例  引入的是开发版本包，包含完整的注释和警告。 一旦引入 VueJs 核心包，在全局环境，就有了 Vue 构造函数。  1-3 插值">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708072110066.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708072951874.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708074148262.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708091134224.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-07-08%20094643.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708095731810.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708100747646.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708101525642.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708101554164.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708105400142.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708110646069.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708160208873.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708160356031.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240710082751895.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708161454324.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709173947734.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709193118247.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709193007230.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709192940869.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709195046333.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709195237001.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709195349812.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709200732741.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240710073817294.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240710075300172.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240710083552727.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240710111306372.png">
+<meta property="article:published_time" content="2024-07-07T22:58:22.000Z">
+<meta property="article:modified_time" content="2024-07-10T03:13:19.428Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="自研笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708072110066.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/%E7%AB%99%E7%82%B9.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/%E7%AB%99%E7%82%B9.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/%E7%AB%99%E7%82%B9.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Vue2速学 -
+        
+        dearlrq
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        dearlrq
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Farsan&display=swap" rel="stylesheet">
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":true,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"english":{"enable":true,"family":"Farsan","url":"https://fonts.googleapis.com/css2?family=Farsan&display=swap"}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/白.jpg","dark":"/images/夜.jpg"},"title":"Hello,World!","subtitle":{"text":["若待上林花似锦，出门俱是看花人。"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"首页":{"path":"/","icon":"fa-regular fa-house"},"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"},"关于":{"icon":"fa-regular fa-user","submenus":{"Me":"/about"}},"链接":{"icon":"fa-regular fa-link","submenus":{"Github":"https://github.com/dearlrq"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"欢迎来到dearlrq的blog,网站正在建设中...","links":{"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"标签":{"path":"/tags","icon":"fa-regular fa-tags"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":50,"Categories":{"icon":"fa-solid fa-folder","path":"/categories/"}},"tags":{"enable":true,"limit":50,"Tags":{"icon":"fa-solid fa-tags","path":"/tags/"}}},"footerStart":"2024/1/13 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+        
+<link rel="stylesheet" href="/fontawesome/thin.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/duotone.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/sharp-solid.min.css">
+
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/%E7%AB%99%E7%82%B9.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                dearlrq
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    链接
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/dearlrq">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-关于"
+                        >
+                            <span>
+                                关于
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-关于">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-链接"
+                        >
+                            <span>
+                                链接
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-链接">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/dearlrq">GITHUB</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">12</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">Vue2速学</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/%E7%AB%99%E7%82%B9.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">dearlrq</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-07-08 06:58:22</span>
+        <span class="mobile">2024-07-08 06:58:22</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-07-10 11:13:19</span>
+            <span class="mobile">2024-07-10 11:13:19</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Web/">Web</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/Web/Vue/">Vue</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%87%AA%E7%A0%94%E7%AC%94%E8%AE%B0/">自研笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>9 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h1 id="1-快速上手"><a href="#1-快速上手" class="headerlink" title="1- 快速上手"></a>1- 快速上手</h1><h2 id="1-1-Vue概念"><a href="#1-1-Vue概念" class="headerlink" title="1-1 Vue概念"></a>1-1 Vue概念</h2><p>Vue 是一个用于 构建用户界面 的 渐进式 框架。</p>
+<ul>
+<li><p>构建用户界面：基于数据渲染出用户看到的页面。</p>
+</li>
+<li><p>渐进式：循序渐进。</p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708072110066.png"
+                      alt="image-20240708072110066"
+                ></p>
+</li>
+<li><p>框架：一套完整的项目解决方案。可以提升开发效率（理解规则 -&gt; 官网）。</p>
+</li>
+</ul>
+<h2 id="1-2-构建Vue实例"><a href="#1-2-构建Vue实例" class="headerlink" title="1-2 构建Vue实例"></a>1-2 构建Vue实例</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708072951874.png"
+                      alt="image-20240708072951874"
+                ></p>
+<ul>
+<li>引入的是开发版本包，包含完整的注释和警告。</li>
+<li>一旦引入 VueJs 核心包，在全局环境，就有了 Vue 构造函数。</li>
+</ul>
+<h2 id="1-3-插值表达式"><a href="#1-3-插值表达式" class="headerlink" title="1-3 插值表达式"></a>1-3 插值表达式</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708074148262.png"
+                      alt="image-20240708074148262"
+                ></p>
+<h2 id="1-4-Vue响应式特性"><a href="#1-4-Vue响应式特性" class="headerlink" title="1-4 Vue响应式特性"></a>1-4 Vue响应式特性</h2><p>响应式：</p>
+<ul>
+<li>数据改变，视图自动更新。</li>
+<li>使用 Vue 开发 -&gt; 专注于业务核心逻辑 即可。</li>
+</ul>
+<p>访问或修改数据：</p>
+<ul>
+<li>data 中的数据，最终会被添加到实例上。</li>
+<li>访问数据：” 实例 .属性名 “</li>
+<li>修改数据：” 实例 .属性名 “ &#x3D; “ 值 “</li>
+</ul>
+<h1 id="2-Vue指令"><a href="#2-Vue指令" class="headerlink" title="2- Vue指令"></a>2- Vue指令</h1><h2 id="2-1-概念"><a href="#2-1-概念" class="headerlink" title="2-1 概念"></a>2-1 概念</h2><p>Vue 会根据不同的【指令】，针对标签实现不同的【功能】。</p>
+<p>指令：带有 v- 前缀 的 特殊 标签属性。</p>
+<h2 id="2-2-v-html"><a href="#2-2-v-html" class="headerlink" title="2-2 v-html"></a>2-2 v-html</h2><p>作用：动态解析标签，设置元素的 innerHTML。</p>
+<p>语法：v-html &#x3D; “ 表达式 “</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708091134224.png"
+                      alt="image-20240708091134224"
+                ></p>
+<h2 id="2-3-v-show"><a href="#2-3-v-show" class="headerlink" title="2-3 v-show"></a>2-3 v-show</h2><p>作用：控制元素显示隐藏。</p>
+<p>语法：v-show &#x3D; “ 表达式 “，表达式值 true 显示， false 隐藏。</p>
+<p>底层原理：切换 css 的 display: none 来控制 显示 和 隐藏。</p>
+<p>场景：频繁切换显示隐藏的场景。</p>
+<h2 id="2-4-v-if"><a href="#2-4-v-if" class="headerlink" title="2-4 v-if"></a>2-4 v-if</h2><p>作用：控制元素显示隐藏（条件渲染）。</p>
+<p>语法：v-if &#x3D; “ 表达式 “，表达式值 true 显示， false 隐藏。</p>
+<p>底层原理：根据 判断条件 控制元素节点的 创建 和 移除。</p>
+<p>场景：要么显示，要么隐藏，不频繁切换的场景。</p>
+<h2 id="2-5-v-else-与-v-else-if"><a href="#2-5-v-else-与-v-else-if" class="headerlink" title="2-5 v-else 与 v-else-if"></a>2-5 v-else 与 v-else-if</h2><p>作用：辅助 v-if 进行判断渲染。</p>
+<p>语法：v-else</p>
+<p>语法：v-else-if &#x3D; “ 表达式 “</p>
+<p>注意：需要紧挨着 v-if 一起使用。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-07-08%20094643.png"
+                      alt="屏幕截图 2024-07-08 094643"
+                ></p>
+<h2 id="2-6-v-on"><a href="#2-6-v-on" class="headerlink" title="2-6 v-on"></a>2-6 v-on</h2><p>作用：注册事件 &#x3D; 添加监听 + 提供处理逻辑。</p>
+<p>语法：</p>
+<ul>
+<li><p>v-on：事件名 &#x3D; “ 内联语句 “</p>
+</li>
+<li><p>v-on：事件名 &#x3D; “ methods中的函数名 “</p>
+</li>
+</ul>
+<p>简写：@事件名</p>
+<p>注意：methods 函数内的 this 指向 Vue 实例。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708095731810.png"
+                      alt="image-20240708095731810"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708100747646.png"
+                      alt="image-20240708100747646"
+                ></p>
+<h2 id="2-7-v-on-调用传参"><a href="#2-7-v-on-调用传参" class="headerlink" title="2-7 v-on 调用传参"></a>2-7 v-on 调用传参</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708101525642.png"
+                      alt="image-20240708101525642"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708101554164.png"
+                      alt="image-20240708101554164"
+                ></p>
+<h2 id="2-8-v-bind"><a href="#2-8-v-bind" class="headerlink" title="2-8 v-bind"></a>2-8 v-bind</h2><p>作用：动态的设置 html 的标签属性 -&gt; src、url、title…</p>
+<p>语法：v-bind：属性名 &#x3D; “ 表达式 “</p>
+<p>简写：: 属性名 &#x3D; “ 表达式 “</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708105400142.png"
+                      alt="image-20240708105400142"
+                ></p>
+<h2 id="2-9-v-for"><a href="#2-9-v-for" class="headerlink" title="2-9 v-for"></a>2-9 v-for</h2><p>作用：基于数据循环，多次渲染整个元素 -&gt;  数组、对象、数字…</p>
+<p>遍历数组语法：</p>
+<ul>
+<li><p>v-for &#x3D; “ ( item, index ) in 数组 “</p>
+</li>
+<li><p>省略 index：v-for &#x3D; “ item in 数组 “</p>
+</li>
+<li><p>item 每一项</p>
+</li>
+<li><p>index 下标（从0开始）</p>
+</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708110646069.png"
+                      alt="image-20240708110646069"
+                ></p>
+<h2 id="2-10-v-for-的key"><a href="#2-10-v-for-的key" class="headerlink" title="2-10 v-for 的key"></a>2-10 v-for 的key</h2><p>作用：给列表项添加的唯一标识。便于Vue进行列表项的正确排序复用。</p>
+<p>语法：key属性 &#x3D; “ 唯一标识 “</p>
+<p>注意点：</p>
+<ul>
+<li>key 的值只能是 字符串 或 数字类型。</li>
+<li>key 的值必须具有 唯一性。</li>
+<li>推荐使用 id 作为 key（唯一），不推荐使用 index 作为 key（会变化，不对应）。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708160208873.png"
+                      alt="image-20240708160208873"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708160356031.png"
+                      alt="image-20240708160356031"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240710082751895.png"
+                      alt="image-20240710082751895"
+                ></p>
+<h2 id="2-11-v-model"><a href="#2-11-v-model" class="headerlink" title="2-11 v-model"></a>2-11 v-model</h2><p>作用：给 表单元素 使用，双向数据绑定 -&gt; 可以快速 获取 或 设置 表单元素内容。</p>
+<ul>
+<li>数据变化 -&gt; 视图自动更新</li>
+<li>视图变化 -&gt; 数据自动更新</li>
+</ul>
+<p>语法：v-model &#x3D; “ 变量 “ </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240708161454324.png"
+                      alt="image-20240708161454324"
+                ></p>
+<h1 id="3-指令补充"><a href="#3-指令补充" class="headerlink" title="3- 指令补充"></a>3- 指令补充</h1><h2 id="3-1-指令修饰符"><a href="#3-1-指令修饰符" class="headerlink" title="3-1 指令修饰符"></a>3-1 指令修饰符</h2><p>概念：通过 “ , “ 指明一些指令 后缀，不同 后缀 封装了不同的处理操作 -&gt; 简化代码。</p>
+<p>按键修饰符：</p>
+<ul>
+<li>@keyup .enter：键盘回车监听</li>
+</ul>
+<p>v-model修饰符：</p>
+<ul>
+<li>v-model .trim：去除首尾空格</li>
+<li>v-model .number：转数字</li>
+</ul>
+<p>事件修饰符：</p>
+<ul>
+<li>@事件名 .stop：阻止冒泡，用在子模块</li>
+<li>@事件名 .prevent：阻止默认行为</li>
+</ul>
+<h2 id="3-2-v-bind操作class"><a href="#3-2-v-bind操作class" class="headerlink" title="3-2 v-bind操作class"></a>3-2 v-bind操作class</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709173947734.png"
+                      alt="image-20240709173947734"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709193118247.png"
+                      alt="image-20240709193118247"
+                ></p>
+<h2 id="3-3-v-bind操作style"><a href="#3-3-v-bind操作style" class="headerlink" title="3-3 v-bind操作style"></a>3-3 v-bind操作style</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709193007230.png"
+                      alt="image-20240709193007230"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709192940869.png"
+                      alt="image-20240709192940869"
+                ></p>
+<h2 id="3-4-v-model应用于其他表单元素"><a href="#3-4-v-model应用于其他表单元素" class="headerlink" title="3-4 v-model应用于其他表单元素"></a>3-4 v-model应用于其他表单元素</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709195046333.png"
+                      alt="image-20240709195046333"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709195237001.png"
+                      alt="image-20240709195237001"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709195349812.png"
+                      alt="image-20240709195349812"
+                ></p>
+<h1 id="4-计算属性"><a href="#4-计算属性" class="headerlink" title="4- 计算属性"></a>4- 计算属性</h1><h2 id="4-1-计算属性基础使用"><a href="#4-1-计算属性基础使用" class="headerlink" title="4-1 计算属性基础使用"></a>4-1 计算属性基础使用</h2><ul>
+<li>概念与语法</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240709200732741.png"
+                      alt="image-20240709200732741"
+                ></p>
+<ul>
+<li>实例</li>
+</ul>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for:</span>(<span class="attr">item</span>, <span class="attr">index</span>) <span class="attr">in</span> <span class="attr">list</span> <span class="attr">:key</span>=<span class="string">item.id</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;&#123; item.name &#125;&#125; - &#123;&#123; item.num &#125;&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>   </span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>礼物总数:&#123;&#123; totalcount &#125;&#125;个<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>    </span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	<span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="comment">// 现有的数据</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">list</span>:[</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                &#123;<span class="attr">id</span>:<span class="number">1</span>, <span class="attr">name</span>:<span class="string">&#x27;篮球&#x27;</span>, <span class="attr">num</span>:<span class="number">3</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                &#123;<span class="attr">id</span>:<span class="number">2</span>, <span class="attr">name</span>:<span class="string">&#x27;玩具&#x27;</span>, <span class="attr">num</span>:<span class="number">2</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                &#123;<span class="attr">id</span>:<span class="number">3</span>, <span class="attr">name</span>:<span class="string">&#x27;铅笔&#x27;</span>, <span class="attr">num</span>:<span class="number">5</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            ]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="attr">computed</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="title function_">totalcount</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//基于现有的数据，编写求值逻辑</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//计算属性函数内部，可以直接通过 this 访问到 app 实例</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//需求:对 this.list 数组里面的 num 进行求和 → reduce</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//把0先赋给sum，然后sum加上遍历的实例的num后，再赋给sum累加，直到遍历完毕</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">let</span> total = <span class="variable language_">this</span>.<span class="property">list</span>.<span class="title function_">reduce</span>(<span class="function">(<span class="params">sum, item</span>) =&gt;</span> sum + item.<span class="property">num</span>, <span class="number">0</span>) </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">return</span> total</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span>    </span><br></pre></td></tr></table></figure></div>
+
+<h2 id="4-2-computed计算属性-vs-methods方法"><a href="#4-2-computed计算属性-vs-methods方法" class="headerlink" title="4-2 computed计算属性 vs methods方法"></a>4-2 computed计算属性 vs methods方法</h2><ul>
+<li>对比</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240710073817294.png"
+                      alt="image-20240710073817294"
+                ></p>
+<ul>
+<li>实例</li>
+</ul>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for:</span>(<span class="attr">item</span>, <span class="attr">index</span>) <span class="attr">in</span> <span class="attr">list</span> <span class="attr">:key</span>=<span class="string">item.id</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;&#123; item.name &#125;&#125; - &#123;&#123; item.num &#125;&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>    </span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>小黑的礼物清单雪<span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; totalcountFn() &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>小黑的礼物清单雪<span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; totalcountFn() &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>小黑的礼物清单雪<span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; totalcount &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>小黑的礼物清单雪<span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; totalcount &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	<span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="comment">// 现有的数据</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">list</span>:[</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                &#123;<span class="attr">id</span>:<span class="number">1</span>, <span class="attr">name</span>:<span class="string">&#x27;篮球&#x27;</span>, <span class="attr">num</span>:<span class="number">3</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                &#123;<span class="attr">id</span>:<span class="number">2</span>, <span class="attr">name</span>:<span class="string">&#x27;玩具&#x27;</span>, <span class="attr">num</span>:<span class="number">2</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                &#123;<span class="attr">id</span>:<span class="number">3</span>, <span class="attr">name</span>:<span class="string">&#x27;铅笔&#x27;</span>, <span class="attr">num</span>:<span class="number">5</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            ]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="title function_">totalcountFn</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;methods方法执行了&#x27;</span>) <span class="comment">//执行2次</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">let</span> total = <span class="variable language_">this</span>.<span class="property">list</span>.<span class="title function_">reduce</span>(<span class="function">(<span class="params">sum, item</span>) =&gt;</span> sum + item.<span class="property">num</span>, <span class="number">0</span>) </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">return</span> total</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;,		</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="attr">computed</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="title function_">totalcount</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//计算属性:有缓存的，一旦计算出来结果，就会立刻缓存</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//下一次读取 → 直接读缓存就行 → 性能特别高</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;computed方法执行了&#x27;</span>) <span class="comment">//执行1次</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">let</span> total = <span class="variable language_">this</span>.<span class="property">list</span>.<span class="title function_">reduce</span>(<span class="function">(<span class="params">sum, item</span>) =&gt;</span> sum + item.<span class="property">num</span>, <span class="number">0</span>) </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">return</span> total</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span>    </span><br></pre></td></tr></table></figure></div>
+
+<h2 id="4-3-计算属性完整写法"><a href="#4-3-计算属性完整写法" class="headerlink" title="4-3 计算属性完整写法"></a>4-3 计算属性完整写法</h2><ul>
+<li>概念与语法</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240710075300172.png"
+                      alt="image-20240710075300172"
+                ></p>
+<ul>
+<li>实例</li>
+</ul>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">		<span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">		<span class="attr">data</span>:&#123;</span><br><span class="line">            <span class="attr">firstName</span>: <span class="string">&#x27;刘&#x27;</span></span><br><span class="line"> 			<span class="attr">lastName</span>: <span class="string">&#x27;备&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">			<span class="title function_">changeName</span>(<span class="params"></span>)&#123;</span><br><span class="line">				<span class="variable language_">this</span>.<span class="property">fullName</span> = <span class="string">&#x27;吕小布&#x27;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,		</span><br><span class="line">		<span class="attr">computed</span>:&#123;</span><br><span class="line">            <span class="comment">// 完整写法 → 获取 + 设置</span></span><br><span class="line">            <span class="attr">fullName</span>:&#123;</span><br><span class="line">                <span class="comment">//(1)当fullName计算属性，被获取求值时，执行get(有缓存)</span></span><br><span class="line">                <span class="comment">//会将返回值作为，求值的结果</span></span><br><span class="line">                <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstName</span> + <span class="variable language_">this</span>.<span class="property">lastName</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="comment">//(2)当fullName计算属性，被修改赋值时，执行set</span></span><br><span class="line">                <span class="comment">//修改的值，传递给set方法的形参</span></span><br><span class="line">                <span class="title function_">set</span>(<span class="params">value</span>)&#123;</span><br><span class="line">                    <span class="variable language_">this</span>.<span class="property">firstName</span> = value.<span class="title function_">slice</span>(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">                    <span class="variable language_">this</span>.<span class="property">lastName</span> = value.<span class="title function_">slice</span>(<span class="number">1</span>)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="5-watch侦听器"><a href="#5-watch侦听器" class="headerlink" title="5- watch侦听器"></a>5- watch侦听器</h1><h2 id="5-1-概念"><a href="#5-1-概念" class="headerlink" title="5-1 概念"></a>5-1 概念</h2><p>作用：监视数据变化，执行一些 业务逻辑 或 异步操作。</p>
+<p>语法：</p>
+<ul>
+<li>简单写法 -&gt; 简单类型数据，直接监视</li>
+<li>完整写法 -&gt; 添加额外配置项</li>
+</ul>
+<h2 id="5-2-简单写法"><a href="#5-2-简单写法" class="headerlink" title="5-2 简单写法"></a>5-2 简单写法</h2><ul>
+<li>语法</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240710083552727.png"
+                      alt="image-20240710083552727"
+                ></p>
+<ul>
+<li>实例（实时翻译）</li>
+</ul>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">		<span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">		<span class="attr">data</span>:&#123;</span><br><span class="line">            <span class="attr">words</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">            <span class="attr">result</span>:<span class="string">&#x27;&#x27;</span>, <span class="comment">//翻译后结果</span></span><br><span class="line">            <span class="comment">// timer:null //延时器id，可以去掉，只在下面逻辑有this.timer就行</span></span><br><span class="line">            <span class="attr">obj</span>: &#123;</span><br><span class="line">            	<span class="attr">words</span>:<span class="string">&#x27;&#x27;</span> <span class="comment">//需要翻译的数据</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">watch</span>:&#123;</span><br><span class="line">			<span class="comment">//该方法会在数据变化时调用执行</span></span><br><span class="line">			<span class="comment">//newValue新值，oldValue老值(一般不用)</span></span><br><span class="line">			<span class="title function_">words</span>(<span class="params">newValue</span>)&#123;</span><br><span class="line">				<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;变化了&#x27;</span>, newValue)</span><br><span class="line">			&#125;,</span><br><span class="line">			<span class="string">&#x27;obj.words&#x27;</span> (newValue)&#123;</span><br><span class="line">				<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;变化了&#x27;</span>, newValue)</span><br><span class="line">			&#125;,</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//翻译逻辑代码</span></span><br><span class="line">            <span class="string">&#x27;obj.words&#x27;</span> (newValue)&#123;</span><br><span class="line">                <span class="comment">//防抖:延迟执行 → 干啥事先等一等，延迟一会，一段时间内没有再次触发，才执行</span></span><br><span class="line">                <span class="built_in">clearTimeout</span>(<span class="variable language_">this</span>.<span class="property">timer</span>)</span><br><span class="line">                <span class="variable language_">this</span>.<span class="property">timer</span> = <span class="built_in">setTimeout</span>(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">                    <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">axios</span>(&#123;</span><br><span class="line">                        <span class="attr">url</span>:<span class="string">&quot;https://applet-base-api-t.itheima.net/api/&quot;</span></span><br><span class="line">                        <span class="attr">params</span>:&#123;</span><br><span class="line">                            <span class="attr">words</span>: newValue</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                    <span class="variable language_">this</span>.<span class="property">result</span> = res.<span class="property">data</span>.<span class="property">data</span></span><br><span class="line">                &#125;,<span class="number">1000</span>) <span class="comment">//1秒</span></span><br><span class="line">            &#125;</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="5-3-完整写法"><a href="#5-3-完整写法" class="headerlink" title="5-3 完整写法"></a>5-3 完整写法</h2><ul>
+<li>语法</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240710111306372.png"
+                      alt="image-20240710111306372"
+                ></p>
+<ul>
+<li>实例</li>
+</ul>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">		<span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">		<span class="attr">data</span>:&#123;</span><br><span class="line">            <span class="attr">result</span>: <span class="string">&#x27;&#x27;</span>, <span class="comment">//翻译后结果</span></span><br><span class="line">            <span class="attr">obj</span>: &#123;</span><br><span class="line">            	<span class="attr">words</span>: <span class="string">&#x27;&#x27;</span> <span class="comment">//需要翻译的数据</span></span><br><span class="line">            	<span class="attr">lang</span>: <span class="string">&#x27;english&#x27;</span> <span class="comment">//设定翻译成的语言</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">watch</span>:&#123;</span><br><span class="line">            <span class="attr">obj</span>:&#123;</span><br><span class="line">            	<span class="attr">deep</span>: <span class="literal">true</span>, <span class="comment">//深度监视</span></span><br><span class="line">                <span class="attr">immediate</span>: <span class="literal">true</span>, <span class="comment">//初始化立刻执行一次handler方法 </span></span><br><span class="line">            	<span class="title function_">handler</span>(<span class="params">newValue</span>)&#123;</span><br><span class="line">            		<span class="built_in">clearTimeout</span>(<span class="variable language_">this</span>.<span class="property">timer</span>)</span><br><span class="line">                    <span class="variable language_">this</span>.<span class="property">timer</span> = <span class="built_in">setTimeout</span>(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">                        <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">axios</span>(&#123;</span><br><span class="line">                            <span class="attr">url</span>:<span class="string">&quot;https://applet-base-api-t.itheima.net/api/&quot;</span>,</span><br><span class="line">                            <span class="attr">params</span>:newValue</span><br><span class="line">                        &#125;)</span><br><span class="line">                        <span class="variable language_">this</span>.<span class="property">result</span> = res.<span class="property">data</span>.<span class="property">data</span></span><br><span class="line">                    &#125;,<span class="number">1000</span>) <span class="comment">//1秒</span></span><br><span class="line">            	&#125;</span><br><span class="line">            &#125;</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
+
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> Vue2速学</li>
+        <li><strong>作者:</strong> dearlrq</li>
+        <li><strong>创建于
+                :</strong> 2024-07-08 06:58:22</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2024-07-10 11:13:19
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://redefine.ohevan.com/2024/07/08/Vue2速学/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E8%87%AA%E7%A0%94%E7%AC%94%E8%AE%B0/">#自研笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/07/12/RuoYi%E6%A1%86%E6%9E%B6%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">RuoYi框架实战开发</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/07/05/Git%E4%BD%BF%E7%94%A8/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Git使用</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">Vue2速学</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B"><span class="nav-number">1.</span> <span class="nav-text">1- 快速上手</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Vue%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">1-1 Vue概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%9E%84%E5%BB%BAVue%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.2.</span> <span class="nav-text">1-2 构建Vue实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E6%8F%92%E5%80%BC%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">1-3 插值表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Vue%E5%93%8D%E5%BA%94%E5%BC%8F%E7%89%B9%E6%80%A7"><span class="nav-number">1.4.</span> <span class="nav-text">1-4 Vue响应式特性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Vue%E6%8C%87%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">2- Vue指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">2-1 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-v-html"><span class="nav-number">2.2.</span> <span class="nav-text">2-2 v-html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-v-show"><span class="nav-number">2.3.</span> <span class="nav-text">2-3 v-show</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-v-if"><span class="nav-number">2.4.</span> <span class="nav-text">2-4 v-if</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-v-else-%E4%B8%8E-v-else-if"><span class="nav-number">2.5.</span> <span class="nav-text">2-5 v-else 与 v-else-if</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-v-on"><span class="nav-number">2.6.</span> <span class="nav-text">2-6 v-on</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-v-on-%E8%B0%83%E7%94%A8%E4%BC%A0%E5%8F%82"><span class="nav-number">2.7.</span> <span class="nav-text">2-7 v-on 调用传参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-v-bind"><span class="nav-number">2.8.</span> <span class="nav-text">2-8 v-bind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-9-v-for"><span class="nav-number">2.9.</span> <span class="nav-text">2-9 v-for</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-10-v-for-%E7%9A%84key"><span class="nav-number">2.10.</span> <span class="nav-text">2-10 v-for 的key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-11-v-model"><span class="nav-number">2.11.</span> <span class="nav-text">2-11 v-model</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%8C%87%E4%BB%A4%E8%A1%A5%E5%85%85"><span class="nav-number">3.</span> <span class="nav-text">3- 指令补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">3.1.</span> <span class="nav-text">3-1 指令修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-v-bind%E6%93%8D%E4%BD%9Cclass"><span class="nav-number">3.2.</span> <span class="nav-text">3-2 v-bind操作class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-v-bind%E6%93%8D%E4%BD%9Cstyle"><span class="nav-number">3.3.</span> <span class="nav-text">3-3 v-bind操作style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-v-model%E5%BA%94%E7%94%A8%E4%BA%8E%E5%85%B6%E4%BB%96%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0"><span class="nav-number">3.4.</span> <span class="nav-text">3-4 v-model应用于其他表单元素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7"><span class="nav-number">4.</span> <span class="nav-text">4- 计算属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="nav-number">4.1.</span> <span class="nav-text">4-1 计算属性基础使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-computed%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7-vs-methods%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">4-2 computed计算属性 vs methods方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%AE%8C%E6%95%B4%E5%86%99%E6%B3%95"><span class="nav-number">4.3.</span> <span class="nav-text">4-3 计算属性完整写法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-watch%E4%BE%A6%E5%90%AC%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">5- watch侦听器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E6%A6%82%E5%BF%B5"><span class="nav-number">5.1.</span> <span class="nav-text">5-1 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E7%AE%80%E5%8D%95%E5%86%99%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">5-2 简单写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-%E5%AE%8C%E6%95%B4%E5%86%99%E6%B3%95"><span class="nav-number">5.3.</span> <span class="nav-text">5-3 完整写法</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">dearlrq</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2024</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">dearlrq</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.0</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>

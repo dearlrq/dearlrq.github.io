@@ -18,12 +18,12 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="导学教师  姓名：祁瑞丽 QQ：309222063 电话：15369155136 研习室：1#322  主要内容大纲  GPIO  中断系统  定时器&#x2F;计数器  串口通信  ADC应用   实验内容  外部中断应用—键控三色灯的设计 串行通信应用—多指令控制器设计与开发 ADC应用—芯片温度监控系统设计  1- 认识单片机1-1 介绍1-1-1 系统最小系统：单片机  处理器内核(CPU">
+        <meta name="description" content="1- 认识单片机1-1 介绍1-1-1 系统最小系统：单片机  处理器内核(CPU) 存储器 I&#x2F;O控制电路  扩展系统：单片机  处理器内核(CPU) 存储器 I&#x2F;O控制电路 中断单元 定时单元 AD单元  1-1-2 特点和用途特点：  集成度高、体积小、功耗低、控制性强、易扩展、环境适应能力强  用途：  智能仪表、工业控制、民用及医疗等方面  1-1-3 容易混淆的名字">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单片机原理及应用">
 <meta property="og:url" content="http://example.com/2024/02/26/%E5%8D%95%E7%89%87%E6%9C%BA%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="导学教师  姓名：祁瑞丽 QQ：309222063 电话：15369155136 研习室：1#322  主要内容大纲  GPIO  中断系统  定时器&#x2F;计数器  串口通信  ADC应用   实验内容  外部中断应用—键控三色灯的设计 串行通信应用—多指令控制器设计与开发 ADC应用—芯片温度监控系统设计  1- 认识单片机1-1 介绍1-1-1 系统最小系统：单片机  处理器内核(CPU">
+<meta property="og:description" content="1- 认识单片机1-1 介绍1-1-1 系统最小系统：单片机  处理器内核(CPU) 存储器 I&#x2F;O控制电路  扩展系统：单片机  处理器内核(CPU) 存储器 I&#x2F;O控制电路 中断单元 定时单元 AD单元  1-1-2 特点和用途特点：  集成度高、体积小、功耗低、控制性强、易扩展、环境适应能力强  用途：  智能仪表、工业控制、民用及医疗等方面  1-1-3 容易混淆的名字">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240318110910571.png">
 <meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240318110951541.png">
@@ -60,8 +60,47 @@
 <meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240401201339096.png">
 <meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240401201354732.png">
 <meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240401201413185.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422082321987.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422082406929.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422082843730.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422083031077.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422083335071.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422084048295.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422093516963.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422094223264.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094411.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094527.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094538.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094655.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422094918066.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094715.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094724.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094735.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422095632562.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422095703389.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422095720690.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104240441.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104258747.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104809842.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104825549.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104847083.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104901820.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104920269.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513081142160.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513081950660.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513082147734.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513084103073.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513090712282.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513090939286.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513094154578.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513094230400.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513094254375.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513094405881.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513094428537.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513100653396.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513100714797.png">
 <meta property="article:published_time" content="2024-02-26T00:49:05.000Z">
-<meta property="article:modified_time" content="2024-04-08T10:32:42.952Z">
+<meta property="article:modified_time" content="2024-07-12T11:52:00.521Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
@@ -607,11 +646,11 @@
         <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">12</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -651,7 +690,7 @@
                     <div class="author flex items-center">
                         <span class="name text-default-text-color text-lg font-semibold">dearlrq</span>
                         
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
                         
                     </div>
                     <div class="meta-info">
@@ -665,8 +704,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-08 18:32:42</span>
-            <span class="mobile">2024-04-08 18:32:42</span>
+            <span class="desktop">2024-07-12 19:52</span>
+            <span class="mobile">2024-07-12 19:52</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -714,12 +753,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>4.1k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>5.5k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>15 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>20 分钟</span>
         </span>
     
     
@@ -738,33 +777,7 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h1 id="导学"><a href="#导学" class="headerlink" title="导学"></a>导学</h1><p>教师</p>
-<ul>
-<li>姓名：祁瑞丽</li>
-<li>QQ：309222063</li>
-<li>电话：15369155136</li>
-<li>研习室：1#322</li>
-</ul>
-<p>主要内容大纲</p>
-<ul>
-<li><p>GPIO</p>
-</li>
-<li><p>中断系统</p>
-</li>
-<li><p>定时器&#x2F;计数器</p>
-</li>
-<li><p>串口通信</p>
-</li>
-<li><p>ADC应用</p>
-</li>
-</ul>
-<p>实验内容</p>
-<ul>
-<li>外部中断应用—键控三色灯的设计</li>
-<li>串行通信应用—多指令控制器设计与开发</li>
-<li>ADC应用—芯片温度监控系统设计</li>
-</ul>
-<h1 id="1-认识单片机"><a href="#1-认识单片机" class="headerlink" title="1- 认识单片机"></a>1- 认识单片机</h1><h2 id="1-1-介绍"><a href="#1-1-介绍" class="headerlink" title="1-1 介绍"></a>1-1 介绍</h2><h3 id="1-1-1-系统"><a href="#1-1-1-系统" class="headerlink" title="1-1-1 系统"></a>1-1-1 系统</h3><p>最小系统：单片机</p>
+            <h1 id="1-认识单片机"><a href="#1-认识单片机" class="headerlink" title="1- 认识单片机"></a>1- 认识单片机</h1><h2 id="1-1-介绍"><a href="#1-1-介绍" class="headerlink" title="1-1 介绍"></a>1-1 介绍</h2><h3 id="1-1-1-系统"><a href="#1-1-1-系统" class="headerlink" title="1-1-1 系统"></a>1-1-1 系统</h3><p>最小系统：单片机</p>
 <ul>
 <li>处理器内核(CPU)</li>
 <li>存储器</li>
@@ -1019,8 +1032,14 @@
                 ></p>
 </li>
 </ul>
-<h1 id="4-定时器-计数器"><a href="#4-定时器-计数器" class="headerlink" title="4- 定时器&#x2F;计数器"></a>4- 定时器&#x2F;计数器</h1><h2 id="4-1-振荡器"><a href="#4-1-振荡器" class="headerlink" title="4-1 振荡器"></a>4-1 振荡器</h2><h3 id="4-1-1-介绍"><a href="#4-1-1-介绍" class="headerlink" title="4-1-1 介绍"></a>4-1-1 介绍</h3><p>晶振 (CrystalOscillator，简写为OSC) 利用 “石英晶体” 制作的振荡器。</p>
-<p>RC振荡器：利用 电阻电容 的特性制作的振荡器。</p>
+<h1 id="4-定时器-计数器"><a href="#4-定时器-计数器" class="headerlink" title="4- 定时器&#x2F;计数器"></a>4- 定时器&#x2F;计数器</h1><h2 id="4-1-振荡器"><a href="#4-1-振荡器" class="headerlink" title="4-1 振荡器"></a>4-1 振荡器</h2><h3 id="4-1-1-介绍"><a href="#4-1-1-介绍" class="headerlink" title="4-1-1 介绍"></a>4-1-1 介绍</h3><p>晶振 (CrystalOscillator，简写为OSC) ：</p>
+<ul>
+<li>利用 “石英晶体” 制作的振荡器。</li>
+</ul>
+<p>RC振荡器：</p>
+<ul>
+<li>利用 电阻电容 的特性制作的振荡器。</li>
+</ul>
 <h3 id="4-1-2-振荡频率"><a href="#4-1-2-振荡频率" class="headerlink" title="4-1-2 振荡频率"></a>4-1-2 振荡频率</h3><p>振荡器可以产生一定Hz的频率。</p>
 <p>振荡的频率 f 和 振荡的周期 T 之间的关系是：</p>
 <ul>
@@ -1099,19 +1118,40 @@
                       alt="image-20240401180710702"
                 ></li>
 </ul>
-<h3 id="4-4-2-Timer1"><a href="#4-4-2-Timer1" class="headerlink" title="4-4-2 Timer1"></a>4-4-2 Timer1</h3><p>Timer1 是一个16位定时器，具有定时、计数、PWM (Pulse WidthModulation，脉冲宽度调制，简称脉宽调制) 功能。</p>
-<p>它内置可编程分频器，可以对输入的时钟信号进行分频。</p>
-<p>16位计数器可以实现从 0x0000 到 0xFFFF 之间任意间的计数。</p>
-<p>Timer1拥有5个独立的均可编程的计数&#x2F;捕获通道，每个通道都能实现16位的计数或者输出PWM等功能。</p>
-<p>Timer1还可以被设置为中断请求模式，在计数结束时向CPU提出中断请求。</p>
-<h3 id="4-4-3-Timer2"><a href="#4-4-3-Timer2" class="headerlink" title="4-4-3 Timer2"></a>4-4-3 Timer2</h3><p>Timer2 也叫 MAC Timer，是专门用来为支持IEEE 802.15.4协议 (低速无线个人网络) 的MAC层提供时钟信号。</p>
-<p>如果利用CC2530内置的RF (RadioFrequency，射频) 功能进行数据传输，也就是Zigbee通信，那就需要 Timer2 产生的时钟信号进行数据的收发控制。</p>
-<h3 id="4-4-4-Timer3-和-Timer4"><a href="#4-4-4-Timer3-和-Timer4" class="headerlink" title="4-4-4 Timer3 和 Timer4"></a>4-4-4 Timer3 和 Timer4</h3><p>Timer3 和 Timer4 都是8位的定时器，它们同样具有定时、计数以及PWM功能。</p>
-<p>它们跟 Timer1 一样也内置了可编程分频器，但他们内部的计数器是8位的，计数范围是 0x00 到 0xFF 。</p>
-<p>Timer3 和 Timer4 都只有一个计数通道，这个通道同样可以产生PWM。</p>
-<h3 id="4-4-5-Sleep-Timer"><a href="#4-4-5-Sleep-Timer" class="headerlink" title="4-4-5 Sleep Timer"></a>4-4-5 Sleep Timer</h3><p>Sleep Timer 是一个超低功耗定时器，可以对32kHz 晶振或者32kHz RC振荡器周期进行计数。</p>
-<p>CC2530处于休眠状态时它可以用来作为实时时钟。</p>
-<p>还可以作为CC2530从休眠到唤醒时的唤醒时钟。</p>
+<h3 id="4-4-2-Timer1"><a href="#4-4-2-Timer1" class="headerlink" title="4-4-2 Timer1"></a>4-4-2 Timer1</h3><ul>
+<li><p>Timer1 是一个16位定时器，具有定时、计数、PWM (Pulse WidthModulation，脉冲宽度调制，简称脉宽调制) 功能。</p>
+</li>
+<li><p>它内置可编程分频器，可以对输入的时钟信号进行分频。</p>
+</li>
+<li><p>16位计数器可以实现从 0x0000 到 0xFFFF 之间任意间的计数。</p>
+</li>
+<li><p>Timer1拥有5个独立的均可编程的计数&#x2F;捕获通道，每个通道都能实现16位的计数或者输出PWM等功能。</p>
+</li>
+<li><p>Timer1还可以被设置为中断请求模式，在计数结束时向CPU提出中断请求。</p>
+</li>
+</ul>
+<h3 id="4-4-3-Timer2"><a href="#4-4-3-Timer2" class="headerlink" title="4-4-3 Timer2"></a>4-4-3 Timer2</h3><ul>
+<li><p>Timer2 也叫 MAC Timer，是专门用来为支持IEEE 802.15.4协议 (低速无线个人网络) 的MAC层提供时钟信号。</p>
+</li>
+<li><p>如果利用CC2530内置的RF (RadioFrequency，射频) 功能进行数据传输，也就是Zigbee通信，那就需要 Timer2 产生的时钟信号进行数据的收发控制。</p>
+</li>
+</ul>
+<h3 id="4-4-4-Timer3-和-Timer4"><a href="#4-4-4-Timer3-和-Timer4" class="headerlink" title="4-4-4 Timer3 和 Timer4"></a>4-4-4 Timer3 和 Timer4</h3><ul>
+<li><p>Timer3 和 Timer4 都是8位的定时器，它们同样具有定时、计数以及PWM功能。</p>
+</li>
+<li><p>它们跟 Timer1 一样也内置了可编程分频器，但他们内部的计数器是8位的，计数范围是 0x00 到 0xFF 。</p>
+</li>
+<li><p>Timer3 和 Timer4 都只有一个计数通道，这个通道同样可以产生PWM。</p>
+</li>
+</ul>
+<h3 id="4-4-5-Sleep-Timer"><a href="#4-4-5-Sleep-Timer" class="headerlink" title="4-4-5 Sleep Timer"></a>4-4-5 Sleep Timer</h3><ul>
+<li><p>Sleep Timer 是一个超低功耗定时器，可以对32kHz 晶振或者32kHz RC振荡器周期进行计数。</p>
+</li>
+<li><p>CC2530处于休眠状态时它可以用来作为实时时钟。</p>
+</li>
+<li><p>还可以作为CC2530从休眠到唤醒时的唤醒时钟。</p>
+</li>
+</ul>
 <h2 id="4-5-CC2530中的Timer1-T1"><a href="#4-5-CC2530中的Timer1-T1" class="headerlink" title="4-5 CC2530中的Timer1 (T1)"></a>4-5 CC2530中的Timer1 (T1)</h2><h3 id="4-5-1-介绍"><a href="#4-5-1-介绍" class="headerlink" title="4-5-1 介绍"></a>4-5-1 介绍</h3><p>包含一个16位计数器，在每个活动时钟边沿递增或递减。</p>
 <ul>
 <li><img  
@@ -1179,10 +1219,16 @@
 </ul>
 <p>可提交中断请求。</p>
 <p>DMA触发功能。</p>
-<h3 id="4-5-2-初始化配置"><a href="#4-5-2-初始化配置" class="headerlink" title="4-5-2 初始化配置"></a>4-5-2 初始化配置</h3><p>修改 T1CTL 的值来设置 Timer1 的计数频率、工作模式等。</p>
-<p>如果工作在模计数模式或者正计数&#x2F;倒计数模式下时，需要配置对应通道的 T1CCn 的值，即先写 T1CCnL ，再写 T1CCnH 的值。</p>
-<p>设置对应通道是比较还是捕获模式，即修改 T1CCTLn 的值。</p>
-<p>如果需要使用中断还要配置相应的中断使能和中断标志位。</p>
+<h3 id="4-5-2-初始化配置"><a href="#4-5-2-初始化配置" class="headerlink" title="4-5-2 初始化配置"></a>4-5-2 初始化配置</h3><ul>
+<li><p>修改 T1CTL 的值来设置 Timer1 的计数频率、工作模式等。</p>
+</li>
+<li><p>如果工作在模计数模式或者正计数&#x2F;倒计数模式下时，需要配置对应通道的 T1CCn 的值，即先写 T1CCnL ，再写 T1CCnH 的值。</p>
+</li>
+<li><p>设置对应通道是比较还是捕获模式，即修改 T1CCTLn 的值。</p>
+</li>
+<li><p>如果需要使用中断还要配置相应的中断使能和中断标志位。</p>
+</li>
+</ul>
 <h2 id="4-6-实战"><a href="#4-6-实战" class="headerlink" title="4-6 实战"></a>4-6 实战</h2><ul>
 <li><p><img  
                      lazyload
@@ -1213,6 +1259,420 @@
                 ></p>
 </li>
 </ul>
+<h1 id="5-串行通信"><a href="#5-串行通信" class="headerlink" title="5- 串行通信"></a>5- 串行通信</h1><h2 id="5-1-通信介绍"><a href="#5-1-通信介绍" class="headerlink" title="5-1 通信介绍"></a>5-1 通信介绍</h2><h3 id="5-1-1-通信系统三要素"><a href="#5-1-1-通信系统三要素" class="headerlink" title="5-1-1 通信系统三要素"></a>5-1-1 通信系统三要素</h3><ul>
+<li><p>信源、信道、信宿（发送端、传输介质、接收端）。</p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422082321987.png"
+                      alt="image-20240422082321987"
+                ></p>
+</li>
+</ul>
+<h3 id="5-1-2-并行通信与串行通信"><a href="#5-1-2-并行通信与串行通信" class="headerlink" title="5-1-2 并行通信与串行通信"></a>5-1-2 并行通信与串行通信</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422082406929.png"
+                      alt="image-20240422082406929"
+                ></li>
+</ul>
+<h2 id="5-2-串行通信介绍"><a href="#5-2-串行通信介绍" class="headerlink" title="5-2 串行通信介绍"></a>5-2 串行通信介绍</h2><h3 id="5-2-1-串行通信中数据收发过程"><a href="#5-2-1-串行通信中数据收发过程" class="headerlink" title="5-2-1 串行通信中数据收发过程"></a>5-2-1 串行通信中数据收发过程</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422082843730.png"
+                      alt="image-20240422082843730"
+                ></li>
+</ul>
+<h3 id="5-2-2-同步串行通信介绍"><a href="#5-2-2-同步串行通信介绍" class="headerlink" title="5-2-2 同步串行通信介绍"></a>5-2-2 同步串行通信介绍</h3><ul>
+<li><p>发送方在发送数据时，接收方必须也在时刻准备着接收数据。</p>
+</li>
+<li><p>发送方和接收方的时钟频率相同，否则会造成数据错误。</p>
+</li>
+<li><p>发送方所发送的数据帧中字符是一个挨着一个传递，字符之间没有间隙（空闲）。</p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422083031077.png"
+                      alt="image-20240422083031077"
+                ></p>
+</li>
+</ul>
+<h3 id="5-2-3-异步串行通信介绍"><a href="#5-2-3-异步串行通信介绍" class="headerlink" title="5-2-3 异步串行通信介绍"></a>5-2-3 异步串行通信介绍</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422083335071.png"
+                      alt="image-20240422083335071"
+                ></li>
+</ul>
+<h3 id="5-2-4-常用异步串行通信接口-—-UART"><a href="#5-2-4-常用异步串行通信接口-—-UART" class="headerlink" title="5-2-4 常用异步串行通信接口 — UART"></a>5-2-4 常用异步串行通信接口 — UART</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422084048295.png"
+                      alt="image-20240422084048295"
+                ></li>
+</ul>
+<h3 id="5-2-5-波特率"><a href="#5-2-5-波特率" class="headerlink" title="5-2-5 波特率"></a>5-2-5 波特率</h3><p>概念：</p>
+<ul>
+<li>指每秒钟发生的信号或符号的变化的数量，这里的符号可以是 “电压、频率或相位” 。</li>
+</ul>
+<p>作用：</p>
+<ul>
+<li>用来在通信双方约定好 “数据” 的传输速率，这样发送端与接收端才能保持 “步调一致” 地进行 “发和收” ，否则就会出现 “发得快收得慢” 或者 “发得慢收得快” 的情况。</li>
+</ul>
+<h2 id="5-3-CC2530中的串行通信接口"><a href="#5-3-CC2530中的串行通信接口" class="headerlink" title="5-3 CC2530中的串行通信接口"></a>5-3 CC2530中的串行通信接口</h2><ul>
+<li><p>CC2530中有两个独立的 USART 接口，分别是 USART0 和 USART1 。</p>
+</li>
+<li><p>它们可以分别工作在 “异步串行通信” 的 UART 模式下或者 “同步串行通信” 的 SPI 模式下。</p>
+</li>
+<li><p>UART 操作由 USART 控制和状态寄存器 UxCSR 以及 UART 控制寄存器 UxUCR 来控制。这里的 x 是 USART 的编号，其数值为 0 或者 1。当 UxCSR.MODE 设置为 1 时，就选择了 UART 模式。</p>
+</li>
+<li><p>UxDBUF 是双向缓冲寄存器，当执行数据发送时，首先将要发送的字符存入到 UxDBUF 中；当执行数据接收时，从 UxDBUF 中读取数据。</p>
+</li>
+<li><p>通过 UxUCR 来设置当前异步串行通信的配置，包括：起始位用高电平还是低电平、数据位位数、停止位位数、是否有奇偶校验位等。</p>
+</li>
+<li><p>通过 UxBAUD 和 UxGCR 的组合来配置 USARTx 的波特率。</p>
+</li>
+<li><p>CC2530中的两个 USART 都可以向 MCU 提出 “数据接收完成中断请求” 和 “数据发送完成中断请求” 。</p>
+</li>
+</ul>
+<h2 id="5-4-CC2530中的串口编程应用"><a href="#5-4-CC2530中的串口编程应用" class="headerlink" title="5-4 CC2530中的串口编程应用"></a>5-4 CC2530中的串口编程应用</h2><h3 id="5-4-1-串口初始化"><a href="#5-4-1-串口初始化" class="headerlink" title="5-4-1 串口初始化"></a>5-4-1 串口初始化</h3><ul>
+<li><p>初始化中包含对CC2530中 USARTn 的选择、同步异步选择、异步串行通信中数据帧格式的设置、波特率的设置等。</p>
+</li>
+<li><p>这里会涉及到 UxCSR、UxUCR 、UxBAUD和UxGCR 设置。</p>
+</li>
+<li><p>另外CC2530的 USARTn 控制器是连接在 GPIO 中的，还需要对相应的 pin 进行配置。</p>
+</li>
+</ul>
+<h3 id="5-4-2-CC2530中外设引脚映射关系表"><a href="#5-4-2-CC2530中外设引脚映射关系表" class="headerlink" title="5-4-2 CC2530中外设引脚映射关系表"></a>5-4-2 CC2530中外设引脚映射关系表</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422093516963.png"
+                      alt="image-20240422093516963"
+                ></li>
+</ul>
+<h3 id="5-4-3-实例"><a href="#5-4-3-实例" class="headerlink" title="5-4-3 实例"></a>5-4-3 实例</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422094223264.png"
+                      alt="image-20240422094223264"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094411.png"
+                      alt="屏幕截图 2024-04-22 094411"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094527.png"
+                      alt="屏幕截图 2024-04-22 094527"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094538.png"
+                      alt="屏幕截图 2024-04-22 094538"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094655.png"
+                      alt="屏幕截图 2024-04-22 094655"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422094918066.png"
+                      alt="image-20240422094918066"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094715.png"
+                      alt="屏幕截图 2024-04-22 094715"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094724.png"
+                      alt="屏幕截图 2024-04-22 094724"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-22%20094735.png"
+                      alt="屏幕截图 2024-04-22 094735"
+                ></p>
+</li>
+</ul>
+<h3 id="5-4-4-串口发送数据功能"><a href="#5-4-4-串口发送数据功能" class="headerlink" title="5-4-4 串口发送数据功能"></a>5-4-4 串口发送数据功能</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422095632562.png"
+                      alt="image-20240422095632562"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422095703389.png"
+                      alt="image-20240422095703389"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422095720690.png"
+                      alt="image-20240422095720690"
+                ></p>
+</li>
+</ul>
+<h3 id="5-4-5-串口接收数据功能"><a href="#5-4-5-串口接收数据功能" class="headerlink" title="5-4-5 串口接收数据功能"></a>5-4-5 串口接收数据功能</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104240441.png"
+                      alt="image-20240422104240441"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104258747.png"
+                      alt="image-20240422104258747"
+                ></p>
+</li>
+</ul>
+<h2 id="5-5-实战"><a href="#5-5-实战" class="headerlink" title="5-5 实战"></a>5-5 实战</h2><h3 id="5-5-1-要求"><a href="#5-5-1-要求" class="headerlink" title="5-5-1 要求"></a>5-5-1 要求</h3><ul>
+<li>将PC机与xLabGreenHouse的Node3 CC2530连接，当通过PC机的键盘输入一串以‘@’结束的字符串，通过串口工具发送给CC2530，CC2530将刚才接收到的内容原样输出到串口工具界面中。</li>
+</ul>
+<h3 id="5-5-2-实现"><a href="#5-5-2-实现" class="headerlink" title="5-5-2 实现"></a>5-5-2 实现</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104809842.png"
+                      alt="image-20240422104809842"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104825549.png"
+                      alt="image-20240422104825549"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104847083.png"
+                      alt="image-20240422104847083"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104901820.png"
+                      alt="image-20240422104901820"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240422104920269.png"
+                      alt="image-20240422104920269"
+                ></p>
+</li>
+</ul>
+<h1 id="6-ADC"><a href="#6-ADC" class="headerlink" title="6- ADC"></a>6- ADC</h1><h2 id="6-1-模拟信号和数字信号"><a href="#6-1-模拟信号和数字信号" class="headerlink" title="6-1 模拟信号和数字信号"></a>6-1 模拟信号和数字信号</h2><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513081142160.png"
+                      alt="image-20240513081142160"
+                ></li>
+</ul>
+<p>模拟量：</p>
+<ul>
+<li>任何两个数字之间都有无限个中间值，所以称之为连续变化的量，也就是模拟量。</li>
+</ul>
+<p>数字量：</p>
+<ul>
+<li>数字间有一定的间隔，不是连续的，即离散的量称之为数字量。</li>
+</ul>
+<p>A&#x2F;D：</p>
+<ul>
+<li>Analog to Digital Converter，用模数转换器实现模拟量到数字量的转换，简称ADC。</li>
+</ul>
+<p>D&#x2F;A：</p>
+<ul>
+<li>Digitalto Analog Converter，用数模转换器实现数字量到模拟量的转换，简称DAC。</li>
+</ul>
+<h2 id="6-2-ADC"><a href="#6-2-ADC" class="headerlink" title="6-2 ADC"></a>6-2 ADC</h2><h3 id="6-2-1-介绍"><a href="#6-2-1-介绍" class="headerlink" title="6-2-1 介绍"></a>6-2-1 介绍</h3><p>ADC ( analog to digital converter )：</p>
+<ul>
+<li>模数转换器，它是将连续变化的模拟信号转换为离散的数字信号的器件。</li>
+</ul>
+<h3 id="6-2-2-转换"><a href="#6-2-2-转换" class="headerlink" title="6-2-2 转换"></a>6-2-2 转换</h3><p>转换过程：</p>
+<ul>
+<li><p>采样 → 量化 → 编码</p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513081950660.png"
+                      alt="image-20240513081950660"
+                ></p>
+</li>
+</ul>
+<p>实例：</p>
+<ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513082147734.png"
+                      alt="image-20240513082147734"
+                ></li>
+</ul>
+<h3 id="6-2-3-分辨率"><a href="#6-2-3-分辨率" class="headerlink" title="6-2-3 分辨率"></a>6-2-3 分辨率</h3><p>分辨率：</p>
+<ul>
+<li>能够分辨出模拟量之间变化的最小值。</li>
+<li>1个二进制数据描述 0~5V 的电压变化，分辨率是 2.5V。</li>
+<li>2个二进制数据描述 0~5V 的电压变化，分辨率是 1.25V。</li>
+<li>3个二进制数据描述 0~5V 的电压变化，分辨率是 0.625V</li>
+</ul>
+<h3 id="6-2-4-重要参数"><a href="#6-2-4-重要参数" class="headerlink" title="6-2-4 重要参数"></a>6-2-4 重要参数</h3><p>ADC的位数：</p>
+<ul>
+<li><p>一个 n 位的 ADC 表示这个 ADC 共有 2的n次方 个刻度。</p>
+</li>
+<li><p>8 位的 ADC，输出的是从 0~255 一共256个数字量，也就是 2的8次方 个数据刻度。</p>
+</li>
+</ul>
+<p>参考电压：</p>
+<ul>
+<li><p>也叫做基准电压，是 ADC 的参考基准，是指转换后满量程所对应的电压值，是 ADC 的一个重要指标。</p>
+</li>
+<li><p>要想把输入 ADC 的信号测量准确，那么基准源首先要准，基准源的偏差会直接导致转换结果的偏差。</p>
+</li>
+</ul>
+<p>分辨率：</p>
+<ul>
+<li><p>数字量变化一个最小刻度，模拟信号的变化量，定义为满刻度量程与 2的n次方 的比值。</p>
+</li>
+<li><p>假定 5.10V 的电压系统，使用8位的 ADC 进行测量，那么相当于 0~255 一共 256 个刻度把 5.10V 平均分成了255 份，那么分辨率就是 5.10&#x2F;255 &#x3D; 0.02V。</p>
+</li>
+</ul>
+<p>转换速率：</p>
+<ul>
+<li>是指 ADC 每秒能进行采样转换的最大次数单位是 sps ( samples per second )。</li>
+</ul>
+<h3 id="6-2-5-逐次逼近型ADC的原理"><a href="#6-2-5-逐次逼近型ADC的原理" class="headerlink" title="6-2-5 逐次逼近型ADC的原理"></a>6-2-5 逐次逼近型ADC的原理</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513084103073.png"
+                      alt="image-20240513084103073"
+                ></li>
+</ul>
+<h2 id="6-3-CC2530的ADC"><a href="#6-3-CC2530的ADC" class="headerlink" title="6-3 CC2530的ADC"></a>6-3 CC2530的ADC</h2><h3 id="6-3-1-介绍"><a href="#6-3-1-介绍" class="headerlink" title="6-3-1 介绍"></a>6-3-1 介绍</h3><ul>
+<li>可选7~12位的分辨率</li>
+<li>8个独立的输入通道，可接收单端或差分信号</li>
+<li>转换结束时可选 中断触发 或 DMA触发</li>
+<li>配有温度传感器输入</li>
+<li>具有电池测量功能</li>
+</ul>
+<h3 id="6-3-2-CC2530的ADC方框图："><a href="#6-3-2-CC2530的ADC方框图：" class="headerlink" title="6-3-2 CC2530的ADC方框图："></a>6-3-2 CC2530的ADC方框图：</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513090712282.png"
+                      alt="image-20240513090712282"
+                ></li>
+</ul>
+<h3 id="6-3-3-与ADC有关的SFR"><a href="#6-3-3-与ADC有关的SFR" class="headerlink" title="6-3-3 与ADC有关的SFR"></a>6-3-3 与ADC有关的SFR</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513090939286.png"
+                      alt="image-20240513090939286"
+                ></li>
+</ul>
+<h2 id="6-4-CC2530的ADC编程应用"><a href="#6-4-CC2530的ADC编程应用" class="headerlink" title="6-4 CC2530的ADC编程应用"></a>6-4 CC2530的ADC编程应用</h2><h3 id="6-4-1-ADC初始化"><a href="#6-4-1-ADC初始化" class="headerlink" title="6-4-1 ADC初始化"></a>6-4-1 ADC初始化</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513094154578.png"
+                      alt="image-20240513094154578"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513094230400.png"
+                      alt="image-20240513094230400"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513094254375.png"
+                      alt="image-20240513094254375"
+                ></p>
+</li>
+</ul>
+<h3 id="6-4-2-CC2530片内温度传感器数值计算"><a href="#6-4-2-CC2530片内温度传感器数值计算" class="headerlink" title="6-4-2 CC2530片内温度传感器数值计算"></a>6-4-2 CC2530片内温度传感器数值计算</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513094405881.png"
+                      alt="image-20240513094405881"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513094428537.png"
+                      alt="image-20240513094428537"
+                ></p>
+</li>
+</ul>
+<h2 id="6-5-实战"><a href="#6-5-实战" class="headerlink" title="6-5 实战"></a>6-5 实战</h2><h3 id="6-5-1-要求"><a href="#6-5-1-要求" class="headerlink" title="6-5-1 要求"></a>6-5-1 要求</h3><ul>
+<li>实时获取 xLabGreenHouse 实验平台中任意一个 CC2530 节点的芯片温度，并将获取的温度数据实时输出到与之连接的 PC 机的串口调试助手的接收区中。</li>
+<li>利用 CC2530 片上 ADC 获取片内温度传感器的数据</li>
+<li>配置串口通信实现数据的实时传输</li>
+</ul>
+<h3 id="6-5-2-实现"><a href="#6-5-2-实现" class="headerlink" title="6-5-2 实现"></a>6-5-2 实现</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513100653396.png"
+                      alt="image-20240513100653396"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240513100714797.png"
+                      alt="image-20240513100714797"
+                ></p>
+</li>
+</ul>
 
         </div>
 
@@ -1227,7 +1687,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-04-08 18:32:42
+                    :</strong> 2024-07-12 19:52:00
             </li>
         
         <li>
@@ -1350,7 +1810,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">单片机原理及应用</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%BC%E5%AD%A6"><span class="nav-number">1.</span> <span class="nav-text">导学</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%AE%A4%E8%AF%86%E5%8D%95%E7%89%87%E6%9C%BA"><span class="nav-number">2.</span> <span class="nav-text">1- 认识单片机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.1.</span> <span class="nav-text">1-1 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.1.1.</span> <span class="nav-text">1-1-1 系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-%E7%89%B9%E7%82%B9%E5%92%8C%E7%94%A8%E9%80%94"><span class="nav-number">2.1.2.</span> <span class="nav-text">1-1-2 特点和用途</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-3-%E5%AE%B9%E6%98%93%E6%B7%B7%E6%B7%86%E7%9A%84%E5%90%8D%E5%AD%97"><span class="nav-number">2.1.3.</span> <span class="nav-text">1-1-3 容易混淆的名字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-4-%E7%B3%BB%E5%88%97%E6%9C%BA"><span class="nav-number">2.1.4.</span> <span class="nav-text">1-1-4 系列机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-5-MCS-51%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E5%86%85%E9%83%A8%E6%80%BB%E4%BD%93%E7%BB%93%E6%9E%84"><span class="nav-number">2.1.5.</span> <span class="nav-text">1-1-5 MCS-51单片机的内部总体结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-6-%E5%8D%95%E7%89%87%E6%9C%BA%E5%86%85%E9%83%A8%E4%B8%89%E5%A4%A7%E8%B5%84%E6%BA%90"><span class="nav-number">2.1.6.</span> <span class="nav-text">1-1-6 单片机内部三大资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-7-LED%E5%8F%91%E5%85%89%E4%BA%8C%E6%9E%81%E7%AE%A1"><span class="nav-number">2.1.7.</span> <span class="nav-text">1-1-7 LED发光二极管</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-MCS-51%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%88%9D%E8%AF%86"><span class="nav-number">2.2.</span> <span class="nav-text">1-2 MCS-51单片机的工作原理初识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-CC2530-%E5%AE%9E%E7%89%A9%E5%8F%8A%E7%9B%B8%E5%BA%94%E5%A5%97%E4%BB%B6"><span class="nav-number">2.2.1.</span> <span class="nav-text">1-2-1 CC2530 实物及相应套件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-CC2530-%E5%8D%95%E7%89%87%E6%9C%BA%E8%8A%82%E7%82%B9%E5%BA%95%E6%9D%BF"><span class="nav-number">2.2.2.</span> <span class="nav-text">1-2-2 CC2530 单片机节点底板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-%E5%9B%BE%E5%BC%8F"><span class="nav-number">2.2.3.</span> <span class="nav-text">1-2-3 图式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-4-CPU"><span class="nav-number">2.2.4.</span> <span class="nav-text">1-2-4 CPU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-5-%E6%97%B6%E9%92%9F%E6%BA%90-%E6%97%B6%E9%92%9F%E7%94%B5%E8%B7%AF"><span class="nav-number">2.2.5.</span> <span class="nav-text">1-2-5 时钟源 &lt;–&gt; 时钟电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-6-SFR%E5%92%8CRAM"><span class="nav-number">2.2.6.</span> <span class="nav-text">1-2-6 SFR和RAM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-7-ROM"><span class="nav-number">2.2.7.</span> <span class="nav-text">1-2-7 ROM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-8-%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83"><span class="nav-number">2.2.8.</span> <span class="nav-text">1-2-8 存储单元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-9-%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83%E7%9A%84%E5%9C%B0%E5%9D%80"><span class="nav-number">2.2.9.</span> <span class="nav-text">1-2-9 存储单元的地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-GPIO"><span class="nav-number">3.</span> <span class="nav-text">2- GPIO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E5%8D%95%E7%89%87%E6%9C%BA%E4%B8%AD%E7%9A%84GPIO"><span class="nav-number">3.1.</span> <span class="nav-text">2-1 单片机中的GPIO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-%E5%9B%BE%E5%BC%8F"><span class="nav-number">3.1.1.</span> <span class="nav-text">2-1-1 图式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.1.2.</span> <span class="nav-text">2-1-2 介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-CC2530%E4%B8%AD%E7%9A%84GPIO"><span class="nav-number">3.2.</span> <span class="nav-text">2-2 CC2530中的GPIO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E9%80%9A%E8%BF%87SFR%E8%AE%BE%E7%BD%AEGPIO"><span class="nav-number">3.3.</span> <span class="nav-text">2-3 通过SFR设置GPIO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.3.1.</span> <span class="nav-text">2-3-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-PxSEL"><span class="nav-number">3.3.2.</span> <span class="nav-text">2-3-2 PxSEL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-PxDIR"><span class="nav-number">3.3.3.</span> <span class="nav-text">2-3-3 PxDIR</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD"><span class="nav-number">4.</span> <span class="nav-text">3- 外部中断</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-CPU%E6%89%A7%E8%A1%8C%E6%8C%87%E4%BB%A4%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">4.1.</span> <span class="nav-text">3-1 CPU执行指令的流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD"><span class="nav-number">4.2.</span> <span class="nav-text">3-2 外部中断</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-%E4%B8%AD%E6%96%AD%E6%BA%90"><span class="nav-number">4.2.1.</span> <span class="nav-text">3-2-1 中断源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-%E4%B8%AD%E6%96%AD%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F"><span class="nav-number">4.2.2.</span> <span class="nav-text">3-2-2 中断服务程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-%E4%B8%AD%E6%96%AD%E5%90%91%E9%87%8F%E8%A1%A8"><span class="nav-number">4.2.3.</span> <span class="nav-text">3-2-3 中断向量表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-4-%E4%B8%AD%E6%96%AD%E5%B5%8C%E5%A5%97%E5%92%8C%E4%B8%AD%E6%96%AD%E5%88%A4%E4%BC%98%E6%9C%BA%E5%88%B6"><span class="nav-number">4.2.4.</span> <span class="nav-text">3-2-4 中断嵌套和中断判优机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-5-%E4%B8%AD%E6%96%AD%E5%85%81%E8%AE%B8%E4%B8%8E%E5%B1%8F%E8%94%BD"><span class="nav-number">4.2.5.</span> <span class="nav-text">3-2-5 中断允许与屏蔽</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-CC2530%E7%9A%84%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD%E5%8F%8A%E5%85%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">4.3.</span> <span class="nav-text">3-3 CC2530的外部中断及其配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.3.1.</span> <span class="nav-text">3-3-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2-IEN0%E3%80%81IEN1%E3%80%81IEN2"><span class="nav-number">4.3.2.</span> <span class="nav-text">3-3-2 IEN0、IEN1、IEN2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-3-%E4%B8%AD%E6%96%AD%E6%A0%87%E5%BF%97%E4%BD%8D%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">4.3.3.</span> <span class="nav-text">3-3-3 中断标志位的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-4-CC2530%E4%B8%AD%E6%96%AD%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4"><span class="nav-number">4.3.4.</span> <span class="nav-text">3-3-4 CC2530中断配置步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E5%AE%9E%E6%88%98%E4%B8%8E%E6%8C%91%E6%88%98"><span class="nav-number">4.4.</span> <span class="nav-text">3-4 实战与挑战</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%AE%9A%E6%97%B6%E5%99%A8-%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">4- 定时器&#x2F;计数器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E6%8C%AF%E8%8D%A1%E5%99%A8"><span class="nav-number">5.1.</span> <span class="nav-text">4-1 振荡器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">5.1.1.</span> <span class="nav-text">4-1-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-2-%E6%8C%AF%E8%8D%A1%E9%A2%91%E7%8E%87"><span class="nav-number">5.1.2.</span> <span class="nav-text">4-1-2 振荡频率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-3-%E6%8C%AF%E8%8D%A1%E5%99%A8%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">5.1.3.</span> <span class="nav-text">4-1-3 振荡器的作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E5%88%86%E9%A2%91"><span class="nav-number">5.2.</span> <span class="nav-text">4-2 分频</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1-%E5%88%86%E9%A2%91%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">5.2.1.</span> <span class="nav-text">4-2-1 分频的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-2-%E5%88%86%E9%A2%91%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">5.2.2.</span> <span class="nav-text">4-2-2 分频的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-3-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%88%86%E9%A2%91"><span class="nav-number">5.2.3.</span> <span class="nav-text">4-2-3 如何实现分频</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-CC2530%E4%B8%AD%E7%9A%84%E6%8C%AF%E8%8D%A1%E5%99%A8%E5%92%8C%E6%97%B6%E9%92%9F"><span class="nav-number">5.3.</span> <span class="nav-text">4-3 CC2530中的振荡器和时钟</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">5.3.1.</span> <span class="nav-text">4-3-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-2-%E9%AB%98%E9%A2%91%E6%8C%AF%E8%8D%A1%E5%99%A8"><span class="nav-number">5.3.2.</span> <span class="nav-text">4-3-2 高频振荡器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-3-%E4%BD%8E%E9%A2%91%E6%8C%AF%E8%8D%A1%E5%99%A8"><span class="nav-number">5.3.3.</span> <span class="nav-text">4-3-3 低频振荡器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-4-%E4%B8%BB%E6%97%B6%E9%92%9F"><span class="nav-number">5.3.4.</span> <span class="nav-text">4-3-4 主时钟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-5-%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B"><span class="nav-number">5.3.5.</span> <span class="nav-text">4-3-5 应用案例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-CC2530%E4%B8%AD%E7%9A%84Timers"><span class="nav-number">5.4.</span> <span class="nav-text">4-4 CC2530中的Timers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">5.4.1.</span> <span class="nav-text">4-4-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-2-Timer1"><span class="nav-number">5.4.2.</span> <span class="nav-text">4-4-2 Timer1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-3-Timer2"><span class="nav-number">5.4.3.</span> <span class="nav-text">4-4-3 Timer2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-4-Timer3-%E5%92%8C-Timer4"><span class="nav-number">5.4.4.</span> <span class="nav-text">4-4-4 Timer3 和 Timer4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-5-Sleep-Timer"><span class="nav-number">5.4.5.</span> <span class="nav-text">4-4-5 Sleep Timer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-CC2530%E4%B8%AD%E7%9A%84Timer1-T1"><span class="nav-number">5.5.</span> <span class="nav-text">4-5 CC2530中的Timer1 (T1)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">5.5.1.</span> <span class="nav-text">4-5-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-2-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="nav-number">5.5.2.</span> <span class="nav-text">4-5-2 初始化配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-%E5%AE%9E%E6%88%98"><span class="nav-number">5.6.</span> <span class="nav-text">4-6 实战</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%AE%A4%E8%AF%86%E5%8D%95%E7%89%87%E6%9C%BA"><span class="nav-number">1.</span> <span class="nav-text">1- 认识单片机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">1-1 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.1.</span> <span class="nav-text">1-1-1 系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-%E7%89%B9%E7%82%B9%E5%92%8C%E7%94%A8%E9%80%94"><span class="nav-number">1.1.2.</span> <span class="nav-text">1-1-2 特点和用途</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-3-%E5%AE%B9%E6%98%93%E6%B7%B7%E6%B7%86%E7%9A%84%E5%90%8D%E5%AD%97"><span class="nav-number">1.1.3.</span> <span class="nav-text">1-1-3 容易混淆的名字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-4-%E7%B3%BB%E5%88%97%E6%9C%BA"><span class="nav-number">1.1.4.</span> <span class="nav-text">1-1-4 系列机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-5-MCS-51%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E5%86%85%E9%83%A8%E6%80%BB%E4%BD%93%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.5.</span> <span class="nav-text">1-1-5 MCS-51单片机的内部总体结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-6-%E5%8D%95%E7%89%87%E6%9C%BA%E5%86%85%E9%83%A8%E4%B8%89%E5%A4%A7%E8%B5%84%E6%BA%90"><span class="nav-number">1.1.6.</span> <span class="nav-text">1-1-6 单片机内部三大资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-7-LED%E5%8F%91%E5%85%89%E4%BA%8C%E6%9E%81%E7%AE%A1"><span class="nav-number">1.1.7.</span> <span class="nav-text">1-1-7 LED发光二极管</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-MCS-51%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%88%9D%E8%AF%86"><span class="nav-number">1.2.</span> <span class="nav-text">1-2 MCS-51单片机的工作原理初识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-CC2530-%E5%AE%9E%E7%89%A9%E5%8F%8A%E7%9B%B8%E5%BA%94%E5%A5%97%E4%BB%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">1-2-1 CC2530 实物及相应套件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-CC2530-%E5%8D%95%E7%89%87%E6%9C%BA%E8%8A%82%E7%82%B9%E5%BA%95%E6%9D%BF"><span class="nav-number">1.2.2.</span> <span class="nav-text">1-2-2 CC2530 单片机节点底板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-%E5%9B%BE%E5%BC%8F"><span class="nav-number">1.2.3.</span> <span class="nav-text">1-2-3 图式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-4-CPU"><span class="nav-number">1.2.4.</span> <span class="nav-text">1-2-4 CPU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-5-%E6%97%B6%E9%92%9F%E6%BA%90-%E6%97%B6%E9%92%9F%E7%94%B5%E8%B7%AF"><span class="nav-number">1.2.5.</span> <span class="nav-text">1-2-5 时钟源 &lt;–&gt; 时钟电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-6-SFR%E5%92%8CRAM"><span class="nav-number">1.2.6.</span> <span class="nav-text">1-2-6 SFR和RAM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-7-ROM"><span class="nav-number">1.2.7.</span> <span class="nav-text">1-2-7 ROM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-8-%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83"><span class="nav-number">1.2.8.</span> <span class="nav-text">1-2-8 存储单元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-9-%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83%E7%9A%84%E5%9C%B0%E5%9D%80"><span class="nav-number">1.2.9.</span> <span class="nav-text">1-2-9 存储单元的地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-GPIO"><span class="nav-number">2.</span> <span class="nav-text">2- GPIO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E5%8D%95%E7%89%87%E6%9C%BA%E4%B8%AD%E7%9A%84GPIO"><span class="nav-number">2.1.</span> <span class="nav-text">2-1 单片机中的GPIO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-%E5%9B%BE%E5%BC%8F"><span class="nav-number">2.1.1.</span> <span class="nav-text">2-1-1 图式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.1.2.</span> <span class="nav-text">2-1-2 介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-CC2530%E4%B8%AD%E7%9A%84GPIO"><span class="nav-number">2.2.</span> <span class="nav-text">2-2 CC2530中的GPIO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E9%80%9A%E8%BF%87SFR%E8%AE%BE%E7%BD%AEGPIO"><span class="nav-number">2.3.</span> <span class="nav-text">2-3 通过SFR设置GPIO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.3.1.</span> <span class="nav-text">2-3-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-PxSEL"><span class="nav-number">2.3.2.</span> <span class="nav-text">2-3-2 PxSEL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-PxDIR"><span class="nav-number">2.3.3.</span> <span class="nav-text">2-3-3 PxDIR</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD"><span class="nav-number">3.</span> <span class="nav-text">3- 外部中断</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-CPU%E6%89%A7%E8%A1%8C%E6%8C%87%E4%BB%A4%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">3-1 CPU执行指令的流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD"><span class="nav-number">3.2.</span> <span class="nav-text">3-2 外部中断</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-%E4%B8%AD%E6%96%AD%E6%BA%90"><span class="nav-number">3.2.1.</span> <span class="nav-text">3-2-1 中断源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-%E4%B8%AD%E6%96%AD%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F"><span class="nav-number">3.2.2.</span> <span class="nav-text">3-2-2 中断服务程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-%E4%B8%AD%E6%96%AD%E5%90%91%E9%87%8F%E8%A1%A8"><span class="nav-number">3.2.3.</span> <span class="nav-text">3-2-3 中断向量表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-4-%E4%B8%AD%E6%96%AD%E5%B5%8C%E5%A5%97%E5%92%8C%E4%B8%AD%E6%96%AD%E5%88%A4%E4%BC%98%E6%9C%BA%E5%88%B6"><span class="nav-number">3.2.4.</span> <span class="nav-text">3-2-4 中断嵌套和中断判优机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-5-%E4%B8%AD%E6%96%AD%E5%85%81%E8%AE%B8%E4%B8%8E%E5%B1%8F%E8%94%BD"><span class="nav-number">3.2.5.</span> <span class="nav-text">3-2-5 中断允许与屏蔽</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-CC2530%E7%9A%84%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD%E5%8F%8A%E5%85%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">3.3.</span> <span class="nav-text">3-3 CC2530的外部中断及其配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.3.1.</span> <span class="nav-text">3-3-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2-IEN0%E3%80%81IEN1%E3%80%81IEN2"><span class="nav-number">3.3.2.</span> <span class="nav-text">3-3-2 IEN0、IEN1、IEN2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-3-%E4%B8%AD%E6%96%AD%E6%A0%87%E5%BF%97%E4%BD%8D%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.3.3.</span> <span class="nav-text">3-3-3 中断标志位的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-4-CC2530%E4%B8%AD%E6%96%AD%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.3.4.</span> <span class="nav-text">3-3-4 CC2530中断配置步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E5%AE%9E%E6%88%98%E4%B8%8E%E6%8C%91%E6%88%98"><span class="nav-number">3.4.</span> <span class="nav-text">3-4 实战与挑战</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%AE%9A%E6%97%B6%E5%99%A8-%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">4- 定时器&#x2F;计数器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E6%8C%AF%E8%8D%A1%E5%99%A8"><span class="nav-number">4.1.</span> <span class="nav-text">4-1 振荡器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.1.1.</span> <span class="nav-text">4-1-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-2-%E6%8C%AF%E8%8D%A1%E9%A2%91%E7%8E%87"><span class="nav-number">4.1.2.</span> <span class="nav-text">4-1-2 振荡频率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-3-%E6%8C%AF%E8%8D%A1%E5%99%A8%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">4.1.3.</span> <span class="nav-text">4-1-3 振荡器的作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E5%88%86%E9%A2%91"><span class="nav-number">4.2.</span> <span class="nav-text">4-2 分频</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1-%E5%88%86%E9%A2%91%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">4.2.1.</span> <span class="nav-text">4-2-1 分频的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-2-%E5%88%86%E9%A2%91%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">4.2.2.</span> <span class="nav-text">4-2-2 分频的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-3-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%88%86%E9%A2%91"><span class="nav-number">4.2.3.</span> <span class="nav-text">4-2-3 如何实现分频</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-CC2530%E4%B8%AD%E7%9A%84%E6%8C%AF%E8%8D%A1%E5%99%A8%E5%92%8C%E6%97%B6%E9%92%9F"><span class="nav-number">4.3.</span> <span class="nav-text">4-3 CC2530中的振荡器和时钟</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.3.1.</span> <span class="nav-text">4-3-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-2-%E9%AB%98%E9%A2%91%E6%8C%AF%E8%8D%A1%E5%99%A8"><span class="nav-number">4.3.2.</span> <span class="nav-text">4-3-2 高频振荡器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-3-%E4%BD%8E%E9%A2%91%E6%8C%AF%E8%8D%A1%E5%99%A8"><span class="nav-number">4.3.3.</span> <span class="nav-text">4-3-3 低频振荡器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-4-%E4%B8%BB%E6%97%B6%E9%92%9F"><span class="nav-number">4.3.4.</span> <span class="nav-text">4-3-4 主时钟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-5-%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B"><span class="nav-number">4.3.5.</span> <span class="nav-text">4-3-5 应用案例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-CC2530%E4%B8%AD%E7%9A%84Timers"><span class="nav-number">4.4.</span> <span class="nav-text">4-4 CC2530中的Timers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.4.1.</span> <span class="nav-text">4-4-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-2-Timer1"><span class="nav-number">4.4.2.</span> <span class="nav-text">4-4-2 Timer1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-3-Timer2"><span class="nav-number">4.4.3.</span> <span class="nav-text">4-4-3 Timer2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-4-Timer3-%E5%92%8C-Timer4"><span class="nav-number">4.4.4.</span> <span class="nav-text">4-4-4 Timer3 和 Timer4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-5-Sleep-Timer"><span class="nav-number">4.4.5.</span> <span class="nav-text">4-4-5 Sleep Timer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-CC2530%E4%B8%AD%E7%9A%84Timer1-T1"><span class="nav-number">4.5.</span> <span class="nav-text">4-5 CC2530中的Timer1 (T1)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.5.1.</span> <span class="nav-text">4-5-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-2-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="nav-number">4.5.2.</span> <span class="nav-text">4-5-2 初始化配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-%E5%AE%9E%E6%88%98"><span class="nav-number">4.6.</span> <span class="nav-text">4-6 实战</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1"><span class="nav-number">5.</span> <span class="nav-text">5- 串行通信</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E9%80%9A%E4%BF%A1%E4%BB%8B%E7%BB%8D"><span class="nav-number">5.1.</span> <span class="nav-text">5-1 通信介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-1-%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">5.1.1.</span> <span class="nav-text">5-1-1 通信系统三要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-2-%E5%B9%B6%E8%A1%8C%E9%80%9A%E4%BF%A1%E4%B8%8E%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1"><span class="nav-number">5.1.2.</span> <span class="nav-text">5-1-2 并行通信与串行通信</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1%E4%BB%8B%E7%BB%8D"><span class="nav-number">5.2.</span> <span class="nav-text">5-2 串行通信介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-1-%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1%E4%B8%AD%E6%95%B0%E6%8D%AE%E6%94%B6%E5%8F%91%E8%BF%87%E7%A8%8B"><span class="nav-number">5.2.1.</span> <span class="nav-text">5-2-1 串行通信中数据收发过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-2-%E5%90%8C%E6%AD%A5%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1%E4%BB%8B%E7%BB%8D"><span class="nav-number">5.2.2.</span> <span class="nav-text">5-2-2 同步串行通信介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-3-%E5%BC%82%E6%AD%A5%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1%E4%BB%8B%E7%BB%8D"><span class="nav-number">5.2.3.</span> <span class="nav-text">5-2-3 异步串行通信介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-4-%E5%B8%B8%E7%94%A8%E5%BC%82%E6%AD%A5%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3-%E2%80%94-UART"><span class="nav-number">5.2.4.</span> <span class="nav-text">5-2-4 常用异步串行通信接口 — UART</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-5-%E6%B3%A2%E7%89%B9%E7%8E%87"><span class="nav-number">5.2.5.</span> <span class="nav-text">5-2-5 波特率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-CC2530%E4%B8%AD%E7%9A%84%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3"><span class="nav-number">5.3.</span> <span class="nav-text">5-3 CC2530中的串行通信接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-CC2530%E4%B8%AD%E7%9A%84%E4%B8%B2%E5%8F%A3%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8"><span class="nav-number">5.4.</span> <span class="nav-text">5-4 CC2530中的串口编程应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-1-%E4%B8%B2%E5%8F%A3%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">5.4.1.</span> <span class="nav-text">5-4-1 串口初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-2-CC2530%E4%B8%AD%E5%A4%96%E8%AE%BE%E5%BC%95%E8%84%9A%E6%98%A0%E5%B0%84%E5%85%B3%E7%B3%BB%E8%A1%A8"><span class="nav-number">5.4.2.</span> <span class="nav-text">5-4-2 CC2530中外设引脚映射关系表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-3-%E5%AE%9E%E4%BE%8B"><span class="nav-number">5.4.3.</span> <span class="nav-text">5-4-3 实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-4-%E4%B8%B2%E5%8F%A3%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE%E5%8A%9F%E8%83%BD"><span class="nav-number">5.4.4.</span> <span class="nav-text">5-4-4 串口发送数据功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-5-%E4%B8%B2%E5%8F%A3%E6%8E%A5%E6%94%B6%E6%95%B0%E6%8D%AE%E5%8A%9F%E8%83%BD"><span class="nav-number">5.4.5.</span> <span class="nav-text">5-4-5 串口接收数据功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-%E5%AE%9E%E6%88%98"><span class="nav-number">5.5.</span> <span class="nav-text">5-5 实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-1-%E8%A6%81%E6%B1%82"><span class="nav-number">5.5.1.</span> <span class="nav-text">5-5-1 要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-2-%E5%AE%9E%E7%8E%B0"><span class="nav-number">5.5.2.</span> <span class="nav-text">5-5-2 实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-ADC"><span class="nav-number">6.</span> <span class="nav-text">6- ADC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-%E6%A8%A1%E6%8B%9F%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7"><span class="nav-number">6.1.</span> <span class="nav-text">6-1 模拟信号和数字信号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-ADC"><span class="nav-number">6.2.</span> <span class="nav-text">6-2 ADC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">6.2.1.</span> <span class="nav-text">6-2-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-2-%E8%BD%AC%E6%8D%A2"><span class="nav-number">6.2.2.</span> <span class="nav-text">6-2-2 转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-3-%E5%88%86%E8%BE%A8%E7%8E%87"><span class="nav-number">6.2.3.</span> <span class="nav-text">6-2-3 分辨率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-4-%E9%87%8D%E8%A6%81%E5%8F%82%E6%95%B0"><span class="nav-number">6.2.4.</span> <span class="nav-text">6-2-4 重要参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-5-%E9%80%90%E6%AC%A1%E9%80%BC%E8%BF%91%E5%9E%8BADC%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">6.2.5.</span> <span class="nav-text">6-2-5 逐次逼近型ADC的原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-CC2530%E7%9A%84ADC"><span class="nav-number">6.3.</span> <span class="nav-text">6-3 CC2530的ADC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">6.3.1.</span> <span class="nav-text">6-3-1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-2-CC2530%E7%9A%84ADC%E6%96%B9%E6%A1%86%E5%9B%BE%EF%BC%9A"><span class="nav-number">6.3.2.</span> <span class="nav-text">6-3-2 CC2530的ADC方框图：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-3-%E4%B8%8EADC%E6%9C%89%E5%85%B3%E7%9A%84SFR"><span class="nav-number">6.3.3.</span> <span class="nav-text">6-3-3 与ADC有关的SFR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-CC2530%E7%9A%84ADC%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8"><span class="nav-number">6.4.</span> <span class="nav-text">6-4 CC2530的ADC编程应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-1-ADC%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">6.4.1.</span> <span class="nav-text">6-4-1 ADC初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-2-CC2530%E7%89%87%E5%86%85%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97"><span class="nav-number">6.4.2.</span> <span class="nav-text">6-4-2 CC2530片内温度传感器数值计算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-5-%E5%AE%9E%E6%88%98"><span class="nav-number">6.5.</span> <span class="nav-text">6-5 实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5-1-%E8%A6%81%E6%B1%82"><span class="nav-number">6.5.1.</span> <span class="nav-text">6-5-1 要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5-2-%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.5.2.</span> <span class="nav-text">6-5-2 实现</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>

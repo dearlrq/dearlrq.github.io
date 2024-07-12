@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="dearlrq">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/06/22/计算机网络/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="1- 概述1-1 因特网的概述1-1-1 网络、互联网和因特网   1-1-2 因特网发展的三个阶段   1-1-3 因特网的标准化工作   1-3-4 因特网的组成   1-2- 三种交换方式1-2-1 电路交换   1-2-2 分组交换   1-2-3 电路交换、报文交换、分组交换的对比   1-3 计算机网络的定义和分类1-3-1 定义   1-3-2 分类   1-4 计算机网络的性能指标">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络">
+<meta property="og:url" content="http://example.com/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1- 概述1-1 因特网的概述1-1-1 网络、互联网和因特网   1-1-2 因特网发展的三个阶段   1-1-3 因特网的标准化工作   1-3-4 因特网的组成   1-2- 三种交换方式1-2-1 电路交换   1-2-2 分组交换   1-2-3 电路交换、报文交换、分组交换的对比   1-3 计算机网络的定义和分类1-3-1 定义   1-3-2 分类   1-4 计算机网络的性能指标">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623154313650.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623154513929.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623154922111.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623155102672.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623155553848.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623160104789.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623160550729.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623160837159.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623161211808.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623161947115.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623162217046.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623162444594.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623162950356.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623163214547.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623163322940.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623163549988.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623163731182.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623164032233.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623164318159.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623164339238.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623164902318.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623164933343.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623165005243.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623165035247.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623165100538.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623165151818.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623165529381.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623165801734.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623170635537.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623170754118.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623170158203.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623170404386.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623170454549.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623171654653.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623182613312.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623184933641.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623184656173.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623183007249.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623183150971.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-06-23%20183252.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623183559066.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623194307576.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623194442148.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623212503544.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623195042558.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623195137807.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623195213928.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623195238893.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623185341248.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623185758675.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623190148282.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623190635242.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623191604298.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623192504307.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623192537504.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623192712329.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623194050867.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623193052601.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623193535453.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623193739163.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623193822424.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623195551571.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623195642624.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623204742143.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623205121697.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623211106118.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623211915441.png">
+<meta property="article:published_time" content="2024-06-22T12:59:21.000Z">
+<meta property="article:modified_time" content="2024-07-04T08:46:57.966Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="自研笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623154313650.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/%E7%AB%99%E7%82%B9.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/%E7%AB%99%E7%82%B9.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/%E7%AB%99%E7%82%B9.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            计算机网络 -
+        
+        dearlrq
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        dearlrq
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Farsan&display=swap" rel="stylesheet">
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":true,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"english":{"enable":true,"family":"Farsan","url":"https://fonts.googleapis.com/css2?family=Farsan&display=swap"}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/白.jpg","dark":"/images/夜.jpg"},"title":"Hello,World!","subtitle":{"text":["若待上林花似锦，出门俱是看花人。"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"首页":{"path":"/","icon":"fa-regular fa-house"},"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"},"关于":{"icon":"fa-regular fa-user","submenus":{"Me":"/about"}},"链接":{"icon":"fa-regular fa-link","submenus":{"Github":"https://github.com/dearlrq"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"欢迎来到dearlrq的blog,网站正在建设中...","links":{"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"标签":{"path":"/tags","icon":"fa-regular fa-tags"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":50,"Categories":{"icon":"fa-solid fa-folder","path":"/categories/"}},"tags":{"enable":true,"limit":50,"Tags":{"icon":"fa-solid fa-tags","path":"/tags/"}}},"footerStart":"2024/1/13 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+        
+<link rel="stylesheet" href="/fontawesome/thin.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/duotone.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/sharp-solid.min.css">
+
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/%E7%AB%99%E7%82%B9.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                dearlrq
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    链接
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/dearlrq">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-关于"
+                        >
+                            <span>
+                                关于
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-关于">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-链接"
+                        >
+                            <span>
+                                链接
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-链接">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/dearlrq">GITHUB</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">12</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">计算机网络</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/%E7%AB%99%E7%82%B9.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">dearlrq</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-06-22 20:59:21</span>
+        <span class="mobile">2024-06-22 20:59:21</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-07-04 16:46:57</span>
+            <span class="mobile">2024-07-04 16:46:57</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%BB%84%E8%AE%A1%E7%BD%91/">计组计网</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%BB%84%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%87%AA%E7%A0%94%E7%AC%94%E8%AE%B0/">自研笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>355 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1- 概述"></a>1- 概述</h1><h2 id="1-1-因特网的概述"><a href="#1-1-因特网的概述" class="headerlink" title="1-1 因特网的概述"></a>1-1 因特网的概述</h2><h3 id="1-1-1-网络、互联网和因特网"><a href="#1-1-1-网络、互联网和因特网" class="headerlink" title="1-1-1 网络、互联网和因特网"></a>1-1-1 网络、互联网和因特网</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623154313650.png"
+                      alt="image-20240623154313650"
+                ></li>
+</ul>
+<h3 id="1-1-2-因特网发展的三个阶段"><a href="#1-1-2-因特网发展的三个阶段" class="headerlink" title="1-1-2 因特网发展的三个阶段"></a>1-1-2 因特网发展的三个阶段</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623154513929.png"
+                      alt="image-20240623154513929"
+                ></li>
+</ul>
+<h3 id="1-1-3-因特网的标准化工作"><a href="#1-1-3-因特网的标准化工作" class="headerlink" title="1-1-3 因特网的标准化工作"></a>1-1-3 因特网的标准化工作</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623154922111.png"
+                      alt="image-20240623154922111"
+                ></li>
+</ul>
+<h3 id="1-3-4-因特网的组成"><a href="#1-3-4-因特网的组成" class="headerlink" title="1-3-4 因特网的组成"></a>1-3-4 因特网的组成</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623155102672.png"
+                      alt="image-20240623155102672"
+                ></li>
+</ul>
+<h2 id="1-2-三种交换方式"><a href="#1-2-三种交换方式" class="headerlink" title="1-2- 三种交换方式"></a>1-2- 三种交换方式</h2><h3 id="1-2-1-电路交换"><a href="#1-2-1-电路交换" class="headerlink" title="1-2-1 电路交换"></a>1-2-1 电路交换</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623155553848.png"
+                      alt="image-20240623155553848"
+                ></li>
+</ul>
+<h3 id="1-2-2-分组交换"><a href="#1-2-2-分组交换" class="headerlink" title="1-2-2 分组交换"></a>1-2-2 分组交换</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623160104789.png"
+                      alt="image-20240623160104789"
+                ></li>
+</ul>
+<h3 id="1-2-3-电路交换、报文交换、分组交换的对比"><a href="#1-2-3-电路交换、报文交换、分组交换的对比" class="headerlink" title="1-2-3 电路交换、报文交换、分组交换的对比"></a>1-2-3 电路交换、报文交换、分组交换的对比</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623160550729.png"
+                      alt="image-20240623160550729"
+                ></li>
+</ul>
+<h2 id="1-3-计算机网络的定义和分类"><a href="#1-3-计算机网络的定义和分类" class="headerlink" title="1-3 计算机网络的定义和分类"></a>1-3 计算机网络的定义和分类</h2><h3 id="1-3-1-定义"><a href="#1-3-1-定义" class="headerlink" title="1-3-1 定义"></a>1-3-1 定义</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623160837159.png"
+                      alt="image-20240623160837159"
+                ></li>
+</ul>
+<h3 id="1-3-2-分类"><a href="#1-3-2-分类" class="headerlink" title="1-3-2 分类"></a>1-3-2 分类</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623161211808.png"
+                      alt="image-20240623161211808"
+                ></li>
+</ul>
+<h2 id="1-4-计算机网络的性能指标"><a href="#1-4-计算机网络的性能指标" class="headerlink" title="1-4 计算机网络的性能指标"></a>1-4 计算机网络的性能指标</h2><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623161947115.png"
+                      alt="image-20240623161947115"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623162217046.png"
+                      alt="image-20240623162217046"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623162444594.png"
+                      alt="image-20240623162444594"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623162950356.png"
+                      alt="image-20240623162950356"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623163214547.png"
+                      alt="image-20240623163214547"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623163322940.png"
+                      alt="image-20240623163322940"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623163549988.png"
+                      alt="image-20240623163549988"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623163731182.png"
+                      alt="image-20240623163731182"
+                ></p>
+</li>
+</ul>
+<h2 id="1-5-计算机网络体系结构"><a href="#1-5-计算机网络体系结构" class="headerlink" title="1-5 计算机网络体系结构"></a>1-5 计算机网络体系结构</h2><h3 id="1-5-1-常见的计算机网络体系结构"><a href="#1-5-1-常见的计算机网络体系结构" class="headerlink" title="1-5-1 常见的计算机网络体系结构"></a>1-5-1 常见的计算机网络体系结构</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623164032233.png"
+                      alt="image-20240623164032233"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623164318159.png"
+                      alt="image-20240623164318159"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623164339238.png"
+                      alt="image-20240623164339238"
+                ></p>
+</li>
+</ul>
+<h3 id="1-5-2-计算机网络体系结构分层的必要性"><a href="#1-5-2-计算机网络体系结构分层的必要性" class="headerlink" title="1-5-2 计算机网络体系结构分层的必要性"></a>1-5-2 计算机网络体系结构分层的必要性</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623164902318.png"
+                      alt="image-20240623164902318"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623164933343.png"
+                      alt="image-20240623164933343"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623165005243.png"
+                      alt="image-20240623165005243"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623165035247.png"
+                      alt="image-20240623165035247"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623165100538.png"
+                      alt="image-20240623165100538"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623165151818.png"
+                      alt="image-20240623165151818"
+                ></p>
+</li>
+</ul>
+<h3 id="1-5-3-计算机网络体系结构分层思想举例"><a href="#1-5-3-计算机网络体系结构分层思想举例" class="headerlink" title="1-5-3 计算机网络体系结构分层思想举例"></a>1-5-3 计算机网络体系结构分层思想举例</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623165529381.png"
+                      alt="image-20240623165529381"
+                ></li>
+</ul>
+<h3 id="1-5-4-计算机网络体系结构中的专用术语"><a href="#1-5-4-计算机网络体系结构中的专用术语" class="headerlink" title="1-5-4 计算机网络体系结构中的专用术语"></a>1-5-4 计算机网络体系结构中的专用术语</h3><ul>
+<li><p>实体</p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623165801734.png"
+                      alt="image-20240623165801734"
+                ></p>
+</li>
+<li><p>协议</p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623170635537.png"
+                      alt="image-20240623170635537"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623170754118.png"
+                      alt="image-20240623170754118"
+                ></p>
+</li>
+<li><p>服务</p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623170158203.png"
+                      alt="image-20240623170158203"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623170404386.png"
+                      alt="image-20240623170404386"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623170454549.png"
+                      alt="image-20240623170454549"
+                ></p>
+</li>
+</ul>
+<h1 id="2-物理层"><a href="#2-物理层" class="headerlink" title="2- 物理层"></a>2- 物理层</h1><h2 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2-1 概述"></a>2-1 概述</h2><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623171654653.png"
+                      alt="image-20240623171654653"
+                ></li>
+</ul>
+<h2 id="2-2-物理层下面的传输媒体"><a href="#2-2-物理层下面的传输媒体" class="headerlink" title="2-2 物理层下面的传输媒体"></a>2-2 物理层下面的传输媒体</h2><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623182613312.png"
+                      alt="image-20240623182613312"
+                ></li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623184933641.png"
+                      alt="image-20240623184933641"
+                ></li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623184656173.png"
+                      alt="image-20240623184656173"
+                ></li>
+</ul>
+<h2 id="2-3-传输方式"><a href="#2-3-传输方式" class="headerlink" title="2-3 传输方式"></a>2-3 传输方式</h2><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623183007249.png"
+                      alt="image-20240623183007249"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623183150971.png"
+                      alt="image-20240623183150971"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-06-23%20183252.png"
+                      alt="屏幕截图 2024-06-23 183252"
+                ></p>
+</li>
+</ul>
+<h2 id="2-4-编码与调制"><a href="#2-4-编码与调制" class="headerlink" title="2-4 编码与调制"></a>2-4 编码与调制</h2><h3 id="2-4-1-概述"><a href="#2-4-1-概述" class="headerlink" title="2-4-1 概述"></a>2-4-1 概述</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623183559066.png"
+                      alt="image-20240623183559066"
+                ></li>
+</ul>
+<h3 id="2-4-2-编码"><a href="#2-4-2-编码" class="headerlink" title="2-4-2 编码"></a>2-4-2 编码</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623194307576.png"
+                      alt="image-20240623194307576"
+                ></li>
+</ul>
+<h3 id="2-4-3-调制"><a href="#2-4-3-调制" class="headerlink" title="2-4-3 调制"></a>2-4-3 调制</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623194442148.png"
+                      alt="image-20240623194442148"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623212503544.png"
+                      alt="image-20240623212503544"
+                ></p>
+</li>
+</ul>
+<h2 id="2-5-信道的极限容量"><a href="#2-5-信道的极限容量" class="headerlink" title="2-5 信道的极限容量"></a>2-5 信道的极限容量</h2><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623195042558.png"
+                      alt="image-20240623195042558"
+                ></li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623195137807.png"
+                      alt="image-20240623195137807"
+                ></li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623195213928.png"
+                      alt="image-20240623195213928"
+                ></li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623195238893.png"
+                      alt="image-20240623195238893"
+                ></li>
+</ul>
+<h1 id="3-数据链路层"><a href="#3-数据链路层" class="headerlink" title="3- 数据链路层"></a>3- 数据链路层</h1><h2 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3-1 概述"></a>3-1 概述</h2><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623185341248.png"
+                      alt="image-20240623185341248"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623185758675.png"
+                      alt="image-20240623185758675"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623190148282.png"
+                      alt="image-20240623190148282"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623190635242.png"
+                      alt="image-20240623190635242"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623191604298.png"
+                      alt="image-20240623191604298"
+                ></p>
+</li>
+</ul>
+<h2 id="3-2-封装成帧"><a href="#3-2-封装成帧" class="headerlink" title="3-2 封装成帧"></a>3-2 封装成帧</h2><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623192504307.png"
+                      alt="image-20240623192504307"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623192537504.png"
+                      alt="image-20240623192537504"
+                ></p>
+</li>
+</ul>
+<h2 id="3-3-差错检测"><a href="#3-3-差错检测" class="headerlink" title="3-3 差错检测"></a>3-3 差错检测</h2><h3 id="3-3-1-概述"><a href="#3-3-1-概述" class="headerlink" title="3-3-1 概述"></a>3-3-1 概述</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623192712329.png"
+                      alt="image-20240623192712329"
+                ></li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623194050867.png"
+                      alt="image-20240623194050867"
+                ></li>
+</ul>
+<h3 id="3-3-2-奇偶校验"><a href="#3-3-2-奇偶校验" class="headerlink" title="3-3-2 奇偶校验"></a>3-3-2 奇偶校验</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623193052601.png"
+                      alt="image-20240623193052601"
+                ></li>
+</ul>
+<h3 id="3-3-3-CRC校验"><a href="#3-3-3-CRC校验" class="headerlink" title="3-3-3 CRC校验"></a>3-3-3 CRC校验</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623193535453.png"
+                      alt="image-20240623193535453"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623193739163.png"
+                      alt="image-20240623193739163"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623193822424.png"
+                      alt="image-20240623193822424"
+                ></p>
+</li>
+</ul>
+<h2 id="3-4-可靠传输"><a href="#3-4-可靠传输" class="headerlink" title="3-4 可靠传输"></a>3-4 可靠传输</h2><h3 id="3-4-1-概述"><a href="#3-4-1-概述" class="headerlink" title="3-4-1 概述"></a>3-4-1 概述</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623195551571.png"
+                      alt="image-20240623195551571"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623195642624.png"
+                      alt="image-20240623195642624"
+                ></p>
+</li>
+</ul>
+<h3 id="3-4-2-停止-等待协议SW"><a href="#3-4-2-停止-等待协议SW" class="headerlink" title="3-4-2 停止-等待协议SW"></a>3-4-2 停止-等待协议SW</h3><ul>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623204742143.png"
+                      alt="image-20240623204742143"
+                ></p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623205121697.png"
+                      alt="image-20240623205121697"
+                ></p>
+</li>
+</ul>
+<h3 id="3-4-3-回退N帧协议GBN"><a href="#3-4-3-回退N帧协议GBN" class="headerlink" title="3-4-3 回退N帧协议GBN"></a>3-4-3 回退N帧协议GBN</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623211106118.png"
+                      alt="image-20240623211106118"
+                ></li>
+</ul>
+<h3 id="3-4-4-选择重传协议SR"><a href="#3-4-4-选择重传协议SR" class="headerlink" title="3-4-4 选择重传协议SR"></a>3-4-4 选择重传协议SR</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20240623211915441.png"
+                      alt="image-20240623211915441"
+                ></li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 计算机网络</li>
+        <li><strong>作者:</strong> dearlrq</li>
+        <li><strong>创建于
+                :</strong> 2024-06-22 20:59:21</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2024-07-04 16:46:57
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://redefine.ohevan.com/2024/06/22/计算机网络/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E8%87%AA%E7%A0%94%E7%AC%94%E8%AE%B0/">#自研笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/07/05/Git%E4%BD%BF%E7%94%A8/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Git使用</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/05/25/RuoYi%E6%A1%86%E6%9E%B6/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">RuoYi框架</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">计算机网络</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">1- 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E5%9B%A0%E7%89%B9%E7%BD%91%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">1-1 因特网的概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-%E7%BD%91%E7%BB%9C%E3%80%81%E4%BA%92%E8%81%94%E7%BD%91%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91"><span class="nav-number">1.1.1.</span> <span class="nav-text">1-1-1 网络、互联网和因特网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-%E5%9B%A0%E7%89%B9%E7%BD%91%E5%8F%91%E5%B1%95%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="nav-number">1.1.2.</span> <span class="nav-text">1-1-2 因特网发展的三个阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-3-%E5%9B%A0%E7%89%B9%E7%BD%91%E7%9A%84%E6%A0%87%E5%87%86%E5%8C%96%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.1.3.</span> <span class="nav-text">1-1-3 因特网的标准化工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-4-%E5%9B%A0%E7%89%B9%E7%BD%91%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">1.1.4.</span> <span class="nav-text">1-3-4 因特网的组成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E4%B8%89%E7%A7%8D%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">1-2- 三种交换方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="nav-number">1.2.1.</span> <span class="nav-text">1-2-1 电路交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="nav-number">1.2.2.</span> <span class="nav-text">1-2-2 分组交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2%E3%80%81%E6%8A%A5%E6%96%87%E4%BA%A4%E6%8D%A2%E3%80%81%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="nav-number">1.2.3.</span> <span class="nav-text">1-2-3 电路交换、报文交换、分组交换的对比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%86%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">1-3 计算机网络的定义和分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.1.</span> <span class="nav-text">1-3-1 定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-%E5%88%86%E7%B1%BB"><span class="nav-number">1.3.2.</span> <span class="nav-text">1-3-2 分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">1.4.</span> <span class="nav-text">1-4 计算机网络的性能指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">1.5.</span> <span class="nav-text">1-5 计算机网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">1.5.1.</span> <span class="nav-text">1-5-1 常见的计算机网络体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%88%86%E5%B1%82%E7%9A%84%E5%BF%85%E8%A6%81%E6%80%A7"><span class="nav-number">1.5.2.</span> <span class="nav-text">1-5-2 计算机网络体系结构分层的必要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-3-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3%E4%B8%BE%E4%BE%8B"><span class="nav-number">1.5.3.</span> <span class="nav-text">1-5-3 计算机网络体系结构分层思想举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%AD%E7%9A%84%E4%B8%93%E7%94%A8%E6%9C%AF%E8%AF%AD"><span class="nav-number">1.5.4.</span> <span class="nav-text">1-5-4 计算机网络体系结构中的专用术语</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E7%89%A9%E7%90%86%E5%B1%82"><span class="nav-number">2.</span> <span class="nav-text">2- 物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E6%A6%82%E8%BF%B0"><span class="nav-number">2.1.</span> <span class="nav-text">2-1 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E7%89%A9%E7%90%86%E5%B1%82%E4%B8%8B%E9%9D%A2%E7%9A%84%E4%BC%A0%E8%BE%93%E5%AA%92%E4%BD%93"><span class="nav-number">2.2.</span> <span class="nav-text">2-2 物理层下面的传输媒体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">2-3 传输方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6"><span class="nav-number">2.4.</span> <span class="nav-text">2-4 编码与调制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-%E6%A6%82%E8%BF%B0"><span class="nav-number">2.4.1.</span> <span class="nav-text">2-4-1 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-%E7%BC%96%E7%A0%81"><span class="nav-number">2.4.2.</span> <span class="nav-text">2-4-2 编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-3-%E8%B0%83%E5%88%B6"><span class="nav-number">2.4.3.</span> <span class="nav-text">2-4-3 调制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E4%BF%A1%E9%81%93%E7%9A%84%E6%9E%81%E9%99%90%E5%AE%B9%E9%87%8F"><span class="nav-number">2.5.</span> <span class="nav-text">2-5 信道的极限容量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="nav-number">3.</span> <span class="nav-text">3- 数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E6%A6%82%E8%BF%B0"><span class="nav-number">3.1.</span> <span class="nav-text">3-1 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7"><span class="nav-number">3.2.</span> <span class="nav-text">3-2 封装成帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B"><span class="nav-number">3.3.</span> <span class="nav-text">3-3 差错检测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-%E6%A6%82%E8%BF%B0"><span class="nav-number">3.3.1.</span> <span class="nav-text">3-3-1 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2-%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C"><span class="nav-number">3.3.2.</span> <span class="nav-text">3-3-2 奇偶校验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-3-CRC%E6%A0%A1%E9%AA%8C"><span class="nav-number">3.3.3.</span> <span class="nav-text">3-3-3 CRC校验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93"><span class="nav-number">3.4.</span> <span class="nav-text">3-4 可靠传输</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-1-%E6%A6%82%E8%BF%B0"><span class="nav-number">3.4.1.</span> <span class="nav-text">3-4-1 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-2-%E5%81%9C%E6%AD%A2-%E7%AD%89%E5%BE%85%E5%8D%8F%E8%AE%AESW"><span class="nav-number">3.4.2.</span> <span class="nav-text">3-4-2 停止-等待协议SW</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-3-%E5%9B%9E%E9%80%80N%E5%B8%A7%E5%8D%8F%E8%AE%AEGBN"><span class="nav-number">3.4.3.</span> <span class="nav-text">3-4-3 回退N帧协议GBN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-4-%E9%80%89%E6%8B%A9%E9%87%8D%E4%BC%A0%E5%8D%8F%E8%AE%AESR"><span class="nav-number">3.4.4.</span> <span class="nav-text">3-4-4 选择重传协议SR</span></a></li></ol></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">dearlrq</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2024</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">dearlrq</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.0</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>

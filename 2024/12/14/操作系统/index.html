@@ -1,0 +1,2748 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="dearlrq">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/12/14/操作系统/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="1 操作系统引论1.1 操作系统的概念1、操作系统是一组控制和管理计算机硬件和软件资源，合理的对各类作业进行调度，以及方便用户使用计算机的程序的集合，是配置在计算机裸机上的第一层软件，是对硬件功能的首次扩充。  软件（程序） 硬件之上第一层 用户和硬件之间的接口  2、配置操作系统的主要目的就是提高系统资源的利用率。  1.2 操作系统的目标和作用1.2.1 目标主要目标：方便性、有效性、可扩充性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统">
+<meta property="og:url" content="http://example.com/2024/12/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 操作系统引论1.1 操作系统的概念1、操作系统是一组控制和管理计算机硬件和软件资源，合理的对各类作业进行调度，以及方便用户使用计算机的程序的集合，是配置在计算机裸机上的第一层软件，是对硬件功能的首次扩充。  软件（程序） 硬件之上第一层 用户和硬件之间的接口  2、配置操作系统的主要目的就是提高系统资源的利用率。  1.2 操作系统的目标和作用1.2.1 目标主要目标：方便性、有效性、可扩充性">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241214205511924.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215130514317.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215150430314.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215150701831.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215150731263.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215150813591.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215150838379.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215150856933.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216203619344.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216203716969.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216204407533.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216204711546.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216210538373.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216205640587.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219202301650.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216210819777.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216221106078.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216221425954.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216221603220.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216221741117.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216222053603.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219112722167.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219113014802.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219113243926.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219113344282.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219113822006.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219114512233.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219162702540.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219163017806.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219163448774.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219190008391.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219190126860.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219190327333.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219190450315.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219190537330.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219190611054.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219191600544.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219191808635.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219201143808.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219201257740.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219201542078.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219202130808.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219210743964.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219213730889.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219221519557.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219221928612.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223203049506.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223203113578.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223204641506.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223204739103.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223205100483.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223213115702.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223222340285.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223223542404.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241227204751375.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241227203828001.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241227213008251.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241227213138782.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229212134343.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229213646609.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229214408503.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229215920082.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229215142172.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229215356725.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229215833893.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229221107396.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229221153359.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229221555843.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229223045386.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229223353413.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229223526363.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229223552571.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230133907003.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230135043134.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230135406453.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230140507079.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230141350891.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230142643010.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230143156669.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230150459722.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230150811173.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230153521143.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230162116725.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230165250246.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230182725520.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230182751247.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230184726404.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230185428960.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230191222289.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230194047252.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230194111033.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230194520516.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230195135400.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230211207530.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230212948551.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230213607449.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230215538837.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230220523482.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230220822843.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231132514021.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231133340996.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231135427782.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231135507249.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231135536063.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231140159221.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231151450576.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231153828608.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231154142437.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231163115529.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231163500322.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231163637618.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231201933728.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231193053483.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231195347394.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231200633059.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231203550277.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231205930376.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231210741475.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231220326620.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231220529891.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231220652792.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101150217375.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101150932317.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101151648438.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101153257219.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101153954364.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101154243082.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101154851476.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101155017999.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101163200910.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101165411590.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101170931318.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101171118002.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101172110285.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101172456945.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101174153357.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101174233788.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101174639953.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101184124662.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101184305319.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101184341166.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101191839168.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101192309738.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101192839925.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101193305851.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101193805054.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101195104097.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101195324009.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101195436218.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101195525459.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101200254244.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101200737884.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101201452901.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101204645239.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101205313747.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101205907312.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101210617712.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101211839121.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102133742369.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102133809130.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102135108366.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102140000904.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102140159134.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102141123354.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102141157875.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102143927687.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102144201694.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102150954819.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102151622451.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102152423492.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102155452497.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102172733203.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102173556418.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102174034018.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102174336773.png">
+<meta property="og:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102175134999.png">
+<meta property="article:published_time" content="2024-12-14T12:09:48.000Z">
+<meta property="article:modified_time" content="2025-01-05T14:34:48.154Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="自研笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241214205511924.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/%E7%AB%99%E7%82%B9.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/%E7%AB%99%E7%82%B9.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/%E7%AB%99%E7%82%B9.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            操作系统 -
+        
+        dearlrq
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        dearlrq
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Farsan&display=swap" rel="stylesheet">
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"english":{"enable":true,"family":"Farsan","url":"https://fonts.googleapis.com/css2?family=Farsan&display=swap"}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/白.jpg","dark":"/images/夜.jpg"},"title":"Hello,World!","subtitle":{"text":["若待上林花似锦，出门俱是看花人。"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"首页":{"path":"/","icon":"fa-regular fa-house"},"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"},"关于":{"icon":"fa-regular fa-user","submenus":{"Me":"/about"}},"链接":{"icon":"fa-regular fa-link","submenus":{"Github":"https://github.com/dearlrq"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"欢迎来到dearlrq的blog,网站正在建设中...","links":{"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"标签":{"path":"/tags","icon":"fa-regular fa-tags"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":50,"Categories":{"icon":"fa-solid fa-folder","path":"/categories/"}},"tags":{"enable":true,"limit":50,"Tags":{"icon":"fa-solid fa-tags","path":"/tags/"}}},"footerStart":"2024/1/13 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+        
+<link rel="stylesheet" href="/fontawesome/thin.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/duotone.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/sharp-solid.min.css">
+
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/%E7%AB%99%E7%82%B9.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                dearlrq
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    链接
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/dearlrq">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-关于"
+                        >
+                            <span>
+                                关于
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-关于">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-链接"
+                        >
+                            <span>
+                                链接
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-链接">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/dearlrq">GITHUB</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">20</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">操作系统</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/%E7%AB%99%E7%82%B9.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">dearlrq</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-12-14 20:09:48</span>
+        <span class="mobile">2024-12-14 20:09:48</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-01-05 22:34:48</span>
+            <span class="mobile">2025-01-05 22:34:48</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/408/">408</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/408/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%87%AA%E7%A0%94%E7%AC%94%E8%AE%B0/">自研笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>8.1k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>29 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h1 id="1-操作系统引论"><a href="#1-操作系统引论" class="headerlink" title="1 操作系统引论"></a>1 操作系统引论</h1><h2 id="1-1-操作系统的概念"><a href="#1-1-操作系统的概念" class="headerlink" title="1.1 操作系统的概念"></a>1.1 操作系统的概念</h2><p>1、操作系统是一组控制和管理计算机硬件和软件资源，合理的对各类作业进行调度，以及方便用户使用计算机的程序的集合，是配置在计算机裸机上的第一层软件，是对硬件功能的首次扩充。</p>
+<ul>
+<li>软件（程序）</li>
+<li>硬件之上第一层</li>
+<li>用户和硬件之间的接口</li>
+</ul>
+<p>2、配置操作系统的<strong>主要目的就是提高系统资源的利用率</strong>。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241214205511924.png"
+                      alt="image-20241214205511924"
+                ></p>
+<h2 id="1-2-操作系统的目标和作用"><a href="#1-2-操作系统的目标和作用" class="headerlink" title="1.2 操作系统的目标和作用"></a>1.2 操作系统的目标和作用</h2><h3 id="1-2-1-目标"><a href="#1-2-1-目标" class="headerlink" title="1.2.1 目标"></a>1.2.1 目标</h3><p>主要目标：方便性、有效性、可扩充性、开放性。</p>
+<h3 id="1-2-2-作用"><a href="#1-2-2-作用" class="headerlink" title="1.2.2 作用"></a>1.2.2 作用</h3><p>主要作用：用户和机器之间的接口、管理资源、资源抽象。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215130514317.png"
+                      alt="image-20241215130514317"
+                ></p>
+<h3 id="1-2-3-发展的主要动力"><a href="#1-2-3-发展的主要动力" class="headerlink" title="1.2.3 发展的主要动力"></a>1.2.3 发展的主要动力</h3><p>主要动力：不断提高计算机资源利用率、方便用户、器件的不断更新换代（OS随之更新换代，如：8位 → 16位 → 32位 → 64 位）、计算机体系结构的不断发展（单处理机OS → 多处理机OS → 网络操作系统）、不断提出新的应用需求。</p>
+<h2 id="1-3-操作系统的发展历程"><a href="#1-3-操作系统的发展历程" class="headerlink" title="1.3 操作系统的发展历程"></a>1.3 操作系统的发展历程</h2><p>1、发展过程：人工操作 → 脱机方式 → 单批道 → 多批道 → 分时系统（多路性、独立性、及时性、交互性）→ 实时系统（可靠性）→ 网络操作系统</p>
+<p>2、 多道程序设计就是指有多个程序同时进入主存并行运行；多道程序设计技术，使得CPU可以和I&#x2F;O设备并行的工作。</p>
+<p>3、批处理系统主要缺点是：失去了<strong>交互性</strong>。</p>
+<p>4、分时系统采用了<strong>时间片轮转</strong>运行的分时技术，作业越多，用户数越多，响应时间越长。</p>
+<p>5、实时系统在设计时，应首先考虑<strong>实时性</strong>和<strong>可靠性</strong>。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215150430314.png"
+                      alt="image-20241215150430314"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215150701831.png"
+                      alt="image-20241215150701831"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215150731263.png"
+                      alt="image-20241215150731263"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215150813591.png"
+                      alt="image-20241215150813591"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215150838379.png"
+                      alt="image-20241215150838379"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241215150856933.png"
+                      alt="image-20241215150856933"
+                ></p>
+<h2 id="1-4-操作系统的基本特征"><a href="#1-4-操作系统的基本特征" class="headerlink" title="1.4 操作系统的基本特征"></a>1.4 操作系统的基本特征</h2><p>基本特征：并发性（并发：同一时间段；并行：同一时刻）、虚拟性、共享性、异步性（不确定性-走走停停）。</p>
+<p>其中最基本的特征是并发性和共享性。</p>
+<h2 id="1-5-操作系统的主要功能"><a href="#1-5-操作系统的主要功能" class="headerlink" title="1.5 操作系统的主要功能"></a>1.5 操作系统的主要功能</h2><p>主要功能：处理机管理、存储管理、设备管理、文件管理、OS与用户接口。</p>
+<h2 id="1-6-操作系统的结构设计"><a href="#1-6-操作系统的结构设计" class="headerlink" title="1.6 操作系统的结构设计"></a>1.6 操作系统的结构设计</h2><p>传统：无结构 → 模块化（高内聚、低耦合）→ 层次化（无序-有序）。</p>
+<p>微内核：足够小的内核、C&#x2F;S、机制与策略、面向对象。</p>
+<h1 id="2-进程的描述与控制"><a href="#2-进程的描述与控制" class="headerlink" title="2 进程的描述与控制"></a>2 进程的描述与控制</h1><h2 id="2-1-进程的概念"><a href="#2-1-进程的概念" class="headerlink" title="2.1 进程的概念"></a>2.1 进程的概念</h2><p>程序：是静态的，就是个存放在磁盘里的可执行文件，就是一系列的指令集合。</p>
+<p>进程（Process）：是动态的，是程序的一次执行过程。同一个程序多次执行会对应多个进程。</p>
+<ul>
+<li>其他：</li>
+</ul>
+<p>降低进程优先级的合理时机是：进程的时间片用完的时候。</p>
+<p>操作系统负责进程调度的是处理机管理部分。</p>
+<p>程序并发执行的特征：间断性、失去封闭性、不可再现性。</p>
+<h2 id="2-2-进程的组成"><a href="#2-2-进程的组成" class="headerlink" title="2.2 进程的组成"></a>2.2 进程的组成</h2><h3 id="2-2-1-PCB"><a href="#2-2-1-PCB" class="headerlink" title="2.2.1 PCB"></a>2.2.1 PCB</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216203619344.png"
+                      alt="image-20241216203619344"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216203716969.png"
+                      alt="image-20241216203716969"
+                ></p>
+<h3 id="2-2-2-程序段、数据段"><a href="#2-2-2-程序段、数据段" class="headerlink" title="2.2.2 程序段、数据段"></a>2.2.2 程序段、数据段</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216204407533.png"
+                      alt="image-20241216204407533"
+                ></p>
+<h2 id="2-3-进程的特征"><a href="#2-3-进程的特征" class="headerlink" title="2.3 进程的特征"></a>2.3 进程的特征</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216204711546.png"
+                      alt="image-20241216204711546"
+                ></p>
+<h2 id="2-4-进程的状态与转换"><a href="#2-4-进程的状态与转换" class="headerlink" title="2.4 进程的状态与转换"></a>2.4 进程的状态与转换</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216210538373.png"
+                      alt="image-20241216210538373"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216205640587.png"
+                      alt="image-20241216205640587"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219202301650.png"
+                      alt="image-20241219202301650"
+                ></p>
+<h2 id="2-5-进程的组织方式"><a href="#2-5-进程的组织方式" class="headerlink" title="2.5 进程的组织方式"></a>2.5 进程的组织方式</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216210819777.png"
+                      alt="image-20241216210819777"
+                ></p>
+<h2 id="2-6-进程控制"><a href="#2-6-进程控制" class="headerlink" title="2.6 进程控制"></a>2.6 进程控制</h2><h3 id="2-6-1-基本概念"><a href="#2-6-1-基本概念" class="headerlink" title="2.6.1 基本概念"></a>2.6.1 基本概念</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216221106078.png"
+                      alt="image-20241216221106078"
+                ></p>
+<h3 id="2-6-2-进程控制相关的原语"><a href="#2-6-2-进程控制相关的原语" class="headerlink" title="2.6.2 进程控制相关的原语"></a>2.6.2 进程控制相关的原语</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216221425954.png"
+                      alt="image-20241216221425954"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216221603220.png"
+                      alt="image-20241216221603220"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216221741117.png"
+                      alt="image-20241216221741117"
+                ></p>
+<h3 id="2-6-3-总结"><a href="#2-6-3-总结" class="headerlink" title="2.6.3 总结"></a>2.6.3 总结</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241216222053603.png"
+                      alt="image-20241216222053603"
+                ></p>
+<h2 id="2-7-进程通信"><a href="#2-7-进程通信" class="headerlink" title="2.7 进程通信"></a>2.7 进程通信</h2><h3 id="2-7-1-共享存储"><a href="#2-7-1-共享存储" class="headerlink" title="2.7.1 共享存储"></a>2.7.1 共享存储</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219112722167.png"
+                      alt="image-20241219112722167"
+                ></p>
+<h3 id="2-7-2-消息传递"><a href="#2-7-2-消息传递" class="headerlink" title="2.7.2 消息传递"></a>2.7.2 消息传递</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219113014802.png"
+                      alt="image-20241219113014802"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219113243926.png"
+                      alt="image-20241219113243926"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219113344282.png"
+                      alt="image-20241219113344282"
+                ></p>
+<h3 id="2-7-3-管道通信"><a href="#2-7-3-管道通信" class="headerlink" title="2.7.3 管道通信"></a>2.7.3 管道通信</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219113822006.png"
+                      alt="image-20241219113822006"
+                ></p>
+<h3 id="2-7-4-总结"><a href="#2-7-4-总结" class="headerlink" title="2.7.4 总结"></a>2.7.4 总结</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219114512233.png"
+                      alt="image-20241219114512233"
+                ></p>
+<h2 id="2-8-线程的概念"><a href="#2-8-线程的概念" class="headerlink" title="2.8 线程的概念"></a>2.8 线程的概念</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219162702540.png"
+                      alt="image-20241219162702540"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219163017806.png"
+                      alt="image-20241219163017806"
+                ></p>
+<h2 id="2-9-线程的属性"><a href="#2-9-线程的属性" class="headerlink" title="2.9 线程的属性"></a>2.9 线程的属性</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219163448774.png"
+                      alt="image-20241219163448774"
+                ></p>
+<h2 id="2-10-线程的实现方式"><a href="#2-10-线程的实现方式" class="headerlink" title="2.10 线程的实现方式"></a>2.10 线程的实现方式</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219190008391.png"
+                      alt="image-20241219190008391"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219190126860.png"
+                      alt="image-20241219190126860"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219190327333.png"
+                      alt="image-20241219190327333"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219190450315.png"
+                      alt="image-20241219190450315"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219190537330.png"
+                      alt="image-20241219190537330"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219190611054.png"
+                      alt="image-20241219190611054"
+                ></p>
+<h2 id="2-11-线程的状态与转换、组织与控制"><a href="#2-11-线程的状态与转换、组织与控制" class="headerlink" title="2.11 线程的状态与转换、组织与控制"></a>2.11 线程的状态与转换、组织与控制</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219191600544.png"
+                      alt="image-20241219191600544"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219191808635.png"
+                      alt="image-20241219191808635"
+                ></p>
+<h1 id="3-处理机调度与死锁"><a href="#3-处理机调度与死锁" class="headerlink" title="3 处理机调度与死锁"></a>3 处理机调度与死锁</h1><h2 id="3-1-调度的概念、层次"><a href="#3-1-调度的概念、层次" class="headerlink" title="3.1 调度的概念、层次"></a>3.1 调度的概念、层次</h2><p>当有一堆任务要处理，但由于资源有限，这些事情没法同时处理。这就需要确定<strong>某种规则</strong>来<strong>决定</strong>处理这些任务的<strong>顺序</strong>，这就是“调度”研究的问题。</p>
+<ul>
+<li>高级调度</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219201143808.png"
+                      alt="image-20241219201143808"
+                ></p>
+<ul>
+<li>低级调度</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219201257740.png"
+                      alt="image-20241219201257740"
+                ></p>
+<ul>
+<li>中级调度</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219201542078.png"
+                      alt="image-20241219201542078"
+                ></p>
+<ul>
+<li>三层调度的联系、对比</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219202130808.png"
+                      alt="image-20241219202130808"
+                ></p>
+<h2 id="3-2-进程调度的时机、切换与过程、方式"><a href="#3-2-进程调度的时机、切换与过程、方式" class="headerlink" title="3.2 进程调度的时机、切换与过程、方式"></a>3.2 进程调度的时机、切换与过程、方式</h2><h3 id="3-2-1-时机"><a href="#3-2-1-时机" class="headerlink" title="3.2.1 时机"></a>3.2.1 时机</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219210743964.png"
+                      alt="image-20241219210743964"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219213730889.png"
+                      alt="image-20241219213730889"
+                ></p>
+<h3 id="3-2-2-方式"><a href="#3-2-2-方式" class="headerlink" title="3.2.2 方式"></a>3.2.2 方式</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219221519557.png"
+                      alt="image-20241219221519557"
+                ></p>
+<h3 id="3-2-3-切换与过程"><a href="#3-2-3-切换与过程" class="headerlink" title="3.2.3 切换与过程"></a>3.2.3 切换与过程</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241219221928612.png"
+                      alt="image-20241219221928612"
+                ></p>
+<h2 id="3-3-调度器和闲逛进程"><a href="#3-3-调度器和闲逛进程" class="headerlink" title="3.3 调度器和闲逛进程"></a>3.3 调度器和闲逛进程</h2><h3 id="3-3-1-调度器"><a href="#3-3-1-调度器" class="headerlink" title="3.3.1 调度器"></a>3.3.1 调度器</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223203049506.png"
+                      alt="image-20241223203049506"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223203113578.png"
+                      alt="image-20241223203113578"
+                ></p>
+<h3 id="3-3-2-闲逛进程"><a href="#3-3-2-闲逛进程" class="headerlink" title="3.3.2 闲逛进程"></a>3.3.2 闲逛进程</h3><p>调度程序永远的备胎，没有其他就绪进程时，运行闲逛进程（idle）。</p>
+<p>闲逛进程的特性：</p>
+<ul>
+<li>优先级最低</li>
+<li>可以是0地址指令，占一个完整的指令周期（指令周期末尾例行检查中断）</li>
+<li>能耗低</li>
+</ul>
+<h2 id="3-4-调度算法的评价指标"><a href="#3-4-调度算法的评价指标" class="headerlink" title="3.4 调度算法的评价指标"></a>3.4 调度算法的评价指标</h2><ul>
+<li>CPU利用率</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223204641506.png"
+                      alt="image-20241223204641506"
+                ></p>
+<ul>
+<li>系统吞吐量</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223204739103.png"
+                      alt="image-20241223204739103"
+                ></p>
+<ul>
+<li>周转时间</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223205100483.png"
+                      alt="image-20241223205100483"
+                ></p>
+<ul>
+<li>等待时间</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223213115702.png"
+                      alt="image-20241223213115702"
+                ></p>
+<p>等待时间 &#x3D; 周转时间 - 运行时间</p>
+<ul>
+<li>响应时间</li>
+</ul>
+<p>对于计算机用户来说，会希望自己的提交的请求（比如通过键盘输入了一个调试命令）尽早地开始被系统服务、回应。</p>
+<p>响应时间，指从用户提交请求到首次产生响应所用的时间。</p>
+<h2 id="3-5-调度算法"><a href="#3-5-调度算法" class="headerlink" title="3.5 调度算法"></a>3.5 调度算法</h2><h3 id="3-5-1-先来先服务（FCFS）"><a href="#3-5-1-先来先服务（FCFS）" class="headerlink" title="3.5.1 先来先服务（FCFS）"></a>3.5.1 先来先服务（FCFS）</h3><ul>
+<li>考虑了I&#x2F;O请求到达的先后次序，有利于长作业和CPU繁忙型作业。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223222340285.png"
+                      alt="image-20241223222340285"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241223223542404.png"
+                      alt="image-20241223223542404"
+                ></p>
+<h3 id="3-5-2-短作业优先（SJF）"><a href="#3-5-2-短作业优先（SJF）" class="headerlink" title="3.5.2 短作业优先（SJF）"></a>3.5.2 短作业优先（SJF）</h3><ul>
+<li>能使平均周转时间为最小。</li>
+<li>如果系统中所有的作业同时到达，平均周转时间最小的一定是短作业优先算法。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241227204751375.png"
+                      alt="image-20241227204751375"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241227203828001.png"
+                      alt="image-20241227203828001"
+                ></p>
+<h3 id="3-5-3-高响应比优先（HRRN）"><a href="#3-5-3-高响应比优先（HRRN）" class="headerlink" title="3.5.3 高响应比优先（HRRN）"></a>3.5.3 高响应比优先（HRRN）</h3><ul>
+<li>综合考虑了进程等待时间和执行之间，其优先权是可以改变的。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241227213008251.png"
+                      alt="image-20241227213008251"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241227213138782.png"
+                      alt="image-20241227213138782"
+                ></p>
+<h3 id="3-5-4-时间片轮转"><a href="#3-5-4-时间片轮转" class="headerlink" title="3.5.4 时间片轮转"></a>3.5.4 时间片轮转</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229212134343.png"
+                      alt="image-20241229212134343"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229213646609.png"
+                      alt="image-20241229213646609"
+                ></p>
+<ul>
+<li><strong>运行过程</strong>：</li>
+</ul>
+<p>0时刻（P1(5)）：0时刻只有P1到达就绪队列，让P1上处理机运行一个时间片。</p>
+<p>2时刻（P2(4)→P1(3)）：2时刻P2到达就绪队列，P1运行完一个时间片，被剥夺处理机，重新放到队尾。此时P2排在队头，因此让P2上处理机。（注意：2时刻，P1下处理机，同一时刻新进程P2到达，如果在题目中遇到这种情况，默认新到达的进程先进入就绪队列）</p>
+<p>4时刻（P1(3)→P3(1)→P2(2)）：4时刻，P3到达，先插到就绪队尾，紧接着，P2下处理机也插到队尾。</p>
+<p>5时刻（P3(1)→P2(2)→P4(6)）：5时刻，P4到达插到就绪队尾。(注意：由于P1的时间片还没用完，因此暂时不调度。另外，此时P1处于运行态，并不在就绪队列中）</p>
+<p>6时刻（P3(1)→P2(2)→P4(6)→P1(1)）：6时刻，P1时间片用完，下处理机，重新放回就绪队尾，发生调度。</p>
+<p>7时刻（P2(2)→P4(6)→P1(1)）：虽然P3的时间片没用完，但是由于P3只需运行1个单位的时间，运行完了会主动放弃处理机，因此也会发生调度。队头进程P2上处理机。</p>
+<p>9时刻（P4(6)→P1(1)）：进程P2时间片用完，并刚好运行完，发生调度，P4上处理机。</p>
+<p>11时刻（P1(1)&gt;P4(4)）：P4时间片用完，重新回到就绪队列。P1上处理机。</p>
+<p>12时刻（P4(4)）：P1运行完，主动放弃处理机，此时就绪队列中只剩P4，P4上处理机。</p>
+<p>14时刻（）：就绪队列为空，因此让P4接着运行一个时间片。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229214408503.png"
+                      alt="image-20241229214408503"
+                ></p>
+<ul>
+<li><strong>时间片选择注意：</strong></li>
+</ul>
+<p>如果时间片太大，使得每个进程都可以在一个时间片内就完成，则时间片轮转调度算法退化为先来先服务调度算法，并且会增大进程响应时间。因此时间片不能太大。</p>
+<p>另一方面，进程调度、切换是有时间代价的（保存、恢复运行环境），因此如果时间片太小，会导致进程切换过于频繁，系统会花大量的时饲来处理进程切换，从而导致实际用于进程执行的时间比例减少。可见时间片也不能太小。</p>
+<p>一般来说，设计时间片时要让切换进程的开销占比不超过1%。</p>
+<h3 id="3-5-5-优先级调度"><a href="#3-5-5-优先级调度" class="headerlink" title="3.5.5 优先级调度"></a>3.5.5 优先级调度</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229215920082.png"
+                      alt="image-20241229215920082"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229215142172.png"
+                      alt="image-20241229215142172"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229215356725.png"
+                      alt="image-20241229215356725"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229215833893.png"
+                      alt="image-20241229215833893"
+                ></p>
+<ul>
+<li><strong>注意：</strong></li>
+</ul>
+<p>静态优先权是在创建进程时确定的，确定之后整个进程运行期间就不会再改变了。</p>
+<h3 id="3-5-6-多级反馈队列调度"><a href="#3-5-6-多级反馈队列调度" class="headerlink" title="3.5.6 多级反馈队列调度"></a>3.5.6 多级反馈队列调度</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229221107396.png"
+                      alt="image-20241229221107396"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229221153359.png"
+                      alt="image-20241229221153359"
+                ></p>
+<h3 id="3-5-7-多级队列调度"><a href="#3-5-7-多级队列调度" class="headerlink" title="3.5.7 多级队列调度"></a>3.5.7 多级队列调度</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229221555843.png"
+                      alt="image-20241229221555843"
+                ></p>
+<h2 id="3-6-进程同步"><a href="#3-6-进程同步" class="headerlink" title="3.6 进程同步"></a>3.6 进程同步</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229223045386.png"
+                      alt="image-20241229223045386"
+                ></p>
+<h2 id="3-7-进程互斥"><a href="#3-7-进程互斥" class="headerlink" title="3.7 进程互斥"></a>3.7 进程互斥</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229223353413.png"
+                      alt="image-20241229223353413"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229223526363.png"
+                      alt="image-20241229223526363"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241229223552571.png"
+                      alt="image-20241229223552571"
+                ></p>
+<h2 id="3-8-进程互斥的软件实现"><a href="#3-8-进程互斥的软件实现" class="headerlink" title="3.8 进程互斥的软件实现"></a>3.8 进程互斥的软件实现</h2><h3 id="3-8-1-单标志法"><a href="#3-8-1-单标志法" class="headerlink" title="3.8.1 单标志法"></a>3.8.1 单标志法</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230133907003.png"
+                      alt="image-20241230133907003"
+                ></p>
+<ul>
+<li>注意：</li>
+</ul>
+<p>只能按 P0→ P1→P0→P1→ ……这样轮流访问。这种必须 ”轮流访问” 带来的问题是，如果此时允许进入临界区的进程是P0，而P0一直不访问临界区，那么虽然此时临界区空闲，但是并不允许P1访问。</p>
+<p>因此，单标志法存在的主要问题是：违背 “空闲让进” 原则。</p>
+<h3 id="3-8-2-双标志先检查法"><a href="#3-8-2-双标志先检查法" class="headerlink" title="3.8.2 双标志先检查法"></a>3.8.2 双标志先检查法</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230135043134.png"
+                      alt="image-20241230135043134"
+                ></p>
+<h3 id="3-8-3-双标志后检查法"><a href="#3-8-3-双标志后检查法" class="headerlink" title="3.8.3 双标志后检查法"></a>3.8.3 双标志后检查法</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230135406453.png"
+                      alt="image-20241230135406453"
+                ></p>
+<h3 id="3-8-4-Peterson算法"><a href="#3-8-4-Peterson算法" class="headerlink" title="3.8.4 Peterson算法"></a>3.8.4 Peterson算法</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230140507079.png"
+                      alt="image-20241230140507079"
+                ></p>
+<ul>
+<li>注意：</li>
+</ul>
+<p>Peterson 算法用软件方法解决了进程互斥问题，遵循了 空闲让进、忙则等待、有限等待 三个原则，但是依然未遵循 让权等待 的原则。</p>
+<h2 id="3-9-进程互斥的硬件实现"><a href="#3-9-进程互斥的硬件实现" class="headerlink" title="3.9 进程互斥的硬件实现"></a>3.9 进程互斥的硬件实现</h2><h3 id="3-9-1-中断屏蔽方法"><a href="#3-9-1-中断屏蔽方法" class="headerlink" title="3.9.1 中断屏蔽方法"></a>3.9.1 中断屏蔽方法</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230141350891.png"
+                      alt="image-20241230141350891"
+                ></p>
+<h3 id="3-9-2-TestAndset指令"><a href="#3-9-2-TestAndset指令" class="headerlink" title="3.9.2 TestAndset指令"></a>3.9.2 TestAndset指令</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230142643010.png"
+                      alt="image-20241230142643010"
+                ></p>
+<h3 id="3-9-3-Swap指令"><a href="#3-9-3-Swap指令" class="headerlink" title="3.9.3 Swap指令"></a>3.9.3 Swap指令</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230143156669.png"
+                      alt="image-20241230143156669"
+                ></p>
+<h2 id="3-10-互斥锁"><a href="#3-10-互斥锁" class="headerlink" title="3.10 互斥锁"></a>3.10 互斥锁</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230150459722.png"
+                      alt="image-20241230150459722"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230150811173.png"
+                      alt="image-20241230150811173"
+                ></p>
+<h2 id="3-11-信号量机制"><a href="#3-11-信号量机制" class="headerlink" title="3.11 信号量机制"></a>3.11 信号量机制</h2><h3 id="3-11-1-介绍"><a href="#3-11-1-介绍" class="headerlink" title="3.11.1 介绍"></a>3.11.1 介绍</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230153521143.png"
+                      alt="image-20241230153521143"
+                ></p>
+<h3 id="3-11-2-整型信号量"><a href="#3-11-2-整型信号量" class="headerlink" title="3.11.2 整型信号量"></a>3.11.2 整型信号量</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230162116725.png"
+                      alt="image-20241230162116725"
+                ></p>
+<h3 id="3-11-3-记录型信号量"><a href="#3-11-3-记录型信号量" class="headerlink" title="3.11.3 记录型信号量"></a>3.11.3 记录型信号量</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230165250246.png"
+                      alt="image-20241230165250246"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230182725520.png"
+                      alt="image-20241230182725520"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230182751247.png"
+                      alt="image-20241230182751247"
+                ></p>
+<h2 id="3-12-用信号量机制实现进程互斥、同步、前驱关系"><a href="#3-12-用信号量机制实现进程互斥、同步、前驱关系" class="headerlink" title="3.12 用信号量机制实现进程互斥、同步、前驱关系"></a>3.12 用信号量机制实现进程互斥、同步、前驱关系</h2><h3 id="3-12-1-实现进程互斥"><a href="#3-12-1-实现进程互斥" class="headerlink" title="3.12.1 实现进程互斥"></a>3.12.1 实现进程互斥</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230184726404.png"
+                      alt="image-20241230184726404"
+                ></p>
+<h3 id="3-12-2-实现进程同步"><a href="#3-12-2-实现进程同步" class="headerlink" title="3.12.2 实现进程同步"></a>3.12.2 实现进程同步</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230185428960.png"
+                      alt="image-20241230185428960"
+                ></p>
+<h3 id="3-12-3-实现前驱关系"><a href="#3-12-3-实现前驱关系" class="headerlink" title="3.12.3 实现前驱关系"></a>3.12.3 实现前驱关系</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230191222289.png"
+                      alt="image-20241230191222289"
+                ></p>
+<h2 id="3-13-生产者-消费者问题"><a href="#3-13-生产者-消费者问题" class="headerlink" title="3.13 生产者-消费者问题"></a>3.13 生产者-消费者问题</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230194047252.png"
+                      alt="image-20241230194047252"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230194111033.png"
+                      alt="image-20241230194111033"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230194520516.png"
+                      alt="image-20241230194520516"
+                ></p>
+<h2 id="3-14-多生产者-多消费者问题"><a href="#3-14-多生产者-多消费者问题" class="headerlink" title="3.14 多生产者-多消费者问题"></a>3.14 多生产者-多消费者问题</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230195135400.png"
+                      alt="image-20241230195135400"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230211207530.png"
+                      alt="image-20241230211207530"
+                ></p>
+<ul>
+<li>注意：</li>
+</ul>
+<p>在生产者-消费者问题中，如果缓冲区大小为1，那么有可能不需要设置互斥信号量就可以实现互斥访问缓冲区的功能。当然，这不是绝对的，要具体问题具体分析。</p>
+<p>建议：在考试中如果来不及仔细分析，可以加上互斥信号量，保证各进程一定会互斥地访问缓冲区但需要注意的是，实现互斥的P操作一定要在实现同步的P操作之后，否则可能引起 “死锁”。</p>
+<h2 id="3-15-哲学家进餐问题"><a href="#3-15-哲学家进餐问题" class="headerlink" title="3.15 哲学家进餐问题"></a>3.15 哲学家进餐问题</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230212948551.png"
+                      alt="image-20241230212948551"
+                ></p>
+<ul>
+<li><strong>如何防止死锁的发生呢?</strong></li>
+</ul>
+<p>①可以对哲学家进程施加一些限制条件，比如最多允许四个哲学家同时进餐。这样可以保证至少有一个哲学家是可以拿到左右两只筷子的</p>
+<p>②要求奇数号哲学家先拿左边的筷子，然后再拿右边的筷子，而偶数号哲学家刚好相反。用这种方法可以保证如果相邻的两个奇偶号哲学家都想吃饭，那么只会有其中一个可以拿起第一只筷子，另一个会直接阻塞。这就避免了占有一支后再等待另一只的情况。</p>
+<p>③仅当一个哲学家左右两支筷子都可用时才允许他抓起筷子。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230213607449.png"
+                      alt="image-20241230213607449"
+                ></p>
+<h2 id="3-16-管程"><a href="#3-16-管程" class="headerlink" title="3.16 管程"></a>3.16 管程</h2><h3 id="3-16-1-定义和基本特征"><a href="#3-16-1-定义和基本特征" class="headerlink" title="3.16.1 定义和基本特征"></a>3.16.1 定义和基本特征</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230215538837.png"
+                      alt="image-20241230215538837"
+                ></p>
+<h3 id="3-16-2-用管程解决生产者消费者问题"><a href="#3-16-2-用管程解决生产者消费者问题" class="headerlink" title="3.16.2 用管程解决生产者消费者问题"></a>3.16.2 用管程解决生产者消费者问题</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230220523482.png"
+                      alt="image-20241230220523482"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241230220822843.png"
+                      alt="image-20241230220822843"
+                ></p>
+<h2 id="3-17-死锁的概念"><a href="#3-17-死锁的概念" class="headerlink" title="3.17 死锁的概念"></a>3.17 死锁的概念</h2><h3 id="3-17-1-什么是死锁"><a href="#3-17-1-什么是死锁" class="headerlink" title="3.17.1 什么是死锁"></a>3.17.1 什么是死锁</h3><p>每个人都占有一个资源，同时又在等待另一个人手里的资源。发生 “死锁“。</p>
+<p>在并发环境下，各进程因竞争资源而造成的一种<strong>互相等待对方手里的资源，导致各进程都阻塞，都无法向前推进</strong>的现象，就是 “死锁“。发生死锁后若无外力干涉，这些进程都将无法向前推进。</p>
+<h3 id="3-17-2-死锁、饥饿、死循环的区别"><a href="#3-17-2-死锁、饥饿、死循环的区别" class="headerlink" title="3.17.2 死锁、饥饿、死循环的区别"></a>3.17.2 死锁、饥饿、死循环的区别</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231132514021.png"
+                      alt="image-20241231132514021"
+                ></p>
+<h3 id="3-17-3-死锁产生的必要条件"><a href="#3-17-3-死锁产生的必要条件" class="headerlink" title="3.17.3 死锁产生的必要条件"></a>3.17.3 死锁产生的必要条件</h3><p>四个必要条件：<strong>互斥条件、不可抢占条件、请求和保持条件、循环等待条件</strong>。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231133340996.png"
+                      alt="image-20241231133340996"
+                ></p>
+<h3 id="3-17-4-什么时候会发生死锁"><a href="#3-17-4-什么时候会发生死锁" class="headerlink" title="3.17.4 什么时候会发生死锁"></a>3.17.4 什么时候会发生死锁</h3><p>1、对系统资源的竞争。各进程对不可剥夺的资源（如打印机）的竞争可能引起死锁，对可剥夺的资源（CPU）的竞争是不会引起死锁的。</p>
+<p>2、进程推进顺序非法。请求和释放资源的顺序不当，也同样会导致死锁。例如，并发执行的进程P1、P2分别申请并占有了资源 R1、R2，之后进程P1又紧接着申请资源R2，而进程P2又申请资源R1，两者会因为申请的资源被对方占有而阻塞，从而发生死锁。</p>
+<p>3、信号量的使用不当也会造成死锁。如生产者-消费者问题中，如果实现互斥的P操作在实现同步的P操作之前，就有可能导致死锁。（可以把互斥信号量、同步信号量也看做是一种抽象的系统资源）</p>
+<p>总之，对不可剥夺资源的不合理分配，可能导致死锁。</p>
+<p>即：<strong>竞争不可抢占性资源引起死锁、竞争可消耗资源引起死锁、进程推进顺序不当引起死锁</strong>。</p>
+<h3 id="3-17-5-死锁的处理策略"><a href="#3-17-5-死锁的处理策略" class="headerlink" title="3.17.5 死锁的处理策略"></a>3.17.5 死锁的处理策略</h3><p>1、<strong>预防死锁</strong>。破坏死锁产生的四个必要条件中的一个或几个。</p>
+<p>2、<strong>避免死锁</strong>。用某种方法防止系统进入不安全状态，从而避免死锁（银行家算法）。</p>
+<p>3、<strong>死锁的检测和解除</strong>。允许死锁的发生，不过操作系统会负责检测出死锁的发生，然后采取某种措施解除死锁。</p>
+<h2 id="3-18-预防死锁"><a href="#3-18-预防死锁" class="headerlink" title="3.18 预防死锁"></a>3.18 预防死锁</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231135427782.png"
+                      alt="image-20241231135427782"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231135507249.png"
+                      alt="image-20241231135507249"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231135536063.png"
+                      alt="image-20241231135536063"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231140159221.png"
+                      alt="image-20241231140159221"
+                ></p>
+<h2 id="3-19-避免死锁"><a href="#3-19-避免死锁" class="headerlink" title="3.19 避免死锁"></a>3.19 避免死锁</h2><h3 id="3-19-1-安全序列、不安全状态、死锁的联系"><a href="#3-19-1-安全序列、不安全状态、死锁的联系" class="headerlink" title="3.19.1 安全序列、不安全状态、死锁的联系"></a>3.19.1 安全序列、不安全状态、死锁的联系</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231151450576.png"
+                      alt="image-20241231151450576"
+                ></p>
+<h3 id="3-19-2-银行家算法"><a href="#3-19-2-银行家算法" class="headerlink" title="3.19.2 银行家算法"></a>3.19.2 银行家算法</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231153828608.png"
+                      alt="image-20241231153828608"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231154142437.png"
+                      alt="image-20241231154142437"
+                ></p>
+<h2 id="3-20-检测和解除"><a href="#3-20-检测和解除" class="headerlink" title="3.20 检测和解除"></a>3.20 检测和解除</h2><h3 id="3-20-1-死锁的检测"><a href="#3-20-1-死锁的检测" class="headerlink" title="3.20.1 死锁的检测"></a>3.20.1 死锁的检测</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231163115529.png"
+                      alt="image-20241231163115529"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231163500322.png"
+                      alt="image-20241231163500322"
+                ></p>
+<h3 id="3-20-2-死锁的解除"><a href="#3-20-2-死锁的解除" class="headerlink" title="3.20.2 死锁的解除"></a>3.20.2 死锁的解除</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231163637618.png"
+                      alt="image-20241231163637618"
+                ></p>
+<h1 id="4-存储器管理"><a href="#4-存储器管理" class="headerlink" title="4 存储器管理"></a>4 存储器管理</h1><h2 id="4-1-内存的基础知识"><a href="#4-1-内存的基础知识" class="headerlink" title="4.1 内存的基础知识"></a>4.1 内存的基础知识</h2><h3 id="4-1-1-内存的概念和作用"><a href="#4-1-1-内存的概念和作用" class="headerlink" title="4.1.1 内存的概念和作用"></a>4.1.1 内存的概念和作用</h3><p>内存可存放数据。程序执行前**需要先放到内存中才能被CPU处理 **– 缓和CPU与硬盘之间的速度矛盾。</p>
+<p>内存地址从0开始，<strong>每个地址对应一个存储单元</strong>。</p>
+<p>内存中也有一个一个的 “小房间”，每个小房间就是一个 “<strong>存储单元</strong>“。</p>
+<p>如果计算机 “<strong>按字节编址</strong>” 则每个存储单元大小为 <strong>1字节</strong>，即 1B，即 8个二进制位。</p>
+<p>如果<strong>字长为16位</strong>的计算机 ”<strong>按字编址</strong>”，则每个存储单元大小为 <strong>1个字</strong>，每个字的大小为 16 个二进制位。</p>
+<h3 id="4-1-2-程序从写到运行"><a href="#4-1-2-程序从写到运行" class="headerlink" title="4.1.2 程序从写到运行"></a>4.1.2 程序从写到运行</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231201933728.png"
+                      alt="image-20241231201933728"
+                ></p>
+<h3 id="4-1-3-程序的装入"><a href="#4-1-3-程序的装入" class="headerlink" title="4.1.3 程序的装入"></a>4.1.3 程序的装入</h3><ul>
+<li>绝对装入</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231193053483.png"
+                      alt="image-20241231193053483"
+                ></p>
+<ul>
+<li>可重定位装入</li>
+</ul>
+<p>将作业相对地址空间的相对地址转换成内存中的绝对地址的过程就是<strong>地址重定位</strong>。</p>
+<p>地址变换通常是在程序装入时一次完成的，以后不再改变，故称为<strong>静态重定位</strong>。</p>
+<p>静态重定位（装入时由重定位装入程序一次性完成）。</p>
+<p><strong>固定分区分配</strong>是静态重定位。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231195347394.png"
+                      alt="image-20241231195347394"
+                ></p>
+<ul>
+<li>动态运行时装入</li>
+</ul>
+<p>动态重定位（程序真正执行时进行）。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231200633059.png"
+                      alt="image-20241231200633059"
+                ></p>
+<h3 id="4-1-4-链接的三种方式"><a href="#4-1-4-链接的三种方式" class="headerlink" title="4.1.4 链接的三种方式"></a>4.1.4 链接的三种方式</h3><p>1、静态链接：在程序运行之前先将各目标模块及它们所需的库函数连接成一个完整的可执行文件（装入模块），之后不再拆开。</p>
+<p>2、装入时动态链接：将各目标模块装入内存时，边装入边链接的链接方式。</p>
+<p>3、运行时动态链接：在程序执行中需要该目标模块时，才对它进行链接。其优点是便于修改和更新，便于实现对目标模块的共享。</p>
+<h2 id="4-2-内存管理的概念"><a href="#4-2-内存管理的概念" class="headerlink" title="4.2 内存管理的概念"></a>4.2 内存管理的概念</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231203550277.png"
+                      alt="image-20241231203550277"
+                ></p>
+<ul>
+<li>内存保护可采取两种方法：</li>
+</ul>
+<p>方法一：在CPU中设置一对上、下限寄存器，存放进程的上、下限地址。进程的指令要访问某个地址时，CPU检查是否越界。</p>
+<p>方法二：采用重定位寄存器（又称基址寄存器）和界地址寄存器（又称限长寄存器）进行越界检查。重定位寄存器中存放的是进程的起始物理地址。界地址寄存器中存放的是进程的最大逻辑地址。</p>
+<h2 id="4-3-覆盖与交换"><a href="#4-3-覆盖与交换" class="headerlink" title="4.3 覆盖与交换"></a>4.3 覆盖与交换</h2><h3 id="4-3-1-覆盖"><a href="#4-3-1-覆盖" class="headerlink" title="4.3.1 覆盖"></a>4.3.1 覆盖</h3><p>覆盖技术的思想：将<strong>程序分为多个段</strong>（多个模块）常用的段常驻内存，不常用的段在需要时调入内存。</p>
+<p>内存中分为<strong>一个 “固定区”</strong> 和<strong>若干个 “覆盖区“</strong>。</p>
+<p>需要常驻内存的段放在“固定区”中，<strong>调入后就不再调出</strong>（除非运行结束）；不常用的段放在“覆盖区”，<strong>需要用到时调入内存，用不到时调出内存</strong>。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231205930376.png"
+                      alt="image-20241231205930376"
+                ></p>
+<h3 id="4-3-2-交换（对换）"><a href="#4-3-2-交换（对换）" class="headerlink" title="4.3.2 交换（对换）"></a>4.3.2 交换（对换）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231210741475.png"
+                      alt="image-20241231210741475"
+                ></p>
+<h3 id="4-3-3-区别"><a href="#4-3-3-区别" class="headerlink" title="4.3.3 区别"></a>4.3.3 区别</h3><p>覆盖是在同一个程序或进程中的。</p>
+<p>交换是在不同进程（或作业）之间的。</p>
+<h2 id="4-4-连续分配存储管理方式"><a href="#4-4-连续分配存储管理方式" class="headerlink" title="4.4 连续分配存储管理方式"></a>4.4 连续分配存储管理方式</h2><h3 id="4-4-1-单一连续分配"><a href="#4-4-1-单一连续分配" class="headerlink" title="4.4.1 单一连续分配"></a>4.4.1 单一连续分配</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231220326620.png"
+                      alt="image-20241231220326620"
+                ></p>
+<h3 id="4-4-2-固定分区分配"><a href="#4-4-2-固定分区分配" class="headerlink" title="4.4.2 固定分区分配"></a>4.4.2 固定分区分配</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231220529891.png"
+                      alt="image-20241231220529891"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20241231220652792.png"
+                      alt="image-20241231220652792"
+                ></p>
+<h3 id="4-4-3-动态分区分配"><a href="#4-4-3-动态分区分配" class="headerlink" title="4.4.3 动态分区分配"></a>4.4.3 动态分区分配</h3><p><strong>动态分区分配</strong>又称为<strong>可变分区分配</strong>。这种分配方式<strong>不会预先划分内存分区</strong>，而是在进程装入内存时<strong>根据进程的大小动态地建立分区</strong>，并使分区的大小正好适合进程的需要。因此系统分区的大小和数目是可变的。</p>
+<p>（eg：假设某计算机内存大小为64MB，系统区8MB，用户区共56MB…）</p>
+<ul>
+<li>系统要用什么样的数据结构记录内存的使用情况?</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101150217375.png"
+                      alt="image-20250101150217375"
+                ></p>
+<ul>
+<li>当很多个空闲分区都能满足需求时，应该选择哪个分区进行分配?</li>
+</ul>
+<p>把一个新作业装入内存时，须按照一定的<strong>动态分区分配算法</strong>，从空闲分区表（或空闲分区链）中选出一个分区分配给该作业。由于分配算法算法对系统性能有很大的影响，因此人们对它进行了广泛的研究。</p>
+<ul>
+<li>如何进行分区的分配与回收操作?</li>
+<li>分配</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101150932317.png"
+                      alt="image-20250101150932317"
+                ></p>
+<ul>
+<li>回收</li>
+</ul>
+<p>情况一：回收区的后面有一个相邻的空闲分区——两个相邻的空闲分区合并为一个。</p>
+<p>情况二：回收区的前面有一个相邻的空闲分区——两个相邻的空闲分区合并为一个。</p>
+<p>情况三：回收区的前、后各有一个相邻的空闲分区——三个相邻的空闲分区合并为一个。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101151648438.png"
+                      alt="image-20250101151648438"
+                ></p>
+<ul>
+<li>紧凑技术</li>
+</ul>
+<p>动态分区分配<strong>没有内部碎片</strong>，但是<strong>有外部碎片</strong>。</p>
+<p><strong>内部碎片</strong>，分配给某进程的内存区域中，如果有些部分没有用上。</p>
+<p><strong>外部碎片</strong>，是指内存中的某些空闲分区由于太小而难以利用。</p>
+<p>如果内存中空闲空间的总和本来可以满足某进程的要求但由于进程需要的是一整块连续的内存空间，因此这些 “碎片” 不能满足进程的需求。可以通过<strong>紧凑（拼凑，Compaction）技术</strong>来解决外部碎片。</p>
+<h2 id="4-5-动态分区分配算法"><a href="#4-5-动态分区分配算法" class="headerlink" title="4.5 动态分区分配算法"></a>4.5 动态分区分配算法</h2><h3 id="4-5-1-首次适应算法"><a href="#4-5-1-首次适应算法" class="headerlink" title="4.5.1 首次适应算法"></a>4.5.1 首次适应算法</h3><p>空闲分区链以地址递增的次序链接，分配内存时，从链首开始顺序查找，直至找到一个大小能满足要求的空闲分区为止。</p>
+<p>首次适应算法的效果是更好的。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101153257219.png"
+                      alt="image-20250101153257219"
+                ></p>
+<h3 id="4-5-2-最佳适应算法"><a href="#4-5-2-最佳适应算法" class="headerlink" title="4.5.2 最佳适应算法"></a>4.5.2 最佳适应算法</h3><p>将所有的空闲分区按容量从小到大的顺序形成一个空闲分区链，第一次找到的能满足要求的空闲区必然是最佳的。</p>
+<p>（进行若干次空间分配和回收后，能够计算出主存中空闲分区的大小。）</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101153954364.png"
+                      alt="image-20250101153954364"
+                ></p>
+<h3 id="4-5-3-最坏适应算法"><a href="#4-5-3-最坏适应算法" class="headerlink" title="4.5.3 最坏适应算法"></a>4.5.3 最坏适应算法</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101154243082.png"
+                      alt="image-20250101154243082"
+                ></p>
+<h3 id="4-5-4-邻近适应算法"><a href="#4-5-4-邻近适应算法" class="headerlink" title="4.5.4 邻近适应算法"></a>4.5.4 邻近适应算法</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101154851476.png"
+                      alt="image-20250101154851476"
+                ></p>
+<h3 id="4-5-6-总结"><a href="#4-5-6-总结" class="headerlink" title="4.5.6 总结"></a>4.5.6 总结</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101155017999.png"
+                      alt="image-20250101155017999"
+                ></p>
+<h2 id="4-6-分页存储管理方式"><a href="#4-6-分页存储管理方式" class="headerlink" title="4.6 分页存储管理方式"></a>4.6 分页存储管理方式</h2><h3 id="4-6-1-分页存储"><a href="#4-6-1-分页存储" class="headerlink" title="4.6.1 分页存储"></a>4.6.1 分页存储</h3><p>分页存储管理系统中，CPU每存取一个数据，都要访问2次内存。</p>
+<p>在分页式存储管理中，如果页面置换算法选择不当，就会出现抖动现象，使系统的命中率降低。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101163200910.png"
+                      alt="image-20250101163200910"
+                ></p>
+<h3 id="4-6-2-页表"><a href="#4-6-2-页表" class="headerlink" title="4.6.2 页表"></a>4.6.2 页表</h3><p>分页存储管理方式中，页表实现了页号到块号的地址映像。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101165411590.png"
+                      alt="image-20250101165411590"
+                ></p>
+<ul>
+<li>每个页表项占多少字节?</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101170931318.png"
+                      alt="image-20250101170931318"
+                ></p>
+<h3 id="4-6-3-地址的转换"><a href="#4-6-3-地址的转换" class="headerlink" title="4.6.3 地址的转换"></a>4.6.3 地址的转换</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101171118002.png"
+                      alt="image-20250101171118002"
+                ></p>
+<ul>
+<li>如何确定一个逻辑地址对应的页号、页内偏移量?</li>
+</ul>
+<p>如果每个页面大小为2的k次方B ，用二进制数表示逻辑地址则末尾K位即为页内偏移量，其余部分就是页号。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101172110285.png"
+                      alt="image-20250101172110285"
+                ></p>
+<ul>
+<li>为何页面大小要取2的整数幂?</li>
+</ul>
+<p>①逻辑地址的拆分更加迅速– 如果每个页面大小为2的k次方B，用二进制数表示逻辑地址，则末尾K位即为页内偏移量，其余部分就是页号。因此，如果让每个页面的大小为2的整数幂，计算机硬件就可以很方便地得出一个逻辑地址对应的页号和页内偏移量，而无需进行除法运算，从而提升了运行速度。</p>
+<p>②物理地址的计算更加迅速– 根据逻辑地址得到页号，根据页号查询页表从而找到页面存放的内存块号，将二进制表示的内存块号和页内偏移量拼接起来，就可以得到最终的物理地址。</p>
+<h3 id="4-6-4-逻辑地址结构"><a href="#4-6-4-逻辑地址结构" class="headerlink" title="4.6.4 逻辑地址结构"></a>4.6.4 逻辑地址结构</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101172456945.png"
+                      alt="image-20250101172456945"
+                ></p>
+<h3 id="4-6-5-基本地址变换机构"><a href="#4-6-5-基本地址变换机构" class="headerlink" title="4.6.5 基本地址变换机构"></a>4.6.5 基本地址变换机构</h3><ul>
+<li>过程</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101174153357.png"
+                      alt="image-20250101174153357"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101174233788.png"
+                      alt="image-20250101174233788"
+                ></p>
+<ul>
+<li>例子</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101174639953.png"
+                      alt="image-20250101174639953"
+                ></p>
+<h3 id="4-6-6-有快表的地址变换机构"><a href="#4-6-6-有快表的地址变换机构" class="headerlink" title="4.6.6 有快表的地址变换机构"></a>4.6.6 有快表的地址变换机构</h3><ul>
+<li>快表</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101184124662.png"
+                      alt="image-20250101184124662"
+                ></p>
+<ul>
+<li>引入快表后的地址变换过程</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101184305319.png"
+                      alt="image-20250101184305319"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101184341166.png"
+                      alt="image-20250101184341166"
+                ></p>
+<ul>
+<li>局部性原理</li>
+</ul>
+<p><strong>基本地址变换机构</strong>中，每次要访问一个逻辑地址，都需要<strong>查询内存中的页表</strong>。由于局部性原理，<strong>可能连续很多次查到的都是同一个页表项</strong>。</p>
+<h2 id="4-7-基本分段存储管理方式"><a href="#4-7-基本分段存储管理方式" class="headerlink" title="4.7 基本分段存储管理方式"></a>4.7 基本分段存储管理方式</h2><h3 id="4-7-1-分段"><a href="#4-7-1-分段" class="headerlink" title="4.7.1 分段"></a>4.7.1 分段</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101191839168.png"
+                      alt="image-20250101191839168"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101192309738.png"
+                      alt="image-20250101192309738"
+                ></p>
+<h3 id="4-7-2-段表"><a href="#4-7-2-段表" class="headerlink" title="4.7.2 段表"></a>4.7.2 段表</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101192839925.png"
+                      alt="image-20250101192839925"
+                ></p>
+<h3 id="4-7-3-地址变换"><a href="#4-7-3-地址变换" class="headerlink" title="4.7.3 地址变换"></a>4.7.3 地址变换</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101193305851.png"
+                      alt="image-20250101193305851"
+                ></p>
+<h3 id="4-7-4-分段、分页管理的对比"><a href="#4-7-4-分段、分页管理的对比" class="headerlink" title="4.7.4 分段、分页管理的对比"></a>4.7.4 分段、分页管理的对比</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101193805054.png"
+                      alt="image-20250101193805054"
+                ></p>
+<h2 id="4-8-段页式管理方式"><a href="#4-8-段页式管理方式" class="headerlink" title="4.8 段页式管理方式"></a>4.8 段页式管理方式</h2><h3 id="4-8-1-分页、分段的优缺点"><a href="#4-8-1-分页、分段的优缺点" class="headerlink" title="4.8.1 分页、分段的优缺点"></a>4.8.1 分页、分段的优缺点</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>分页</td>
+<td>内存空间利用率高，不会产生外部碎片，只会有少量的页内碎片</td>
+<td>不方便按照逻辑模块实现信息的共享和保护</td>
+</tr>
+<tr>
+<td>分段</td>
+<td>很方便按照逻辑模块实现信息的共享和保护</td>
+<td>如果段长过大，为其分配很大的连续空间会很不方便。另外，段式管理会产生外部碎片（分段管理中产生的外部碎片也可以用“紧凑”来解决，只是需要付出较大的时间代价）</td>
+</tr>
+</tbody></table>
+<h3 id="4-8-2-概念"><a href="#4-8-2-概念" class="headerlink" title="4.8.2 概念"></a>4.8.2 概念</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101195104097.png"
+                      alt="image-20250101195104097"
+                ></p>
+<h3 id="4-8-3-逻辑地址结构"><a href="#4-8-3-逻辑地址结构" class="headerlink" title="4.8.3 逻辑地址结构"></a>4.8.3 逻辑地址结构</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101195324009.png"
+                      alt="image-20250101195324009"
+                ></p>
+<h3 id="4-8-4-段表、页表"><a href="#4-8-4-段表、页表" class="headerlink" title="4.8.4 段表、页表"></a>4.8.4 段表、页表</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101195436218.png"
+                      alt="image-20250101195436218"
+                ></p>
+<h3 id="4-8-5-地址变换"><a href="#4-8-5-地址变换" class="headerlink" title="4.8.5 地址变换"></a>4.8.5 地址变换</h3><p> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101195525459.png"
+                      alt="image-20250101195525459"
+                ></p>
+<h1 id="5-虚拟存储器"><a href="#5-虚拟存储器" class="headerlink" title="5 虚拟存储器"></a>5 虚拟存储器</h1><h2 id="5-1-传统存储管理方式的特征、缺点"><a href="#5-1-传统存储管理方式的特征、缺点" class="headerlink" title="5.1 传统存储管理方式的特征、缺点"></a>5.1 传统存储管理方式的特征、缺点</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101200254244.png"
+                      alt="image-20250101200254244"
+                ></p>
+<h2 id="5-2-局部性原理"><a href="#5-2-局部性原理" class="headerlink" title="5.2 局部性原理"></a>5.2 局部性原理</h2><p><strong>时间局部性</strong>：如果执行了程序中的某条指令，那么不久后这条指令很有可能再次执行；如果某个数据被访问过，不久之后该数据很可能再次被访问。</p>
+<p><strong>空间局部性</strong>：一旦程序访问了某个存储单元，在不久之后，其附近的存储单元也很有可能被访问。(因为很多数据在内存中都是连续存放的)</p>
+<h2 id="5-3-虚拟内存的定义和特征"><a href="#5-3-虚拟内存的定义和特征" class="headerlink" title="5.3 虚拟内存的定义和特征"></a>5.3 虚拟内存的定义和特征</h2><p><strong>虚拟存储器的定义</strong>：是指具有请求调入功能和置换功能，能从逻辑上对内存容量加以扩充的一种存储器系统。其逻辑容量由内存容量和外存容量之和所决定，其运行速度接近于内存速度，而每位的成本却又接近于外存。</p>
+<p><strong>虚拟性</strong>是实现虚拟存储器的目标。</p>
+<p>实现虚拟存储器的<strong>目的</strong>是<strong>扩充主存容量</strong>，是扩充主存逻辑地址的空间技术。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101200737884.png"
+                      alt="image-20250101200737884"
+                ></p>
+<h2 id="5-4-如何实现虚拟内存技术"><a href="#5-4-如何实现虚拟内存技术" class="headerlink" title="5.4 如何实现虚拟内存技术"></a>5.4 如何实现虚拟内存技术</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101201452901.png"
+                      alt="image-20250101201452901"
+                ></p>
+<h2 id="5-5-页面置换算法"><a href="#5-5-页面置换算法" class="headerlink" title="5.5 页面置换算法"></a>5.5 页面置换算法</h2><h3 id="5-5-1-最佳置换算法-OPT"><a href="#5-5-1-最佳置换算法-OPT" class="headerlink" title="5.5.1 最佳置换算法(OPT)"></a>5.5.1 最佳置换算法(OPT)</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101204645239.png"
+                      alt="image-20250101204645239"
+                ></p>
+<ul>
+<li>注意：</li>
+</ul>
+<p>最佳置换算法可以保证<strong>最低的缺页率</strong>，但实际上，只有在进程执行的过程中才能知道接下来会访问到的是哪个页面。操作系统无法提前预判页面访问序列。因此，最佳置换算法是<strong>无法实现</strong>的。</p>
+<h3 id="5-5-2-先进先出置换算法-FIFO"><a href="#5-5-2-先进先出置换算法-FIFO" class="headerlink" title="5.5.2 先进先出置换算法(FIFO)"></a>5.5.2 先进先出置换算法(FIFO)</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101205313747.png"
+                      alt="image-20250101205313747"
+                ></p>
+<h3 id="5-5-3-最近最久未使用置换算法-LRU"><a href="#5-5-3-最近最久未使用置换算法-LRU" class="headerlink" title="5.5.3 最近最久未使用置换算法(LRU)"></a>5.5.3 最近最久未使用置换算法(LRU)</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101205907312.png"
+                      alt="image-20250101205907312"
+                ></p>
+<h3 id="5-5-4-时钟置换算法-CLOCK"><a href="#5-5-4-时钟置换算法-CLOCK" class="headerlink" title="5.5.4 时钟置换算法(CLOCK)"></a>5.5.4 时钟置换算法(CLOCK)</h3><ul>
+<li>原始</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101210617712.png"
+                      alt="image-20250101210617712"
+                ></p>
+<ul>
+<li>改良</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250101211839121.png"
+                      alt="image-20250101211839121"
+                ></p>
+<h1 id="6-输入输出系统"><a href="#6-输入输出系统" class="headerlink" title="6 输入输出系统"></a>6 输入输出系统</h1><h2 id="6-1-I-O系统"><a href="#6-1-I-O系统" class="headerlink" title="6.1 I&#x2F;O系统"></a>6.1 I&#x2F;O系统</h2><ul>
+<li>基本功能</li>
+</ul>
+<p>隐藏物理设备的细节</p>
+<p>与设备的无关性</p>
+<p>提高处理机和I&#x2F;O设备的利用率</p>
+<p>对I&#x2F;O设备进行控制</p>
+<p>确保对设备的正确共享</p>
+<p>错误处理</p>
+<h2 id="6-2-I-O设备的基本概念"><a href="#6-2-I-O设备的基本概念" class="headerlink" title="6.2 I&#x2F;O设备的基本概念"></a>6.2 I&#x2F;O设备的基本概念</h2><ul>
+<li>概念</li>
+</ul>
+<p>“I&#x2F;O” 就是 “输入&#x2F;输出” (Input&#x2F;Output)。I&#x2F;O设备就是可以将数据输入到计算机，或者可以接收计算机输出数据的外部设备，属于计算机中的硬件部件。</p>
+<ul>
+<li><p>分类</p>
+</li>
+<li><p>按<strong>使用特性</strong>分类：</p>
+</li>
+</ul>
+<p>人机交互类外部设备；存储设备；网络通信设备</p>
+<ul>
+<li>按<strong>传输速率</strong>分类：</li>
+</ul>
+<p>低速设备；中速设备；高速设备</p>
+<ul>
+<li>按<strong>信息交换的单位</strong>分类：</li>
+</ul>
+<p>块设备（传输快，可寻址）</p>
+<p>字符设备（传输慢，不可寻址，常采用中断驱动方式）</p>
+<ul>
+<li>按<strong>分配特性</strong>分类</li>
+</ul>
+<p>独享设备；共享设备；虚拟设备</p>
+<h2 id="6-3-I-O控制方式"><a href="#6-3-I-O控制方式" class="headerlink" title="6.3 I&#x2F;O控制方式"></a>6.3 I&#x2F;O控制方式</h2><h3 id="6-3-1-程序直接控制方式"><a href="#6-3-1-程序直接控制方式" class="headerlink" title="6.3.1 程序直接控制方式"></a>6.3.1 程序直接控制方式</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102133742369.png"
+                      alt="image-20250102133742369"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102133809130.png"
+                      alt="image-20250102133809130"
+                ></p>
+<h3 id="6-3-2-中断驱动方式"><a href="#6-3-2-中断驱动方式" class="headerlink" title="6.3.2 中断驱动方式"></a>6.3.2 中断驱动方式</h3><ul>
+<li>思想：</li>
+</ul>
+<p>引入<strong>中断机制</strong>。由于I&#x2F;O设备速度很慢，因此在CPU发出读&#x2F;写命令后，可<strong>将等待I&#x2F;O的进程阻塞</strong>，先切换到别的进程执行。当I&#x2F;O完成后，控制器会向CPU发出一个中断信号，CPU<strong>检测到中断信号后</strong>，会保存当前进程的运行环境信息，转去执行中断处理程序处理该中断。处理中断的过程中，CPU从I&#x2F;O控制器读一个字的数据传送到CPU寄存器，再写入主存。接着，<strong>CPU恢复等待I&#x2F;O的进程（或其他进程）的运行环境，然后继续执行</strong>。</p>
+<ul>
+<li>注意：</li>
+</ul>
+<p>CPU会在每个指令周期的末尾检查中断。</p>
+<p>中断处理过程中需要保存、恢复进程的运行环境这个过程是需要一定时间开销的。可见，如果中断发生的频率太高，也会降低系统性能。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102135108366.png"
+                      alt="image-20250102135108366"
+                ></p>
+<h3 id="6-3-3-DMA方式"><a href="#6-3-3-DMA方式" class="headerlink" title="6.3.3 DMA方式"></a>6.3.3 DMA方式</h3><ul>
+<li>思想：</li>
+</ul>
+<p>与 “中断驱动方式” 相比，DMA方式（Direct Memory Access，<strong>直接存储器存取</strong>。主要用于块设备的I&#x2F;O控制）有这样几个改进：</p>
+<p>①数据的传送单位是“块”。不再是一个字、一个字的传送；</p>
+<p>②数据的流向是从设备直接放入内存，或者从内存直接到设备。不再需要CPU作为 “快递小哥”；</p>
+<p>③仅在传送一个或多个数据块的开始和结束时，才需要CPU干预。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102140000904.png"
+                      alt="image-20250102140000904"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102140159134.png"
+                      alt="image-20250102140159134"
+                ></p>
+<h3 id="6-3-4-通道控制方式"><a href="#6-3-4-通道控制方式" class="headerlink" title="6.3.4 通道控制方式"></a>6.3.4 通道控制方式</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102141123354.png"
+                      alt="image-20250102141123354"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102141157875.png"
+                      alt="image-20250102141157875"
+                ></p>
+<h2 id="6-4-磁盘的结构"><a href="#6-4-磁盘的结构" class="headerlink" title="6.4 磁盘的结构"></a>6.4 磁盘的结构</h2><ul>
+<li>磁盘、磁道、扇区</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102143927687.png"
+                      alt="image-20250102143927687"
+                ></p>
+<ul>
+<li>如何在磁盘中读&#x2F;写数据</li>
+</ul>
+<p>需要把 “磁头” 移动到想要读&#x2F;写的扇区所在的磁道。磁盘会转起来，让目标扇区从磁头下面划过，才能完成对扇区的读&#x2F;写操作。</p>
+<ul>
+<li>盘面、柱面</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102144201694.png"
+                      alt="image-20250102144201694"
+                ></p>
+<ul>
+<li>磁盘的物理地址</li>
+</ul>
+<p>可用（柱面号，盘面号，扇区号）来定位任意一个“磁盘块”。在“文件的物理结构”小节中，我们经常提到文件数据存放在外存中的几号块，这个块号就可以转换成（柱面号，盘面号，扇区号）的地址形式。</p>
+<p>可根据该地址读取一个“块”：</p>
+<p>①根据 “柱面号” 移动磁臂，让磁头指向指定柱面；</p>
+<p>②激活指定盘面对应的磁头;</p>
+<p>③磁盘旋转的过程中，指定的扇区会从磁头下面划过，这样就完成了对指定扇区的读&#x2F;写。</p>
+<ul>
+<li>分类</li>
+<li>根据磁头是否可移动：</li>
+</ul>
+<p>固定头磁盘（每个磁道有一个磁头）；移动头磁盘（每个盘面只有一个磁头）</p>
+<ul>
+<li>根据盘片是否可更换：</li>
+</ul>
+<p>固定盘磁盘；可换盘磁盘</p>
+<h2 id="6-5-磁盘调度算法"><a href="#6-5-磁盘调度算法" class="headerlink" title="6.5 磁盘调度算法"></a>6.5 磁盘调度算法</h2><h3 id="6-5-1-磁盘读-写操作需要的时间"><a href="#6-5-1-磁盘读-写操作需要的时间" class="headerlink" title="6.5.1 磁盘读&#x2F;写操作需要的时间"></a>6.5.1 磁盘读&#x2F;写操作需要的时间</h3><p><strong>磁盘的访问时间 &#x3D; 磁盘寻道时间 + 旋转延迟时间 + 数据传输时间</strong></p>
+<p>即：总的平均存取时间T &#x3D; Ts + 1&#x2F;2r + b&#x2F;(rN)</p>
+<ul>
+<li>磁盘寻道时间</li>
+</ul>
+<p>寻找时间（寻道时间）Ts：在读&#x2F;写数据前，将磁头移动到指定磁道所花的时间。</p>
+<p>①启动磁头臂是需要时间的。假设耗时为s;</p>
+<p>②移动磁头也是需要时间的。假设磁头匀速移动，每跨越一个磁道耗时为m，总共需要跨越n条磁道。</p>
+<p>则：寻道时间Ts &#x3D; s + m*n</p>
+<ul>
+<li>旋转延迟时间</li>
+</ul>
+<p>延迟时间Tr：通过旋转磁盘，使磁头定位到目标扇区所需要的时间。</p>
+<p>设磁盘转速为r（单位:转&#x2F;秒，或转&#x2F;分），则平均所需的延迟时间Tr &#x3D; (1&#x2F;2)*(1&#x2F;r) &#x3D; 1&#x2F;(2r)</p>
+<p>补充：</p>
+<p>1&#x2F;r 就是转一圈需要的时间。找到目标扇区平均需要转半圈，因此再乘以 1&#x2F;2。</p>
+<p>硬盘的典型转速为5400 转&#x2F;分，或7200 转&#x2F;分。</p>
+<ul>
+<li>数据传输时间</li>
+</ul>
+<p>传输时间Tt：从磁盘读出或向磁盘写入数据所经历的时间。</p>
+<p>假设磁盘转速为r，此次读&#x2F;写的字节数为b，每个磁道上的字节数为N。则：传输时间Tt &#x3D; (1&#x2F;r)*(b&#x2F;N) &#x3D; b&#x2F;(rN)</p>
+<ul>
+<li>注意：</li>
+</ul>
+<p>延迟时间和传输时间都与磁盘转速相关，且为线性相关。而转速是硬件的固有属性，因此操作系统也无法优化延迟时间和传输时间。</p>
+<h3 id="6-5-2-先来先服务算法-FCFS"><a href="#6-5-2-先来先服务算法-FCFS" class="headerlink" title="6.5.2 先来先服务算法(FCFS)"></a>6.5.2 先来先服务算法(FCFS)</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102150954819.png"
+                      alt="image-20250102150954819"
+                ></p>
+<h3 id="6-5-3-最短寻找时间优先-SSTF"><a href="#6-5-3-最短寻找时间优先-SSTF" class="headerlink" title="6.5.3 最短寻找时间优先(SSTF)"></a>6.5.3 最短寻找时间优先(SSTF)</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102151622451.png"
+                      alt="image-20250102151622451"
+                ></p>
+<h3 id="6-5-4-扫描算法-SCAN"><a href="#6-5-4-扫描算法-SCAN" class="headerlink" title="6.5.4 扫描算法(SCAN)"></a>6.5.4 扫描算法(SCAN)</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102152423492.png"
+                      alt="image-20250102152423492"
+                ></p>
+<h3 id="6-5-5-循环扫描算法-C-SCAN"><a href="#6-5-5-循环扫描算法-C-SCAN" class="headerlink" title="6.5.5 循环扫描算法(C-SCAN)"></a>6.5.5 循环扫描算法(C-SCAN)</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102155452497.png"
+                      alt="image-20250102155452497"
+                ></p>
+<h1 id="7-文件管理"><a href="#7-文件管理" class="headerlink" title="7 文件管理"></a>7 文件管理</h1><h2 id="7-1-基础"><a href="#7-1-基础" class="headerlink" title="7.1 基础"></a>7.1 基础</h2><p>文件名是由文件创建者在<strong>创建文件</strong>时给出的，每个系统有自己的文件命名规则。</p>
+<p>文件系统的主要目的就是实现对文件的<strong>按名存取</strong>。</p>
+<p>文件属性包括文件类型、文件长度、文件物理位置、文件建立时间等。</p>
+<p>打开文件来获得已有文件的使用权</p>
+<p>关闭文件即可以归还文件的使用权。</p>
+<p>按文件的逻辑结构划分，文件主要有两类：流式文件和记录式文件。</p>
+<p>根据在辅存上的不同存储方式，文件可以有<strong>顺序、链接和索引</strong>三种不同的物理结构。其中顺序访问效率最高的是<strong>顺序</strong>结构，随机访问效率最高的是<strong>索引</strong>结构。</p>
+<p>文件控制块与文件一一对应。</p>
+<p>多级目录结构形式为树型结构。</p>
+<ul>
+<li>操作系统通过什么来感知文件的存在？</li>
+</ul>
+<p><strong>文件控制块</strong>（FCB）。</p>
+<ul>
+<li>什么是绝对路径，相对路径？</li>
+</ul>
+<p>从<strong>根目录</strong>出发的路径称为绝对路径。</p>
+<p>从<strong>当前目录</strong>出发的路径称为相对路径。</p>
+<p>各级目录之间用 “**&#x2F;**” 隔开。</p>
+<h1 id="8-磁盘存储器的管理"><a href="#8-磁盘存储器的管理" class="headerlink" title="8 磁盘存储器的管理"></a>8 磁盘存储器的管理</h1><h2 id="8-1-基础"><a href="#8-1-基础" class="headerlink" title="8.1 基础"></a>8.1 基础</h2><ul>
+<li>文件在外存上的组织方式有哪三种？</li>
+</ul>
+<p>连续组织方式；链接组织方式；索引组织方式</p>
+<h2 id="8-2-文件存储空间管理"><a href="#8-2-文件存储空间管理" class="headerlink" title="8.2 文件存储空间管理"></a>8.2 文件存储空间管理</h2><h3 id="8-2-1-存储空间的划分与初始化"><a href="#8-2-1-存储空间的划分与初始化" class="headerlink" title="8.2.1 存储空间的划分与初始化"></a>8.2.1 存储空间的划分与初始化</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102172733203.png"
+                      alt="image-20250102172733203"
+                ></p>
+<h3 id="8-2-2-空闲表法"><a href="#8-2-2-空闲表法" class="headerlink" title="8.2.2 空闲表法"></a>8.2.2 空闲表法</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102173556418.png"
+                      alt="image-20250102173556418"
+                ></p>
+<h3 id="8-2-3-空闲链表法"><a href="#8-2-3-空闲链表法" class="headerlink" title="8.2.3 空闲链表法"></a>8.2.3 空闲链表法</h3><ul>
+<li>空闲盘块链</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102174034018.png"
+                      alt="image-20250102174034018"
+                ></p>
+<ul>
+<li>空闲盘区链</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102174336773.png"
+                      alt="image-20250102174336773"
+                ></p>
+<h3 id="8-2-4-位示图法"><a href="#8-2-4-位示图法" class="headerlink" title="8.2.4 位示图法"></a>8.2.4 位示图法</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://image-1324607906.cos.ap-beijing.myqcloud.com/bokeimage/image-20250102175134999.png"
+                      alt="image-20250102175134999"
+                ></p>
+<p>如何分配：若文件需要K个块，①顺序扫描位示图，找到K个相邻或不相邻的“0”；②根据字号、位号算出对应的盘块号，将相应盘块分配给文件；③将相应位设置为“1”。</p>
+<p>如何回收：①根据回收的盘块号计算出对应的字号、位号；②将相应二进制位设为“0”。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 操作系统</li>
+        <li><strong>作者:</strong> dearlrq</li>
+        <li><strong>创建于
+                :</strong> 2024-12-14 20:09:48</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-01-05 22:34:48
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://redefine.ohevan.com/2024/12/14/操作系统/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E8%87%AA%E7%A0%94%E7%AC%94%E8%AE%B0/">#自研笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/09/13/SpringCloud%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BC%80%E5%8F%91%E4%B8%8E%E5%AE%9E%E6%88%98/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Spring Cloud 微服务开发与实战</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">操作系统</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA"><span class="nav-text">1 操作系统引论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">1.1 操作系统的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%AE%E6%A0%87%E5%92%8C%E4%BD%9C%E7%94%A8"><span class="nav-text">1.2 操作系统的目标和作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-%E7%9B%AE%E6%A0%87"><span class="nav-text">1.2.1 目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-%E4%BD%9C%E7%94%A8"><span class="nav-text">1.2.2 作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-%E5%8F%91%E5%B1%95%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8A%A8%E5%8A%9B"><span class="nav-text">1.2.3 发展的主要动力</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="nav-text">1.3 操作系统的发展历程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="nav-text">1.4 操作系统的基本特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="nav-text">1.5 操作系统的主要功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-text">1.6 操作系统的结构设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%8F%8F%E8%BF%B0%E4%B8%8E%E6%8E%A7%E5%88%B6"><span class="nav-text">2 进程的描述与控制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">2.1 进程的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-text">2.2 进程的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-PCB"><span class="nav-text">2.2.1 PCB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-%E7%A8%8B%E5%BA%8F%E6%AE%B5%E3%80%81%E6%95%B0%E6%8D%AE%E6%AE%B5"><span class="nav-text">2.2.2 程序段、数据段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">2.3 进程的特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E4%B8%8E%E8%BD%AC%E6%8D%A2"><span class="nav-text">2.4 进程的状态与转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F"><span class="nav-text">2.5 进程的组织方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="nav-text">2.6 进程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">2.6.1 基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-2-%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8E%9F%E8%AF%AD"><span class="nav-text">2.6.2 进程控制相关的原语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-3-%E6%80%BB%E7%BB%93"><span class="nav-text">2.6.3 总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="nav-text">2.7 进程通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-1-%E5%85%B1%E4%BA%AB%E5%AD%98%E5%82%A8"><span class="nav-text">2.7.1 共享存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-2-%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92"><span class="nav-text">2.7.2 消息传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-3-%E7%AE%A1%E9%81%93%E9%80%9A%E4%BF%A1"><span class="nav-text">2.7.3 管道通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-4-%E6%80%BB%E7%BB%93"><span class="nav-text">2.7.4 总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">2.8 线程的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-9-%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-text">2.9 线程的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-10-%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-text">2.10 线程的实现方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-11-%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E4%B8%8E%E8%BD%AC%E6%8D%A2%E3%80%81%E7%BB%84%E7%BB%87%E4%B8%8E%E6%8E%A7%E5%88%B6"><span class="nav-text">2.11 线程的状态与转换、组织与控制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E4%B8%8E%E6%AD%BB%E9%94%81"><span class="nav-text">3 处理机调度与死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E8%B0%83%E5%BA%A6%E7%9A%84%E6%A6%82%E5%BF%B5%E3%80%81%E5%B1%82%E6%AC%A1"><span class="nav-text">3.1 调度的概念、层次</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%E3%80%81%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%87%E7%A8%8B%E3%80%81%E6%96%B9%E5%BC%8F"><span class="nav-text">3.2 进程调度的时机、切换与过程、方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-%E6%97%B6%E6%9C%BA"><span class="nav-text">3.2.1 时机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-%E6%96%B9%E5%BC%8F"><span class="nav-text">3.2.2 方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%87%E7%A8%8B"><span class="nav-text">3.2.3 切换与过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E8%B0%83%E5%BA%A6%E5%99%A8%E5%92%8C%E9%97%B2%E9%80%9B%E8%BF%9B%E7%A8%8B"><span class="nav-text">3.3 调度器和闲逛进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-%E8%B0%83%E5%BA%A6%E5%99%A8"><span class="nav-text">3.3.1 调度器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2-%E9%97%B2%E9%80%9B%E8%BF%9B%E7%A8%8B"><span class="nav-text">3.3.2 闲逛进程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87"><span class="nav-text">3.4 调度算法的评价指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="nav-text">3.5 调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-1-%E5%85%88%E6%9D%A5%E5%85%88%E6%9C%8D%E5%8A%A1%EF%BC%88FCFS%EF%BC%89"><span class="nav-text">3.5.1 先来先服务（FCFS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-2-%E7%9F%AD%E4%BD%9C%E4%B8%9A%E4%BC%98%E5%85%88%EF%BC%88SJF%EF%BC%89"><span class="nav-text">3.5.2 短作业优先（SJF）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-3-%E9%AB%98%E5%93%8D%E5%BA%94%E6%AF%94%E4%BC%98%E5%85%88%EF%BC%88HRRN%EF%BC%89"><span class="nav-text">3.5.3 高响应比优先（HRRN）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-4-%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC"><span class="nav-text">3.5.4 时间片轮转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-5-%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6"><span class="nav-text">3.5.5 优先级调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-6-%E5%A4%9A%E7%BA%A7%E5%8F%8D%E9%A6%88%E9%98%9F%E5%88%97%E8%B0%83%E5%BA%A6"><span class="nav-text">3.5.6 多级反馈队列调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-7-%E5%A4%9A%E7%BA%A7%E9%98%9F%E5%88%97%E8%B0%83%E5%BA%A6"><span class="nav-text">3.5.7 多级队列调度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="nav-text">3.6 进程同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5"><span class="nav-text">3.7 进程互斥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8-%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0"><span class="nav-text">3.8 进程互斥的软件实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-1-%E5%8D%95%E6%A0%87%E5%BF%97%E6%B3%95"><span class="nav-text">3.8.1 单标志法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-2-%E5%8F%8C%E6%A0%87%E5%BF%97%E5%85%88%E6%A3%80%E6%9F%A5%E6%B3%95"><span class="nav-text">3.8.2 双标志先检查法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-3-%E5%8F%8C%E6%A0%87%E5%BF%97%E5%90%8E%E6%A3%80%E6%9F%A5%E6%B3%95"><span class="nav-text">3.8.3 双标志后检查法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-4-Peterson%E7%AE%97%E6%B3%95"><span class="nav-text">3.8.4 Peterson算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-9-%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5%E7%9A%84%E7%A1%AC%E4%BB%B6%E5%AE%9E%E7%8E%B0"><span class="nav-text">3.9 进程互斥的硬件实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-9-1-%E4%B8%AD%E6%96%AD%E5%B1%8F%E8%94%BD%E6%96%B9%E6%B3%95"><span class="nav-text">3.9.1 中断屏蔽方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-9-2-TestAndset%E6%8C%87%E4%BB%A4"><span class="nav-text">3.9.2 TestAndset指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-9-3-Swap%E6%8C%87%E4%BB%A4"><span class="nav-text">3.9.3 Swap指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-10-%E4%BA%92%E6%96%A5%E9%94%81"><span class="nav-text">3.10 互斥锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-11-%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6"><span class="nav-text">3.11 信号量机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-11-1-%E4%BB%8B%E7%BB%8D"><span class="nav-text">3.11.1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-11-2-%E6%95%B4%E5%9E%8B%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="nav-text">3.11.2 整型信号量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-11-3-%E8%AE%B0%E5%BD%95%E5%9E%8B%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="nav-text">3.11.3 记录型信号量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-12-%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5%E3%80%81%E5%90%8C%E6%AD%A5%E3%80%81%E5%89%8D%E9%A9%B1%E5%85%B3%E7%B3%BB"><span class="nav-text">3.12 用信号量机制实现进程互斥、同步、前驱关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-12-1-%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5"><span class="nav-text">3.12.1 实现进程互斥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-12-2-%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="nav-text">3.12.2 实现进程同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-12-3-%E5%AE%9E%E7%8E%B0%E5%89%8D%E9%A9%B1%E5%85%B3%E7%B3%BB"><span class="nav-text">3.12.3 实现前驱关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-13-%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98"><span class="nav-text">3.13 生产者-消费者问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-14-%E5%A4%9A%E7%94%9F%E4%BA%A7%E8%80%85-%E5%A4%9A%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98"><span class="nav-text">3.14 多生产者-多消费者问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-15-%E5%93%B2%E5%AD%A6%E5%AE%B6%E8%BF%9B%E9%A4%90%E9%97%AE%E9%A2%98"><span class="nav-text">3.15 哲学家进餐问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-16-%E7%AE%A1%E7%A8%8B"><span class="nav-text">3.16 管程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-16-1-%E5%AE%9A%E4%B9%89%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="nav-text">3.16.1 定义和基本特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-16-2-%E7%94%A8%E7%AE%A1%E7%A8%8B%E8%A7%A3%E5%86%B3%E7%94%9F%E4%BA%A7%E8%80%85%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98"><span class="nav-text">3.16.2 用管程解决生产者消费者问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-17-%E6%AD%BB%E9%94%81%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">3.17 死锁的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-17-1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%BB%E9%94%81"><span class="nav-text">3.17.1 什么是死锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-17-2-%E6%AD%BB%E9%94%81%E3%80%81%E9%A5%A5%E9%A5%BF%E3%80%81%E6%AD%BB%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">3.17.2 死锁、饥饿、死循环的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-17-3-%E6%AD%BB%E9%94%81%E4%BA%A7%E7%94%9F%E7%9A%84%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="nav-text">3.17.3 死锁产生的必要条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-17-4-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BC%9A%E5%8F%91%E7%94%9F%E6%AD%BB%E9%94%81"><span class="nav-text">3.17.4 什么时候会发生死锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-17-5-%E6%AD%BB%E9%94%81%E7%9A%84%E5%A4%84%E7%90%86%E7%AD%96%E7%95%A5"><span class="nav-text">3.17.5 死锁的处理策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-18-%E9%A2%84%E9%98%B2%E6%AD%BB%E9%94%81"><span class="nav-text">3.18 预防死锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-19-%E9%81%BF%E5%85%8D%E6%AD%BB%E9%94%81"><span class="nav-text">3.19 避免死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-19-1-%E5%AE%89%E5%85%A8%E5%BA%8F%E5%88%97%E3%80%81%E4%B8%8D%E5%AE%89%E5%85%A8%E7%8A%B6%E6%80%81%E3%80%81%E6%AD%BB%E9%94%81%E7%9A%84%E8%81%94%E7%B3%BB"><span class="nav-text">3.19.1 安全序列、不安全状态、死锁的联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-19-2-%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95"><span class="nav-text">3.19.2 银行家算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-20-%E6%A3%80%E6%B5%8B%E5%92%8C%E8%A7%A3%E9%99%A4"><span class="nav-text">3.20 检测和解除</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-20-1-%E6%AD%BB%E9%94%81%E7%9A%84%E6%A3%80%E6%B5%8B"><span class="nav-text">3.20.1 死锁的检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-20-2-%E6%AD%BB%E9%94%81%E7%9A%84%E8%A7%A3%E9%99%A4"><span class="nav-text">3.20.2 死锁的解除</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86"><span class="nav-text">4 存储器管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E5%86%85%E5%AD%98%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">4.1 内存的基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-1-%E5%86%85%E5%AD%98%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E4%BD%9C%E7%94%A8"><span class="nav-text">4.1.1 内存的概念和作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-2-%E7%A8%8B%E5%BA%8F%E4%BB%8E%E5%86%99%E5%88%B0%E8%BF%90%E8%A1%8C"><span class="nav-text">4.1.2 程序从写到运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-3-%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A3%85%E5%85%A5"><span class="nav-text">4.1.3 程序的装入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-4-%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-text">4.1.4 链接的三种方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">4.2 内存管理的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E8%A6%86%E7%9B%96%E4%B8%8E%E4%BA%A4%E6%8D%A2"><span class="nav-text">4.3 覆盖与交换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-1-%E8%A6%86%E7%9B%96"><span class="nav-text">4.3.1 覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-2-%E4%BA%A4%E6%8D%A2%EF%BC%88%E5%AF%B9%E6%8D%A2%EF%BC%89"><span class="nav-text">4.3.2 交换（对换）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-3-%E5%8C%BA%E5%88%AB"><span class="nav-text">4.3.3 区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-text">4.4 连续分配存储管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-1-%E5%8D%95%E4%B8%80%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D"><span class="nav-text">4.4.1 单一连续分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-2-%E5%9B%BA%E5%AE%9A%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D"><span class="nav-text">4.4.2 固定分区分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-3-%E5%8A%A8%E6%80%81%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D"><span class="nav-text">4.4.3 动态分区分配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-%E5%8A%A8%E6%80%81%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D%E7%AE%97%E6%B3%95"><span class="nav-text">4.5 动态分区分配算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-1-%E9%A6%96%E6%AC%A1%E9%80%82%E5%BA%94%E7%AE%97%E6%B3%95"><span class="nav-text">4.5.1 首次适应算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-2-%E6%9C%80%E4%BD%B3%E9%80%82%E5%BA%94%E7%AE%97%E6%B3%95"><span class="nav-text">4.5.2 最佳适应算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-3-%E6%9C%80%E5%9D%8F%E9%80%82%E5%BA%94%E7%AE%97%E6%B3%95"><span class="nav-text">4.5.3 最坏适应算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-4-%E9%82%BB%E8%BF%91%E9%80%82%E5%BA%94%E7%AE%97%E6%B3%95"><span class="nav-text">4.5.4 邻近适应算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-6-%E6%80%BB%E7%BB%93"><span class="nav-text">4.5.6 总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-text">4.6 分页存储管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-1-%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8"><span class="nav-text">4.6.1 分页存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-2-%E9%A1%B5%E8%A1%A8"><span class="nav-text">4.6.2 页表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-3-%E5%9C%B0%E5%9D%80%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="nav-text">4.6.3 地址的转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-4-%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%E7%BB%93%E6%9E%84"><span class="nav-text">4.6.4 逻辑地址结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-5-%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2%E6%9C%BA%E6%9E%84"><span class="nav-text">4.6.5 基本地址变换机构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-6-%E6%9C%89%E5%BF%AB%E8%A1%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2%E6%9C%BA%E6%9E%84"><span class="nav-text">4.6.6 有快表的地址变换机构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7-%E5%9F%BA%E6%9C%AC%E5%88%86%E6%AE%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-text">4.7 基本分段存储管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-1-%E5%88%86%E6%AE%B5"><span class="nav-text">4.7.1 分段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-2-%E6%AE%B5%E8%A1%A8"><span class="nav-text">4.7.2 段表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-3-%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2"><span class="nav-text">4.7.3 地址变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-4-%E5%88%86%E6%AE%B5%E3%80%81%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="nav-text">4.7.4 分段、分页管理的对比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-text">4.8 段页式管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-8-1-%E5%88%86%E9%A1%B5%E3%80%81%E5%88%86%E6%AE%B5%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-text">4.8.1 分页、分段的优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-8-2-%E6%A6%82%E5%BF%B5"><span class="nav-text">4.8.2 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-8-3-%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%E7%BB%93%E6%9E%84"><span class="nav-text">4.8.3 逻辑地址结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-8-4-%E6%AE%B5%E8%A1%A8%E3%80%81%E9%A1%B5%E8%A1%A8"><span class="nav-text">4.8.4 段表、页表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-8-5-%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2"><span class="nav-text">4.8.5 地址变换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-text">5 虚拟存储器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E4%BC%A0%E7%BB%9F%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E7%9A%84%E7%89%B9%E5%BE%81%E3%80%81%E7%BC%BA%E7%82%B9"><span class="nav-text">5.1 传统存储管理方式的特征、缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86"><span class="nav-text">5.2 局部性原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E7%89%B9%E5%BE%81"><span class="nav-text">5.3 虚拟内存的定义和特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E6%8A%80%E6%9C%AF"><span class="nav-text">5.4 如何实现虚拟内存技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="nav-text">5.5 页面置换算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-1-%E6%9C%80%E4%BD%B3%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95-OPT"><span class="nav-text">5.5.1 最佳置换算法(OPT)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-2-%E5%85%88%E8%BF%9B%E5%85%88%E5%87%BA%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95-FIFO"><span class="nav-text">5.5.2 先进先出置换算法(FIFO)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-3-%E6%9C%80%E8%BF%91%E6%9C%80%E4%B9%85%E6%9C%AA%E4%BD%BF%E7%94%A8%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95-LRU"><span class="nav-text">5.5.3 最近最久未使用置换算法(LRU)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-4-%E6%97%B6%E9%92%9F%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95-CLOCK"><span class="nav-text">5.5.4 时钟置换算法(CLOCK)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">6 输入输出系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-I-O%E7%B3%BB%E7%BB%9F"><span class="nav-text">6.1 I&#x2F;O系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-I-O%E8%AE%BE%E5%A4%87%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">6.2 I&#x2F;O设备的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-I-O%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F"><span class="nav-text">6.3 I&#x2F;O控制方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-1-%E7%A8%8B%E5%BA%8F%E7%9B%B4%E6%8E%A5%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F"><span class="nav-text">6.3.1 程序直接控制方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-2-%E4%B8%AD%E6%96%AD%E9%A9%B1%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="nav-text">6.3.2 中断驱动方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-3-DMA%E6%96%B9%E5%BC%8F"><span class="nav-text">6.3.3 DMA方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-4-%E9%80%9A%E9%81%93%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F"><span class="nav-text">6.3.4 通道控制方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-%E7%A3%81%E7%9B%98%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-text">6.4 磁盘的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-5-%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="nav-text">6.5 磁盘调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5-1-%E7%A3%81%E7%9B%98%E8%AF%BB-%E5%86%99%E6%93%8D%E4%BD%9C%E9%9C%80%E8%A6%81%E7%9A%84%E6%97%B6%E9%97%B4"><span class="nav-text">6.5.1 磁盘读&#x2F;写操作需要的时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5-2-%E5%85%88%E6%9D%A5%E5%85%88%E6%9C%8D%E5%8A%A1%E7%AE%97%E6%B3%95-FCFS"><span class="nav-text">6.5.2 先来先服务算法(FCFS)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5-3-%E6%9C%80%E7%9F%AD%E5%AF%BB%E6%89%BE%E6%97%B6%E9%97%B4%E4%BC%98%E5%85%88-SSTF"><span class="nav-text">6.5.3 最短寻找时间优先(SSTF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5-4-%E6%89%AB%E6%8F%8F%E7%AE%97%E6%B3%95-SCAN"><span class="nav-text">6.5.4 扫描算法(SCAN)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5-5-%E5%BE%AA%E7%8E%AF%E6%89%AB%E6%8F%8F%E7%AE%97%E6%B3%95-C-SCAN"><span class="nav-text">6.5.5 循环扫描算法(C-SCAN)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">7 文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-%E5%9F%BA%E7%A1%80"><span class="nav-text">7.1 基础</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-%E7%A3%81%E7%9B%98%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-text">8 磁盘存储器的管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-%E5%9F%BA%E7%A1%80"><span class="nav-text">8.1 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86"><span class="nav-text">8.2 文件存储空间管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-1-%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%92%E5%88%86%E4%B8%8E%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">8.2.1 存储空间的划分与初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-2-%E7%A9%BA%E9%97%B2%E8%A1%A8%E6%B3%95"><span class="nav-text">8.2.2 空闲表法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-3-%E7%A9%BA%E9%97%B2%E9%93%BE%E8%A1%A8%E6%B3%95"><span class="nav-text">8.2.3 空闲链表法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-4-%E4%BD%8D%E7%A4%BA%E5%9B%BE%E6%B3%95"><span class="nav-text">8.2.4 位示图法</span></a></li></ol></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">dearlrq</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2024</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">dearlrq</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.0</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
